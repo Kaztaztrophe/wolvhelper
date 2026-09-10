@@ -51,7 +51,7 @@
       "intro": "Your ears catch the sound of rocks crashing down a slope nearby. You probably should stay away to be safe, but your curiosity begs you to check it out.",
       "options": {
         "Investigate": ["+1 Large Rock|imglargerock","+1 Rusty Pickaxe|imgrustypickaxe","+1 MT|imgmt"],
-        "Proceed with caution": ["+2 Large Rock|imglargerock,largerock//+1 Rabbit Carcass|imgrabbitcarcass","+1 Unidentified Fossil|imgunidentifiedfossil","-5 HP"]
+        "Proceed with caution": ["+2 Large Rock//+1 Rabbit Carcass|imglargerock,largerock,imgrabbitcarcass","+1 Unidentified Fossil|imgunidentifiedfossil","-5 HP"]
       }
     },
     "slippedonarock": {
@@ -119,7 +119,7 @@
     "fossilcliffright": {
       "intro": "A cliff rises to your right with a column of...something crumbling from where it's embedded in the rock. Is it some sort of old human structure?",
       "options": {
-        "Check out the column": ["+1 Wealden Amber|imgwealdenamber//+1 Hiker's Rope|imghikersrope","+1 Fossilized Bone Dust|imgfossilizedbonedust","+1 Unidentified Fossil|unidentifiedfossil","+1 MT|imgmt"],
+        "Check out the column": ["+1 Wealden Amber//+1 Hiker's Rope|imgwealdenamber,imghikersrope","+1 Fossilized Bone Dust|imgfossilizedbonedust","+1 Unidentified Fossil|unidentifiedfossil","+1 MT|imgmt"],
         "Check out the crevices in the rock": ["+1 MT|imgmt"]
       }
     },
@@ -127,7 +127,7 @@
       "intro": "This cliff used to be a solid wall of rock, but now it has split and revealed numerous fossils from millions of years ago. What a find! How many are there? It will take ages to look through them all. The sight is fascinating and daunting at the same time.",
       "options": {
         "Follow the wall": ["+1 MT|imgmt//+1 Charcoal|imgcharcoal"],
-        "Paw at one of the fossils": ["+1 Iron Scrap|imgironscrap//+1 Fossilized Bone Dust|imgfossilizedbonedust","+1 Unidentified Fossil|imgunidentifiedfossil","+1 MT|imgmt"]
+        "Paw at one of the fossils": ["+1 Iron Scrap//+1 Fossilized Bone Dust|imgironscrap,imgfossilizedbonedust","+1 Unidentified Fossil|imgunidentifiedfossil","+1 MT|imgmt"]
       }
     },
     "fossilrelief": {
@@ -160,7 +160,7 @@
     "fossilizedtree": {
       "intro": "From a distance, the remains of the broken tree look ordinary. Upon coming closer, you realize that you don't recognize the type of tree. Its fossilized bark feels strange to the touch.",
       "options": {
-        "Scrape the bark": ["+1 Acorn|imgacorn//+1 Rat Carcass|imgratcarcass","+1 Large Branch|imglargebranch//+1 Charcoal|imgcharcoal","+1 MT|imgmt"],
+        "Scrape the bark": ["+1 Acorn//+1 Rat Carcass|imgacorn,imgratcarcass","+1 Large Branch//+1 Charcoal|imglargebranch,imgcharcoal","+1 MT|imgmt"],
         "Dig under the tree": ["+1 Massive Pinecone|imgmassivepinecone","+1 Unidentified Fossil|imgunidentifiedfossil","+1 MT|imgmt"]
       }
     },
@@ -175,9 +175,9 @@
     "landsliderocks": {
       "intro": "Rocks have tumbled down the mountain here recently, and look quite strange compared to the plain rocks you normally see. They have strange impressions in them, almost as if there were beings that once dwelled in them...",
       "options": {
-        "Check out the fossil": ["+1 Fossilized Bone Dust|imgfossilizedbonedust//+1 Unidentified Fossil|imgunidentifiedfossil","+1 MT|imgmt//+1 Large Rock|imglargerock"],
+        "Check out the fossil": ["+1 Fossilized Bone Dust//+1 Unidentified Fossil|imgfossilizedbonedust,imgunidentifiedfossil","+1 MT|imgmt//+1 Large Rock|imglargerock"],
         "Check around the rocks": ["+2 MT|imgmt"],
-        "Dig under the rocks": ["+1 Rusty Pickaxe|imgrustypickaxe//+1 Unidentified Fossil|imgunidentifiedfossil"]
+        "Dig under the rocks": ["+1 Rusty Pickaxe//+1 Unidentified Fossil|imgrustypickaxe,imgunidentifiedfossil"]
       }
     },
     "openfossilbed": {
@@ -185,7 +185,7 @@
       "options": {
         "Investigate the lower layer": ["+1 MT|imgmt//+5% energy"],
         "Check the middle layer": ["+1 Unidentified Fossil|imgunidentifiedfossil"],
-        "Climb to the upper layer": ["+2 Rabbit Carcass|imgrabbitcarcass,imgrabbitcarcass//+1 Butterfly Wing|imgbutterflywing"]
+        "Climb to the upper layer": ["+2 Rabbit Carcass//+1 Butterfly Wing|imgrabbitcarcass,imgrabbitcarcass,imgbutterflywing"]
       }
     },
     "raisedfossilcliff": {

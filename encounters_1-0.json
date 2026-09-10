@@ -29,7 +29,7 @@
     "disturbeddirt": {
       "intro": "Hmm...the dirt has been displaced here, almost like someone was digging recently. Maybe something valuable is buried?",
       "options": {
-        "Listen": ["+1 MT|mt","No reward"],
+        "Dig around": ["+1 MT|mt","No reward"],
         "Carefully scrape away the dirt": ["+1 Unidentified Fossil|unidentifiedfossil","No reward"]
       }
     },

@@ -1,0 +1,79 @@
+{
+  "images": {
+    "sc": "https://static.wolvden.com/images/layout/icons/icon-sc.png",
+    "gc": "https://static.wolvden.com/images/layout/icons/icon-gc.png",
+    "mt": "https://static.wolvden.com/images/layout/icons/icon-mt.png",
+    "acorn": "https://static.wolvden.com/images/items/other/acorn.png",
+    "butterflywing": "https://static.wolvden.com/images/items/other/butterflywing.png",
+    "charcoal": "https://static.wolvden.com/images/items/herbs/charcoal.png",
+    "fossilizedbonedust": "https://static.wolvden.com/images/items/other/BoneDust.png",
+    "hikersrope": "https://static.wolvden.com/images/items/toys/rope.png",
+    "ironscrap": "https://static.wolvden.com/images/items/other/iron_scrap.png",
+    "largebranch": "https://static.wolvden.com/images/items/other/largebranch.png",
+    "largeleaf": "https://static.wolvden.com/images/items/other/largeleaves.png",
+    "largerock": "https://static.wolvden.com/images/items/other/largerock.png",
+    "massivepinecone": "https://static.wolvden.com/images/items/toys/pinecone_big.png",
+    "molluskshell": "https://static.wolvden.com/images/items/toys/mshell.png",
+    "oddteeth": "https://static.wolvden.com/images/items/trophies/teeth_odd.png",
+    "quailegg": "https://static.wolvden.com/images/items/food/eggquail.png",
+    "rabbitcarcass": "https://static.wolvden.com/images/items/food/rabbit.png",
+    "ratcarcass": "https://static.wolvden.com/images/items/food/rat.png",
+    "recipeapplicator": "https://static.wolvden.com/images/items/scrolls/applicator.png",
+    "rustypickaxe": "https://static.wolvden.com/images/items/toys/oldpickaxe.png",
+    "smallbirdmeat": "https://static.wolvden.com/images/items/food/meat_smallbird.png",
+    "unidentifiedfossil": "https://static.wolvden.com/images/items/lore/fossil.png",
+    "wealdenamber": "https://static.wolvden.com/images/items/trophies/wealdenamber.png"
+  },
+
+  "encounters": {
+    "disturbeddirt": {
+      "intro": "Hmm...the dirt has been displaced here, almost like someone was digging recently. Maybe something valuable is buried?",
+      "options": {
+        "Listen": ["+1 MT|mt","No reward"],
+        "Carefully scrape away the dirt": ["+1 Unidentified Fossil|unidentifiedfossil","No reward"]
+      }
+    },
+    "nearbycreeksound": {
+      "intro": "The familiar sound of a creek bubbling in the distance draws your pawsteps in that direction. It would be a nice spot to take a breather.",
+      "options": {
+        "Follow the bubbling": ["+2 MT|mt","+10 HP"],
+        "Walk along the shore": ["+2 Mollusk Shell|molluskshell,molluskshell","+1 Unidentified Fossil","+1 MT|mt // +1 Unidentified Fossil|unidentifiedfossil"],
+        "Wade through the water": ["+1 Large Branch|largebranch","+1 Unidentified Fossil|unidentifiedfossil","+1 MT|mt // +1 Unidentified Fossil|unidentifiedfossil","+1 MT|mt"]
+      }
+    },
+    "recentearthquakeshiftedground": {
+      "intro": "The ground has shifted due to the recent earthquake, making it much less stable to walk on. However, you hope that all the cracks and holes are full of hidden treasures that would otherwise have remained underground.",
+      "options": {
+        "Investigate": ["+1 Large Rock|largerock","+1 Unidentified Fossil|unidentifiedfossil","+1 MT|mt"]
+      }
+    },
+    "rockslidesounds": {
+      "intro": "Your ears catch the sound of rocks crashing down a slope nearby. You probably should stay away to be safe, but your curiosity begs you to check it out.",
+      "options": {
+        "Investigate": ["+1 Large Rock|largerock","+1 Rusty Pickaxe|rustypickaxe","+1 MT|mt"],
+        "Proceed with caution": ["+2 Large Rock|largerock,largerock // +1 Rabbit Carcass|rabbitcarcass","+1 Unidentified Fossil|unidentifiedfossil","-5 HP"]
+      }
+    },
+    "slippedonarock": {
+      "intro": "Suddenly, you lose the ground under your paws, slipping on a rock and falling to the side. It hurts a little, but you aren't seriously injured.",
+      "options": {
+        "Check the rock out": ["+1 Fossilized Bone Dust|fossilizedbonedust","+1 Unidentified Fossil|unidentifiedfossil","+1 MT|mt // +1 Large Leaf|largeleaf","+1 MT|mt // +1 Massive Pinecone|massivepinecone","+1 MT|mt // +1 Unidentified Fossil|unidentifiedfossil","+2 MT|mt","+1 MT|mt","+5% energy","-5 HP"]
+      }
+    },
+    "softground": {
+      "intro": "The ground is soft under your paws here, and your paws itch to dig in it.",
+      "options": {
+        "Check the rock out": ["+1 MT|mt","+2 HP"],
+        "Roll in it": ["+1 Large Leaf|largeleaf", "+1 Unidentified Fossil|unidentifiedfossil"]
+      }
+    },
+    "deepmud": {
+      "intro": "The ground is soft under your paws here, and your paws itch to dig in it.",
+      "options": {
+        "Play": ["+1 Unidentified Fossil|unidentifiedfossil","+2 MT|mt","+10% energy"],
+        "Dig": ["+1 Unidentified Fossil|unidentifiedfossil","+1 Wealden Amber|wealdenamber","+1 MT|mt // +5% energy","+1 MT|mt"]
+      }
+    }
+
+  }
+}

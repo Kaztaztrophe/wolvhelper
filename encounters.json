@@ -31,6 +31,9 @@
     "imgleftoverbones": "https://grousehouse.wiki/images/items/backgrounds/thumbnails/Leftoverbones.png",
     "imglemmingcarcass": "https://grousehouse.wiki/images/items/food/lemmingcarcass.png",
     "imgmassivepinecone": "https://grousehouse.wiki/images/items/amusement/massivepinecone.png",
+    "imgmeatchunkslarge": "https://grousehouse.wiki/images/items/food/meatchunkslarge.png",
+    "imgmeatchunksmedium": "https://grousehouse.wiki/images/items/food/meatchunksmedium.png",
+    "imgmeatchunkssmall": "https://grousehouse.wiki/images/items/food/meatchunkssmall.png",
     "imgmolluskshell": "https://grousehouse.wiki/images/items/amusement/molluskshell.png",
     "imgmuskratcarcassdecor": "https://grousehouse.wiki/images/items/decorations/thumbnails/Muskratcarcassdecor.png",
     "imgoddteeth": "https://grousehouse.wiki/images/items/other/oddteeth.png",
@@ -73,7 +76,7 @@
       "intro": "The familiar sound of a creek bubbling in the distance draws your pawsteps in that direction. It would be a nice spot to take a breather.",
       "options": {
         "Follow the bubbling": ["+2 MT|imgmt","+10 HP"],
-        "Walk along the shore": ["+2 Mollusk Shell|imgmolluskshell,imgmolluskshell","+1 Unidentified Fossil","+1 MT|imgmt//+1 Unidentified Fossil|imgunidentifiedfossil"],
+        "Walk along the shore": ["+2 Mollusk Shell|imgmolluskshell;imgmolluskshell","+1 Unidentified Fossil","+1 MT|imgmt//+1 Unidentified Fossil|imgunidentifiedfossil"],
         "Wade through the water": ["+1 Large Branch|imglargebranch","+1 Unidentified Fossil|imgunidentifiedfossil","+1 MT|imgmt//+1 Unidentified Fossil|imgunidentifiedfossil","+1 MT|imgmt"]
       }
     },
@@ -87,7 +90,7 @@
       "intro": "Your ears catch the sound of rocks crashing down a slope nearby. You probably should stay away to be safe, but your curiosity begs you to check it out.",
       "options": {
         "Investigate": ["+1 Large Rock|imglargerock","+1 Rusty Pickaxe|imgrustypickaxe","+1 MT|imgmt"],
-        "Proceed with caution": ["+2 Large Rock//+1 Rabbit Carcass|imglargerock,imglargerock,imgrabbitcarcass","+1 Unidentified Fossil|imgunidentifiedfossil","-5 HP"]
+        "Proceed with caution": ["+2 Large Rock//+1 Rabbit Carcass|imglargerock;imglargerock;imgrabbitcarcass","+1 Unidentified Fossil|imgunidentifiedfossil","-5 HP"]
       }
     },
     "slippedonarock": {
@@ -120,7 +123,7 @@
     "ammonitebed": {
       "intro": "One side of a huge, dark rock slab is completely smooth, but the other side looks like the bottom of the sea, with lots of shells of different sizes still stuck within it. You can tell they're older than any wolf can remember.",
       "options": {
-        "Try to take one out": ["+1 MT|imgmt//+2 Mollusk Shell|imgmolluskshell,imgmolluskshell"],
+        "Try to take one out": ["+1 MT|imgmt//+2 Mollusk Shell|imgmolluskshell;imgmolluskshell"],
         "Scratch the surface": ["+2% energy//+1 Unidentified Fossil|imgunidentifiedfossil"]
       }
     },
@@ -135,7 +138,7 @@
       "intro": "Various shapes of plants and small animals are pressed into this rock. You don't recognize any of them. This rock has survived for thousands of years so that you can admire the past.",
       "options": {
         "Dig under the rock": ["+3 MT|imgmt","+1 MT|imgmt","+1 MT|imgmt//-5 HP"],
-        "Scrape": ["+2 Unidentified Fossil|imgunidentifiedfossil,imgunidentifiedfossil","+1 Unidentified Fossil|imgunidentifiedfossil","+1 Fossilized Bone Dust|imgfossilizedbonedust"]
+        "Scrape": ["+2 Unidentified Fossil|imgunidentifiedfossil;imgunidentifiedfossil","+1 Unidentified Fossil|imgunidentifiedfossil","+1 Fossilized Bone Dust|imgfossilizedbonedust"]
       }
     },
     "fossilbed": {
@@ -155,7 +158,7 @@
     "fossilcliffright": {
       "intro": "A cliff rises to your right with a column of...something crumbling from where it's embedded in the rock. Is it some sort of old human structure?",
       "options": {
-        "Check out the column": ["+1 Wealden Amber//+1 Hiker's Rope|imgwealdenamber,imghikersrope","+1 Fossilized Bone Dust|imgfossilizedbonedust","+1 Unidentified Fossil|imgunidentifiedfossil","+1 MT|imgmt"],
+        "Check out the column": ["+1 Wealden Amber//+1 Hiker's Rope|imgwealdenamber;imghikersrope","+1 Fossilized Bone Dust|imgfossilizedbonedust","+1 Unidentified Fossil|imgunidentifiedfossil","+1 MT|imgmt"],
         "Check out the crevices in the rock": ["+1 MT|imgmt"]
       }
     },
@@ -163,7 +166,7 @@
       "intro": "This cliff used to be a solid wall of rock, but now it has split and revealed numerous fossils from millions of years ago. What a find! How many are there? It will take ages to look through them all. The sight is fascinating and daunting at the same time.",
       "options": {
         "Follow the wall": ["+1 MT|imgmt//+1 Charcoal|imgcharcoal"],
-        "Paw at one of the fossils": ["+1 Iron Scrap//+1 Fossilized Bone Dust|imgironscrap,imgfossilizedbonedust","+1 Unidentified Fossil|imgunidentifiedfossil","+1 MT|imgmt"]
+        "Paw at one of the fossils": ["+1 Iron Scrap//+1 Fossilized Bone Dust|imgironscrap;imgfossilizedbonedust","+1 Unidentified Fossil|imgunidentifiedfossil","+1 MT|imgmt"]
       }
     },
     "fossilrelief": {
@@ -177,7 +180,7 @@
       "intro": "The fossilized bones are deeply embedded in the rock, but their shapes are clearly visible. There must be a way to take them out; perhaps even all of them.",
       "options": {
         "Break the rock": ["+1 Fossilized Bone Dust|imgfossilizedbonedust","+1 MT|imgmt"],
-        "Dig": ["+2 Unidentified Fossil|imgunidentifiedfossil,imgunidentifiedfossil","+1 Unidentified Fossil|imgunidentifiedfossil","+1% energy"]
+        "Dig": ["+2 Unidentified Fossil|imgunidentifiedfossil;imgunidentifiedfossil","+1 Unidentified Fossil|imgunidentifiedfossil","+1% energy"]
       }
     },
     "fossilslabs": {
@@ -190,13 +193,13 @@
       "intro": "This wall towers so high that you can't see the top, and is absolutely riddled with bones and fossils of various sizes and shapes. Who knew so many things lurked just beneath your pawsteps that are only now coming to the surface?",
       "options": {
         "Scrape at one of the fossils": ["+1 Recipe: Base Applicator [Fossil]|imgrecipeapplicator","+2 MT|imgmt","+1 MT|imgmt"],
-        "Sniff around the base of the wall": ["+1 Recipe: Base Applicator [Fossil]|imgrecipeapplicator","+2 Quail Egg|imgquailegg,imgquailegg","+1 Large Rock|imglargerock","+1 Unidentified Fossil|imgunidentifiedfossil"]
+        "Sniff around the base of the wall": ["+1 Recipe: Base Applicator [Fossil]|imgrecipeapplicator","+2 Quail Egg|imgquailegg;imgquailegg","+1 Large Rock|imglargerock","+1 Unidentified Fossil|imgunidentifiedfossil"]
       }
     },
     "fossilizedtree": {
       "intro": "From a distance, the remains of the broken tree look ordinary. Upon coming closer, you realize that you don't recognize the type of tree. Its fossilized bark feels strange to the touch.",
       "options": {
-        "Scrape the bark": ["+1 Acorn//+1 Rat Carcass|imgacorn,imgratcarcass","+1 Large Branch//+1 Charcoal|imglargebranch,imgcharcoal","+1 MT|imgmt"],
+        "Scrape the bark": ["+1 Acorn//+1 Rat Carcass|imgacorn;imgratcarcass","+1 Large Branch//+1 Charcoal|imglargebranch;imgcharcoal","+1 MT|imgmt"],
         "Dig under the tree": ["+1 Massive Pinecone|imgmassivepinecone","+1 Unidentified Fossil|imgunidentifiedfossil","+1 MT|imgmt"]
       }
     },
@@ -211,9 +214,9 @@
     "landsliderocks": {
       "intro": "Rocks have tumbled down the mountain here recently, and look quite strange compared to the plain rocks you normally see. They have strange impressions in them, almost as if there were beings that once dwelled in them...",
       "options": {
-        "Check out the fossil": ["+1 Fossilized Bone Dust//+1 Unidentified Fossil|imgfossilizedbonedust,imgunidentifiedfossil","+1 MT|imgmt//+1 Large Rock|imglargerock"],
+        "Check out the fossil": ["+1 Fossilized Bone Dust//+1 Unidentified Fossil|imgfossilizedbonedust;imgunidentifiedfossil","+1 MT|imgmt//+1 Large Rock|imglargerock"],
         "Check around the rocks": ["+2 MT|imgmt"],
-        "Dig under the rocks": ["+1 Rusty Pickaxe//+1 Unidentified Fossil|imgrustypickaxe,imgunidentifiedfossil"]
+        "Dig under the rocks": ["+1 Rusty Pickaxe//+1 Unidentified Fossil|imgrustypickaxe;imgunidentifiedfossil"]
       }
     },
     "openfossilbed": {
@@ -221,13 +224,13 @@
       "options": {
         "Investigate the lower layer": ["+1 MT|imgmt//+5% energy"],
         "Check the middle layer": ["+1 Unidentified Fossil|imgunidentifiedfossil"],
-        "Climb to the upper layer": ["+2 Rabbit Carcass//+1 Butterfly Wing|imgrabbitcarcass,imgrabbitcarcass,imgbutterflywing"]
+        "Climb to the upper layer": ["+2 Rabbit Carcass//+1 Butterfly Wing|imgrabbitcarcass;imgrabbitcarcass;imgbutterflywing"]
       }
     },
     "raisedfossilcliff": {
       "intro": "Are those...trees in that rock? You move closer, giving the rock a curious sniff. It looks like ferns were pressed into this rock years ago and have left only their imprint behind. How cool!",
       "options": {
-        "Sniff at the base of the cliff": ["+2 Fossilized Bone Dust|imgfossilizedbonedust,imgfossilizedbonedust"],
+        "Sniff at the base of the cliff": ["+2 Fossilized Bone Dust|imgfossilizedbonedust;imgfossilizedbonedust"],
         "Run your paw over the imprint": ["+1 Unidentified Fossil|imgunidentifiedfossil"]
       }
     },
@@ -236,10 +239,23 @@
       "options": {
         "Scratch gently": ["+1 Unidentified Fossil|imgunidentifiedfossil"],
         "Scratch aggressively": ["+2 MT|imgmt"],
-        "Bite": ["+2 Fossilized Bone Dust|imgfossilizedbonedust,imgfossilizedbonedust"]
+        "Bite": ["+2 Fossilized Bone Dust|imgfossilizedbonedust;imgfossilizedbonedust"]
       }
     },
 
+    "filler2scents": {
+      "intro": "You briefly stop to smell the air, two diverging scents reaching your nose. Interesting.",
+      "options": {
+        "Follow the stinky scent": ["+1-2 SC|imgsc","No reward (>5000 SC)"],
+        "Follow the delicious scent": ["+5-10% hunger"],
+        "Follow the rancid scent": ["+1 Meat Chunks [Large]|imgmeatchunkslarge","+1 Meat Chunks [Medium]|imgmeatchunksmedium","+1 Meat Chunks [Small]|imgmeatchunkssmall"],
+        "Follow the bitter scent": ["+1 Bone|imgbone","+1 Large Branch|imglargebranch","+1 Large Leaf|imglargeleaf","+1 Large Rock|imglargerock"],
+        "Follow the sweet scent": ["Automatic befriending encounter with a wolf","No reward*"]
+      },
+      "conditional": {
+        "Follow the sweet scent": "*Befriending is not available if your territory is full"
+      }
+    },
     "fillerbirdrest": {
       "intro": "You hear the faint twitter of birds somewhere nearby. You look up to the sky and watch them swooping overhead. What would it feel like to fly? You find a nice comfortable spot in the shade and rest for a moment.",
       "options": {
@@ -250,11 +266,11 @@
     "fillerbutterfly": {
       "intro": "Catching your breath, a small butterfly lands on your nose.",
       "options": {
-        "Watch": ["+1 random recipe from butterfly pool*|imgrecipeanimal","No reward"],
-        "Chomp": ["+1 random recipe from butterfly pool*|imgrecipeanimal","+1% hunger"]
+        "Watch": ["+1 random recipe from butterfly pool*","No reward"],
+        "Chomp": ["+1 random recipe from butterfly pool*","+1% hunger"]
       },
       "notes": [
-        "*Recipes from butterfly pool: Blinded Sphinx|imgblindedsphynx, Brown Longtail|imgbrownlongtail, Canyon Rubyspot|imgcanyonrubyspot, Diana Fritillary|imgdianafritillary, Fiery Skipper|imgfieryskipper, Giant Swallowtail|imggiantswallowtail, Gulf Fritillary|imggulffritillary, Uhler's Arctic|imguhlersarctic, White Peacock|imgwhitepeacock"
+        "*Recipes from butterfly pool: Blinded Sphinx|imgrecipeanimal;imgblindedsphynx, Brown Longtail|imgrecipeanimal;imgbrownlongtail, Canyon Rubyspot|imgrecipeanimal;imgcanyonrubyspot, Diana Fritillary|imgrecipeanimal;imgdianafritillary, Fiery Skipper|imgrecipeanimal;imgfieryskipper, Giant Swallowtail|imgrecipeanimal;imggiantswallowtail, Gulf Fritillary|imgrecipeanimal;imggulffritillary, Uhler's Arctic|imgrecipeanimal;imguhlersarctic, White Peacock|imgrecipeanimal;imgwhitepeacock"
       ]
     },
     "fillercritters": {
@@ -276,8 +292,18 @@
       "notes": [
         "*@poolbone"
       ]
+    },
+    "fillerscentpath": {
+      "intro": "",
+      "options": {
+        "Follow North": [],
+        "Follow West": ["+1 random meat chunks item*//+1 random cave-building material**"]
+      },
+      "notes": [
+        "*@poolmeatchunks",
+        "**@poolcavebuildingmaterial"
+      ]
     }
-
 
   }
 }

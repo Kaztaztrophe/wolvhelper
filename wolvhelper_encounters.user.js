@@ -29,6 +29,26 @@
 	let encounterIdLookup = [];
 	let imageCache = new Map();
 
+	// Preload all images before displaying the helper
+	async function preloadImages() {
+    const promises = Object.entries(database.images).map(
+        ([imageName, imageUrl]) => {
+            return new Promise(resolve => {
+                const image = new Image();
+
+                image.onload = resolve;
+                image.onerror = resolve;
+
+                image.src = imageUrl;
+
+                imageCache.set(imageName, image);
+            });
+        }
+    );
+
+    await Promise.all(promises);
+	}
+
 	// Load encounter database
 	async function loadDatabase() {
 		try {
@@ -62,12 +82,8 @@
 							a.normalized.length
 					);
 
-			// Preload images
-			for (const imageName of Object.keys(database.images)) {
-				const image = new Image();
-				image.src = database.images[imageName];
-				imageCache.set(imageName, image);
-			}
+			// Wait for all images to finish loading
+			await preloadImages();
 
 			updateExploreOutput();
 
@@ -199,26 +215,25 @@
 		return [parseCompoundResult(value)];
 	}
 
+	// Reward images
 	function createRewardImage(imageName) {
-		const imageUrl = database.images[imageName];
+    const cachedImage = imageCache.get(imageName);
 
-		if (!imageUrl) {
-			console.warn('[Wolvhelper] Unknown image:', imageName);
-			return null;
-		}
+    if (!cachedImage) {
+        console.warn('[Wolvhelper] Unknown image:', imageName);
+        return null;
+    }
 
-		const img = document.createElement('img');
+    const img = cachedImage.cloneNode(false);
 
-		img.src = imageUrl;
-		img.alt = imageName;
-		img.title = imageName;
-		img.loading = 'eager';
-		img.style.verticalAlign = 'middle';
-		img.style.height = IMAGE_HEIGHT;
+    img.alt = imageName;
+    img.title = imageName;
+    img.loading = 'eager';
+    img.style.verticalAlign = 'middle';
+    img.style.height = IMAGE_HEIGHT;
 
-		return img;
+    return img;
 	}
-
 
 	// Parse all results for an option
 	function createResultElement(rewards) {

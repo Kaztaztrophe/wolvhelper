@@ -3,35 +3,52 @@
     "imgsc": "https://grousehouse.wiki/images/currency/silvercone.png",
     "imgmt": "https://grousehouse.wiki/images/currency/megalodonteeth.png",
     "imgacorn": "https://grousehouse.wiki/images/items/amusement/acorn.png",
+    "imgbatcarcass": "https://grousehouse.wiki/images/items/food/batcarcass.png",
     "imgblindedsphynx": "https://grousehouse.wiki/images/items/decorations/thumbnails/Blindedsphinx.png",
+    "imgbone": "https://grousehouse.wiki/images/items/amusement/bone.png",
     "imgbrownlongtail": "https://grousehouse.wiki/images/items/decorations/thumbnails/Brownlongtail.png",
     "imgbutterflywing": "https://grousehouse.wiki/images/items/other/butterflywing.png",
     "imgcanyonrubyspot": "https://grousehouse.wiki/images/items/decorations/thumbnails/Canyonrubyspot.png",
+    "imgcarrot": "https://grousehouse.wiki/images/items/food/carrot.png",
     "imgcharcoal": "https://grousehouse.wiki/images/items/herbs/charcoal.png",
+    "imgchickenegg": "https://grousehouse.wiki/images/items/food/chickenegg.png",
+    "imgdeadfish": "https://grousehouse.wiki/images/items/food/deadfish.png",
+    "imgdelicatemeat": "https://grousehouse.wiki/images/items/food/delicatemeat.png",
     "imgdianafritillary": "https://grousehouse.wiki/images/items/decorations/thumbnails/Dianafritillary.png",
+    "imgduckegg": "https://grousehouse.wiki/images/items/food/duckegg.png",
     "imgfieryskipper": "https://grousehouse.wiki/images/items/decorations/thumbnails/Fieryskipper.png",
     "imgfossilizedbonedust": "https://grousehouse.wiki/images/items/other/fossilizedbonedust.png",
     "imggiantswallowtail": "https://grousehouse.wiki/images/items/decorations/thumbnails/Giantswallowtail.png",
+    "imggroundsquirrelcarcass": "https://grousehouse.wiki/images/items/food/groundsquirrelcarcass.png",
     "imggulffritillary": "https://grousehouse.wiki/images/items/decorations/thumbnails/Gulffritillary.png",
     "imghikersrope": "https://grousehouse.wiki/images/items/amusement/hikersrope.png",
     "imgironscrap": "https://grousehouse.wiki/images/items/other/ironscrap.png",
     "imglargebranch": "https://grousehouse.wiki/images/items/other/largebranch.png",
     "imglargeleaf": "https://grousehouse.wiki/images/items/other/largeleaf.png",
     "imglargerock": "https://grousehouse.wiki/images/items/other/largerock.png",
+    "imglemmingcarcass": "https://grousehouse.wiki/images/items/food/lemmingcarcass.png",
     "imgmassivepinecone": "https://grousehouse.wiki/images/items/amusement/massivepinecone.png",
     "imgmolluskshell": "https://grousehouse.wiki/images/items/amusement/molluskshell.png",
     "imgoddteeth": "https://grousehouse.wiki/images/items/other/oddteeth.png",
+    "imgowltalon": "https://grousehouse.wiki/images/items/amusement/owltalon.png",
     "imgquailegg": "https://grousehouse.wiki/images/items/food/quailegg.png",
     "imgrabbitcarcass": "https://grousehouse.wiki/images/items/food/rabbitcarcass.png",
     "imgratcarcass": "https://grousehouse.wiki/images/items/food/ratcarcass.png",
     "imgrecipeanimal": "https://grousehouse.wiki/images/items/recipes/recipeanimal.png",
     "imgrecipeapplicator": "https://grousehouse.wiki/images/items/recipes/recipeapplicator.png",
+    "imgrecipetrinket": "https://grousehouse.wiki/images/items/recipes/recipetrinket.png",
     "imgrustypickaxe": "https://grousehouse.wiki/images/items/amusement/rustypickaxe.png",
     "imgsmallbirdmeat": "https://grousehouse.wiki/images/items/food/smallbirdmeat.png",
+    "imgturkeyegg": "https://grousehouse.wiki/images/items/food/turkeyegg.png",
     "imguhlersarctic": "https://grousehouse.wiki/images/items/decorations/thumbnails/Uhlersarctic.png",
     "imgunidentifiedfossil": "https://grousehouse.wiki/images/items/lore/unidentifiedfossil.png",
     "imgwealdenamber": "https://grousehouse.wiki/images/items/other/wealdenamber.png",
+    "imgweaselcarcass": "https://grousehouse.wiki/images/items/food/weaselcarcass.png",
     "imgwhitepeacock": "https://grousehouse.wiki/images/items/decorations/thumbnails/Whitepeacock.png"
+  },
+  "notes": {
+    "poolbone": "Recipes from bone pool: Abandoned Den|imgabandonedden, Bone Decor|imgbonedecor, Leftover Bones|imgleftoverbones, Muskrat Carcass Decor|imgmuskratcarcassdecor, Scattered Bones|imgscatteredbones, Skeletal Remains|imgskeletalremains, Squirrel Carcass Decor|imgsquirrelcarcassdecor",
+    "poolsingleusefood": "Single use food items: Bat Carcass|imgbatcarcass, Carrot|imgcarrot, Chicken Egg|imgchickenegg, Dead Fish|imgdeadfish, Delicate Meat|imgdelicatemeat, Duck Egg|imgduckegg, Ground Squirrel Carcass|imggroundsquirrelcarcass, Lemming Carcass|imglemmingcarcass, Quail Egg|imgquailegg, Rat Carcass|imgratcarcass, Small Bird Meat|imgsmallbirdmeat, Turkey Egg|imgturkeyegg, Weasel Carcass|imgweaselcarcass, Woodpecker Carcass|imgwoodpeckercarcass"
   },
 
   "encounters": {
@@ -40,8 +57,13 @@
       "intro": "Hmm...the dirt has been displaced here, almost like someone was digging recently. Maybe something valuable is buried?",
       "options": {
         "Dig around": ["+1 MT|imgmt","No reward"],
-        "Carefully scrape away the dirt": ["+1 Unidentified Fossil|imgunidentifiedfossil","No reward"]
-      }
+        "*Carefully scrape away the dirt": ["+1 Unidentified Fossil|imgunidentifiedfossil","No reward"]
+      },
+      "notes": [
+        "*@poolbone",
+        "**@poolsingleusefood",
+        "Test note @poolbone"
+      ]
     },
     "nearbycreeksound": {
       "intro": "The familiar sound of a creek bubbling in the distance draws your pawsteps in that direction. It would be a nice spot to take a breather.",
@@ -230,7 +252,28 @@
       "notes": [
         "*Recipes from butterfly pool: Blinded Sphinx|imgblindedsphynx, Brown Longtail|imgbrownlongtail, Canyon Rubyspot|imgcanyonrubyspot, Diana Fritillary|imgdianafritillary, Fiery Skipper|imgfieryskipper, Giant Swallowtail|imggiantswallowtail, Gulf Fritillary|imggulffritillary, Uhler's Arctic|imguhlersarctic, White Peacock|imgwhitepeacock"
       ]
+    },
+    "fillercritters": {
+      "intro": "You see some small critters running desperately in the opposite direction.",
+      "options": {
+        "Keep Moving Forward": ["Battle with (LVL+5) level local wolf* enemy"],
+        "Turn Back": ["+1 random single-use food item**"]
+      },
+      "notes": [
+        "*Local wolf enemies: Alaskan Tundra Wolf (Tundra), Arctic Wolf (Glacier), Eastern Wolf (Grasslands, Prairie, Riparian Woodland), Mexican Wolf (Desert), Red Wolf (Rainforest, Swamp), Timber Wolf (Coniferous Forest, Deciduous Forest, Mountains, Taiga)",
+        "**@poolsingleusefood"
+      ]
+    },
+    "fillerdirtsnuffle": {
+      "intro": "You snuffle around in the dirt. It's here somewhere.. Yes! Jackpot!",
+      "options": {
+        "Dig": ["+1 Acorn|imgacorn","+1 Bone|imgbone","+1 Owl Talon|imgowltalon","+1 Mollusk Skull|imgmolluskshell","+1 random recipe from bone pool*|imgrecipetrinket","1-3 SC|imgsc|(<5000 SC)"]
+      },
+      "notes": [
+        "*@poolbone"
+      ]
     }
+
 
   }
 }

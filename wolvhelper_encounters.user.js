@@ -1,11 +1,12 @@
 // ==UserScript==
 // @name        Wolvhelper: Explore Encounters
 // @namespace   https://github.com/Kaztaztrophe/Wolvhelper/
-// @version     1.0.0
+// @version     1.0.1
 // @author      Kaztaztrophe
 // @description Wolvden explore encounter helper which displays results
-// @match       https://www.wolvden.com/*
-// @match       https://wolvden.com/*
+// @match       https://www.wolvden.com/biome/*
+// @match       https://wolvden.com/biome/*
+// @run-at      document-idle
 // @grant       none
 // @updateURL   https://raw.githubusercontent.com/Kaztaztrophe/Wolvhelper/main/wolvhelper_encounters.user.js
 // @downloadURL https://raw.githubusercontent.com/Kaztaztrophe/Wolvhelper/main/wolvhelper_encounters.user.js
@@ -15,7 +16,7 @@
 	'use strict';
 
 	// Script settings and variables
-	const DATABASE_URL = 'https://raw.githubusercontent.com/Kaztaztrophe/wolvhelper/main/encounters.json';
+	const DATABASE_URL = 'https://raw.githubusercontent.com/Kaztaztrophe/Wolvhelper/main/encounters.json';
 	const HELPER_CLASS = 'explore-helper';
 	const HELPER_MARGINS = '10px';
 	const IMAGE_HEIGHT = '25px';
@@ -295,6 +296,33 @@
 		return line;
 	}
 
+	// Create notes section
+	function createNotesElement(notes) {
+		if (!Array.isArray(notes) || notes.length === 0) {
+			return null;
+		}
+
+		const container = document.createElement('div');
+		container.style.marginTop = '8px';
+		container.style.textAlign = 'left';
+
+		const label = document.createElement('b');
+		label.textContent = 'Notes:';
+
+		container.appendChild(label);
+
+		for (const note of notes) {
+			const line = document.createElement('div');
+
+			line.textContent = note;
+
+			container.appendChild(line);
+		}
+
+		return container;
+	}
+
+
 	// Remove old output
 	function clearExploreHelper() {
 		const helpers = document.querySelectorAll('.' + HELPER_CLASS);
@@ -384,6 +412,15 @@
 			const line of resultLines
 		) {
 			helper.appendChild(line);
+		}
+
+		// Add optional encounter notes
+		const notes = createNotesElement(
+			encounter.data.notes
+		);
+
+		if (notes) {
+			helper.appendChild(notes);
 		}
 
 		// Find energy message

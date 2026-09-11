@@ -326,78 +326,73 @@
 
 	// Create notes section
 	function createNotesElement(notes) {
-    if (!notes) {
-        return null;
-    }
+		if (!notes) {
+			return null;
+		}
 
-    const noteList = Array.isArray(notes) ? notes : [notes];
+		const noteList = Array.isArray(notes) ? notes : [notes];
 
-    if (noteList.length === 0) {
-        return null;
-    }
+		if (noteList.length === 0) {
+			return null;
+		}
 
-    const container = document.createElement('div');
-    container.style.marginTop = '8px';
-    container.style.textAlign = 'left';
+		const container = document.createElement('div');
+		container.style.marginTop = '8px';
+		container.style.textAlign = 'left';
 
-    const label = document.createElement('b');
-    label.textContent = 'Notes:';
+		const label = document.createElement('b');
+		label.textContent = 'Notes:';
 
-    container.appendChild(label);
+		container.appendChild(label);
 
-    for (const note of noteList) {
-        const line = document.createElement('div');
+		for (const note of noteList) {
+			const line = document.createElement('div');
 
-        // Split the note into text/image sections
-        const parts = note.split('|');
+			// Split note into comma-separated items
+			const items = note.split(',');
 
-        // First section is always text
-        line.appendChild(
-            document.createTextNode(parts[0].trim())
-        );
+			for (let i = 0; i < items.length; i++) {
+				const item = items[i].trim();
 
-        // Every following section is treated as image names
-        // until the next | section.
-        for (let i = 1; i < parts.length; i++) {
-            const section = parts[i].trim();
+				if (!item) {
+					continue;
+				}
 
-            if (!section) {
-                continue;
-            }
+				// Split each item into text and image
+				const parts = item.split('|');
 
-            // Image names can be comma-separated
-            const imageNames = section
-                .split(',')
-                .map(name => name.trim())
-                .filter(Boolean);
+				const text = parts[0].trim();
+				const imageName = parts[1]?.trim();
 
-            for (const imageName of imageNames) {
-                const img = createRewardImage(imageName);
+				// Add text
+				if (text) {
+					line.appendChild(
+						document.createTextNode(text)
+					);
+				}
 
-                if (img) {
-                    img.style.marginLeft = '4px';
-                    line.appendChild(img);
-                }
-            }
+				// Add image
+				if (imageName) {
+					const img = createRewardImage(imageName);
 
-            // If there's another | section, add it as text
-            if (i + 1 < parts.length) {
-                line.appendChild(
-                    document.createTextNode(
-                        ' ' + parts[i + 1].trim()
-                    )
-                );
+					if (img) {
+						img.style.marginLeft = '4px';
+						line.appendChild(img);
+					}
+				}
 
-                i++;
-            }
-        }
+				// Add comma between items
+				if (i < items.length - 1) {
+					line.appendChild(
+						document.createTextNode(', ')
+					);
+				}
+			}
 
-        container.appendChild(line);
-    }
-
-    return container;
+				container.appendChild(line);
+		}
+		return container;
 	}
-
 
 	// Remove old output
 	function clearExploreHelper() {

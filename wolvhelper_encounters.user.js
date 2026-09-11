@@ -326,72 +326,73 @@
 
 	// Create notes section
 	function createNotesElement(notes) {
-		if (!notes) {
-			return null;
-		}
+    if (!notes) {
+      return null;
+    }
 
-		const noteList = Array.isArray(notes) ? notes : [notes];
+    const noteList = Array.isArray(notes) ? notes : [notes];
 
-		if (noteList.length === 0) {
-			return null;
-		}
+    if (noteList.length === 0) {
+      return null;
+    }
 
-		const container = document.createElement('div');
-		container.style.marginTop = '8px';
-		container.style.textAlign = 'left';
+    const container = document.createElement('div');
+    container.style.marginTop = '8px';
+    container.style.textAlign = 'left';
 
-		const label = document.createElement('b');
-		label.textContent = 'Notes:';
+    const label = document.createElement('b');
+    label.textContent = 'Notes:';
+    container.appendChild(label);
 
-		container.appendChild(label);
-
-		for (const note of noteList) {
+    for (const note of noteList) {
 			const line = document.createElement('div');
 
-			// Split note into comma-separated items
-			const items = note.split(',');
+			const parts = note.split(/,\s*/);
 
-			for (let i = 0; i < items.length; i++) {
-				const item = items[i].trim();
+			for (let i = 0; i < parts.length; i++) {
+				const part = parts[i].trim();
 
-				if (!item) {
+				if (!part) {
 					continue;
 				}
 
-				// Split each item into text and image
-				const parts = item.split('|');
+				const separator = part.indexOf('|');
 
-				const text = parts[0].trim();
-				const imageName = parts[1]?.trim();
+				if (separator === -1) {
+					line.appendChild(
+						document.createTextNode(part)
+					);
+					continue;
+				}
 
-				// Add text
+				const text = part.slice(0, separator).trim();
+
+				const imageName = part.slice(separator + 1).trim();
+
 				if (text) {
 					line.appendChild(
 						document.createTextNode(text)
 					);
 				}
 
-				// Add image
-				if (imageName) {
-					const img = createRewardImage(imageName);
+				const img = createRewardImage(imageName);
 
-					if (img) {
-						img.style.marginLeft = '4px';
-						line.appendChild(img);
-					}
+				if (img) {
+					img.style.marginLeft = '4px';
+					line.appendChild(img);
 				}
 
-				// Add comma between items
-				if (i < items.length - 1) {
+				if (i < parts.length - 1) {
 					line.appendChild(
 						document.createTextNode(', ')
 					);
 				}
 			}
 
-				container.appendChild(line);
-		}
-		return container;
+			container.appendChild(line);
+    }
+
+    return container;
 	}
 
 	// Remove old output

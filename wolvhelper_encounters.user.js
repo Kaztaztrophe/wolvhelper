@@ -358,30 +358,40 @@
 
 				const separator = part.indexOf('|');
 
+				// Create a wrapper for pairs
+				const partWrapper = document.createElement('span');
+				partWrapper.style.display = 'inline-block';
+				partWrapper.style.whiteSpace = 'nowrap';
+
+				// Just the display text
 				if (separator === -1) {
-					line.appendChild(
+					partWrapper.appendChild(
 						document.createTextNode(part)
 					);
-					continue;
+				} else {
+					// Everything before | is the label
+					const text = part.slice(0, separator).trim();
+
+					// Everything after | is the image name
+					const imageName = part.slice(separator + 1).trim();
+
+					if (text) {
+						partWrapper.appendChild(
+							document.createTextNode(text)
+						);
+					}
+
+					const img = createRewardImage(imageName);
+
+					if (img) {
+						img.style.marginLeft = '4px';
+						partWrapper.appendChild(img);
+					}
 				}
 
-				const text = part.slice(0, separator).trim();
+				line.appendChild(partWrapper);
 
-				const imageName = part.slice(separator + 1).trim();
-
-				if (text) {
-					line.appendChild(
-						document.createTextNode(text)
-					);
-				}
-
-				const img = createRewardImage(imageName);
-
-				if (img) {
-					img.style.marginLeft = '4px';
-					line.appendChild(img);
-				}
-
+				// Add comma between entries
 				if (i < parts.length - 1) {
 					line.appendChild(
 						document.createTextNode(', ')

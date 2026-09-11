@@ -320,11 +320,24 @@
     "fillercritters": {
       "intro": "You see some small critters running desperately in the opposite direction.",
       "options": {
-        "Keep Moving Forward": ["Battle with (LVL+5) level local wolf enemy*"],
+        "Keep Moving Forward": ["Battle with level (LVL+5) native wolf enemy*"],
         "Turn Back": ["+1 random single-use food item**"]
       },
+      "location": {
+        "/biome/1": "*Eastern Wolf",
+        "/biome/2": "*Timber Wolf",
+        "/biome/3": "*Timber Wolf",
+        "/biome/4": "*Eastern Wolf",
+        "/biome/5": "*Mexican Wolf",
+        "/biome/6": "*Eastern Wolf",
+        "/biome/7": "*Red Wolf",
+        "/biome/8": "*Red Wolf",
+        "/biome/9": "*Timber Wolf",
+        "/biome/10": "*Timber Wolf",
+        "/biome/11": "*Alaskan Tundra Wolf",
+        "/biome/12": "*Arctic Wolf"
+      },
       "notes": [
-        "*''Coniferous Forest:'' Timber Wolf, ''Deciduous Forest:'' Timber Wolf, ''Desert:'' Mexican Wolf, ''Glacier:'' Arctic Wolf, ''Grasslands:'' Eastern Wolf, ''Mountains:'' Timber Wolf, ''Prairie:'' Eastern Wolf, ''Rainforest:'' Red Wolf, ''Riparian Woodland:'' Eastern Wolf, ''Swamp:'' Red Wolf, ''Taiga:'' Timber Wolf, ''Tundra:'' Alaskan Tundra Wolf",
         "**@poolsingleusefood"
       ]
     },
@@ -354,6 +367,26 @@
       "options": {
         "Inspect": ["+1 Large Leaf//+1 Large Rock//+1 Large Branch|imglargebranch;imglargeleaf;imglargerock","+1 Medicine: Healing Salve|imgmedicinehealingsalve"],
         "Drink": ["+5-15 HP"]
+      }
+    },
+    "checkoutpoop": {
+      "intro": "You come across some poop... Normally, you'd roll all over it, but for some reason, something seems special about this poop.",
+      "options": {
+        "Check it out": ["+1 biome-specific herb*","Gain illness: Diarrhea","No reward"]
+      },
+      "location": {
+        "/biome/1": "*@poolherbgrasslands",
+        "/biome/2": "*@poolherbdeciduousforest",
+        "/biome/3": "*@poolherbmountains",
+        "/biome/4": "*@poolherbriparianwoodland",
+        "/biome/5": "*@poolherbdesert",
+        "/biome/6": "*@poolherbprairie",
+        "/biome/7": "*@poolherbswamp",
+        "/biome/8": "*@poolherbrainforest",
+        "/biome/9": "*@poolherbconiferousforest",
+        "/biome/10": "*@poolherbtaiga",
+        "/biome/11": "*@poolherbtundra",
+        "/biome/12": "*@poolherbglacier"
       }
     },
     "herbs": {

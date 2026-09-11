@@ -116,22 +116,21 @@
         "Carefully scrape away the dirt": ["+1 Unidentified Fossil|imgunidentifiedfossil","No reward"]
       },
       "location": {
-        "/biome/1": ["*Eastern Wolf"],
-        "/biome/2": ["*Timber Wolf"],
-        "/biome/3": ["*Timber Wolf"],
-        "/biome/4": ["*Eastern Wolf"],
-        "/biome/5": ["*Mexican Wolf"],
-        "/biome/6": ["*Eastern Wolf"],
-        "/biome/7": ["*Red Wolf"],
-        "/biome/8": ["*Red Wolf"],
-        "/biome/9": ["*Timber Wolf"],
-        "/biome/10": ["*Timber Wolf"],
-        "/biome/11": ["*Alaskan Tundra Wolf"],
-        "/biome/12": ["*Arctic Wolf"]
+        "/biome/1": ["@poolherbgrasslands"],
+        "/biome/2": ["@poolherbdeciduousforest"],
+        "/biome/3": ["@poolherbmountains"],
+        "/biome/4": ["@poolherbriparianwoodland"],
+        "/biome/5": ["@poolherbdesert"],
+        "/biome/6": ["@poolherbprairie"],
+        "/biome/7": ["@poolherbswamp"],
+        "/biome/8": ["@poolherbrainforest"],
+        "/biome/9": ["@poolherbconiferousforest"],
+        "/biome/10": ["@poolherbtaiga"],
+        "/biome/11": ["@poolherbtundra"],
+        "/biome/12": ["@poolherbglacier"]
       },
       "notes": [
-        "*@location1",
-        "**@poolsingleusefood"
+        "*@location1"
       ]
     },
     "nearbycreeksound": {
@@ -342,18 +341,18 @@
         "Turn Back": ["+1 random single-use food item**"]
       },
       "location": {
-        "/biome/1": ["*Eastern Wolf"],
-        "/biome/2": ["*Timber Wolf"],
-        "/biome/3": ["*Timber Wolf"],
-        "/biome/4": ["*Eastern Wolf"],
-        "/biome/5": ["*Mexican Wolf"],
-        "/biome/6": ["*Eastern Wolf"],
-        "/biome/7": ["*Red Wolf"],
-        "/biome/8": ["*Red Wolf"],
-        "/biome/9": ["*Timber Wolf"],
-        "/biome/10": ["*Timber Wolf"],
-        "/biome/11": ["*Alaskan Tundra Wolf"],
-        "/biome/12": ["*Arctic Wolf"]
+        "/biome/1": ["Eastern Wolf"],
+        "/biome/2": ["Timber Wolf"],
+        "/biome/3": ["Timber Wolf"],
+        "/biome/4": ["Eastern Wolf"],
+        "/biome/5": ["Mexican Wolf"],
+        "/biome/6": ["Eastern Wolf"],
+        "/biome/7": ["Red Wolf"],
+        "/biome/8": ["Red Wolf"],
+        "/biome/9": ["Timber Wolf"],
+        "/biome/10": ["Timber Wolf"],
+        "/biome/11": ["Alaskan Tundra Wolf"],
+        "/biome/12": ["Arctic Wolf"]
       },
       "notes": [
         "*@location1",
@@ -395,18 +394,18 @@
         "Check it out": ["+1 biome-specific herb*","Gain illness: Diarrhea","No reward"]
       },
       "location": {
-        "/biome/1": ["*@poolherbgrasslands"],
-        "/biome/2": ["*@poolherbdeciduousforest"],
-        "/biome/3": ["*@poolherbmountains"],
-        "/biome/4": ["*@poolherbriparianwoodland"],
-        "/biome/5": ["*@poolherbdesert"],
-        "/biome/6": ["*@poolherbprairie"],
-        "/biome/7": ["*@poolherbswamp"],
-        "/biome/8": ["*@poolherbrainforest"],
-        "/biome/9": ["*@poolherbconiferousforest"],
-        "/biome/10": ["*@poolherbtaiga"],
-        "/biome/11": ["*@poolherbtundra"],
-        "/biome/12": ["*@poolherbglacier"]
+        "/biome/1": ["@poolherbgrasslands"],
+        "/biome/2": ["@poolherbdeciduousforest"],
+        "/biome/3": ["@poolherbmountains"],
+        "/biome/4": ["@poolherbriparianwoodland"],
+        "/biome/5": ["@poolherbdesert"],
+        "/biome/6": ["@poolherbprairie"],
+        "/biome/7": ["@poolherbswamp"],
+        "/biome/8": ["@poolherbrainforest"],
+        "/biome/9": ["@poolherbconiferousforest"],
+        "/biome/10": ["@poolherbtaiga"],
+        "/biome/11": ["@poolherbtundra"],
+        "/biome/12": ["@poolherbglacier"]
       },
       "notes": [
         "*@location1"
@@ -419,18 +418,18 @@
         "Use": ["+5 HP"]
       },
       "location": {
-        "/biome/1": ["*@poolherbgrasslands"],
-        "/biome/2": ["*@poolherbdeciduousforest"],
-        "/biome/3": ["*@poolherbmountains"],
-        "/biome/4": ["*@poolherbriparianwoodland"],
-        "/biome/5": ["*@poolherbdesert"],
-        "/biome/6": ["*@poolherbprairie"],
-        "/biome/7": ["*@poolherbswamp"],
-        "/biome/8": ["*@poolherbrainforest"],
-        "/biome/9": ["*@poolherbconiferousforest"],
-        "/biome/10": ["*@poolherbtaiga"],
-        "/biome/11": ["*@poolherbtundra"],
-        "/biome/12": ["*@poolherbglacier"]
+        "/biome/1": ["@poolherbgrasslands"],
+        "/biome/2": ["@poolherbdeciduousforest"],
+        "/biome/3": ["@poolherbmountains"],
+        "/biome/4": ["@poolherbriparianwoodland"],
+        "/biome/5": ["@poolherbdesert"],
+        "/biome/6": ["@poolherbprairie"],
+        "/biome/7": ["@poolherbswamp"],
+        "/biome/8": ["@poolherbrainforest"],
+        "/biome/9": ["@poolherbconiferousforest"],
+        "/biome/10": ["@poolherbtaiga"],
+        "/biome/11": ["@poolherbtundra"],
+        "/biome/12": ["@poolherbglacier"]
       },
       "notes": [
         "*@location1"
@@ -444,25 +443,23 @@
         "Befriend": ["Initiates claiming a New Befriended Wolf"]
       },
       "location": {
-        "/biome/1": ["*Eastern Wolf"],
-        "/biome/2": ["*Timber Wolf"],
-        "/biome/3": ["*Timber Wolf"],
-        "/biome/4": ["*Eastern Wolf"],
-        "/biome/5": ["*Mexican Wolf"],
-        "/biome/6": ["*Eastern Wolf"],
-        "/biome/7": ["*Red Wolf"],
-        "/biome/8": ["*Red Wolf"],
-        "/biome/9": ["*Timber Wolf"],
-        "/biome/10": ["*Timber Wolf"],
-        "/biome/11": ["*Alaskan Tundra Wolf"],
-        "/biome/12": ["*Arctic Wolf"]
+        "/biome/1": ["Eastern Wolf"],
+        "/biome/2": ["Timber Wolf"],
+        "/biome/3": ["Timber Wolf"],
+        "/biome/4": ["Eastern Wolf"],
+        "/biome/5": ["Mexican Wolf"],
+        "/biome/6": ["Eastern Wolf"],
+        "/biome/7": ["Red Wolf"],
+        "/biome/8": ["Red Wolf"],
+        "/biome/9": ["Timber Wolf"],
+        "/biome/10": ["Timber Wolf"],
+        "/biome/11": ["Alaskan Tundra Wolf"],
+        "/biome/12": ["Arctic Wolf"]
       },
       "notes": [
         "*@location1"
       ]
     }
-
-
 
   }
 }

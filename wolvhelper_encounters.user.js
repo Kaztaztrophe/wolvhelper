@@ -1,14 +1,14 @@
 // ==UserScript==
 // @name        Wolvhelper: Explore Encounters
-// @namespace   https://github.com/Kaztaztrophe/wolvhelper/
+// @namespace   https://github.com/Kaztaztrophe/Wolvhelper/
 // @version     1.0.0
 // @author      Kaztaztrophe
 // @description Wolvden explore encounter helper which displays results
 // @match       https://www.wolvden.com/*
 // @match       https://wolvden.com/*
 // @grant       none
-// @updateURL   https://raw.githubusercontent.com/Kaztaztrophe/wolvhelper/main/wolvhelper_encounters.user.js
-// @downloadURL https://raw.githubusercontent.com/Kaztaztrophe/wolvhelper/main/wolvhelper_encounters.user.js
+// @updateURL   https://raw.githubusercontent.com/Kaztaztrophe/Wolvhelper/main/wolvhelper_encounters.user.js
+// @downloadURL https://raw.githubusercontent.com/Kaztaztrophe/Wolvhelper/main/wolvhelper_encounters.user.js
 // ==/UserScript==
 
 (function () {

@@ -41,10 +41,7 @@
       "options": {
         "Dig around": ["+1 MT|imgmt","No reward"],
         "Carefully scrape away the dirt": ["+1 Unidentified Fossil|imgunidentifiedfossil","No reward"]
-      },
-      "notes": [
-        "*Recipes from butterfly pool: Blinded Sphinx|imgblindedsphynx, Brown Longtail|imgbrownlongtail, Canyon Rubyspot|imgcanyonrubyspot, Diana Fritillary|imgdianafritillary, Fiery Skipper|imgfieryskipper, Giant Swallowtail|imggiantswallowtail, Gulf Fritillary|imggulffritillary, Uhler's Arctic|imguhlersarctic, White Peacock|imgwhitepeacock"
-      ]
+      }
     },
     "nearbycreeksound": {
       "intro": "The familiar sound of a creek bubbling in the distance draws your pawsteps in that direction. It would be a nice spot to take a breather.",

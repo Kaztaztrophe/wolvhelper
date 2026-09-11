@@ -20,6 +20,7 @@
 	const DATABASE_URL = 'https://raw.githubusercontent.com/Kaztaztrophe/Wolvhelper/main/encounters.json';
 	const HELPER_CLASS = 'explore-helper';
 	const HELPER_MARGINS = '10px';
+	const IMAGE_WIDTH = '25px';
 	const IMAGE_HEIGHT = '25px';
 	const LINE_HEIGHT = '25px';
 	const WAIT_TIMEOUT = 10000;
@@ -27,27 +28,6 @@
 	// Import encounter.json database and pre-build
 	let database = null;
 	let encounterIdLookup = [];
-	let imageCache = new Map();
-
-	// Preload all images before displaying the helper
-	async function preloadImages() {
-    const promises = Object.entries(database.images).map(
-        ([imageName, imageUrl]) => {
-            return new Promise(resolve => {
-                const image = new Image();
-
-                image.onload = resolve;
-                image.onerror = resolve;
-
-                image.src = imageUrl;
-
-                imageCache.set(imageName, image);
-            });
-        }
-    );
-
-    await Promise.all(promises);
-	}
 
 	// Load encounter database
 	async function loadDatabase() {
@@ -64,10 +44,6 @@
 				throw new Error('Database is missing "encounters"');
 			}
 
-			if (!database.images || typeof database.images !== 'object') {
-				database.images = {};
-			}
-
 			// Build the encounter lookup
 			encounterIdLookup =
 				Object.keys(database.encounters)
@@ -81,9 +57,6 @@
 							b.normalized.length -
 							a.normalized.length
 					);
-
-			// Wait for all images to finish loading
-			await preloadImages();
 
 			updateExploreOutput();
 
@@ -228,19 +201,21 @@
 
 	// Reward images
 	function createRewardImage(imageName) {
-    const cachedImage = imageCache.get(imageName);
+    const imageUrl = database.images[imageName];
 
-    if (!cachedImage) {
+    if (!imageUrl) {
         console.warn('[Wolvhelper] Unknown image:', imageName);
         return null;
     }
 
-    const img = cachedImage.cloneNode(false);
+    const img = document.createElement('img');
 
-    img.alt = imageName;
-    img.title = imageName;
-    img.loading = 'eager';
+    img.src = imageUrl;
+    img.loading = 'lazy';
+
+    img.style.display = 'inline-block';
     img.style.verticalAlign = 'middle';
+    img.style.width = IMAGE_WIDTH;
     img.style.height = IMAGE_HEIGHT;
 
     return img;
@@ -347,7 +322,18 @@
     for (const note of noteList) {
 			const line = document.createElement('div');
 
-			const parts = note.split(/,\s*/);
+			let noteText = note;
+
+			noteText = noteText.replace(
+				/(\**)\@([a-zA-Z0-9_]+)/g,
+				(match, prefix, key) => {
+					return database.notes?.[key]
+						? prefix + database.notes[key]
+						: match;
+				}
+			);
+
+			const parts = noteText.split(/,\s*/);
 
 			for (let i = 0; i < parts.length; i++) {
 				const part = parts[i].trim();
@@ -358,22 +344,20 @@
 
 				const separator = part.indexOf('|');
 
-				// Create a wrapper for pairs
 				const partWrapper = document.createElement('span');
 				partWrapper.style.display = 'inline-block';
 				partWrapper.style.whiteSpace = 'nowrap';
 
-				// Just the display text
 				if (separator === -1) {
 					partWrapper.appendChild(
 						document.createTextNode(part)
 					);
 				} else {
-					// Everything before | is the label
-					const text = part.slice(0, separator).trim();
+					const separators = part.split('|');
 
-					// Everything after | is the image name
-					const imageName = part.slice(separator + 1).trim();
+					const text = separators[0].trim();
+					const imageName = separators[1]?.trim();
+					const afterText = separators.slice(2).join('|').trim();
 
 					if (text) {
 						partWrapper.appendChild(
@@ -381,17 +365,26 @@
 						);
 					}
 
-					const img = createRewardImage(imageName);
+					if (imageName) {
+						const img = createRewardImage(imageName);
 
-					if (img) {
-						img.style.marginLeft = '4px';
-						partWrapper.appendChild(img);
+						if (img) {
+							img.style.height = '16px';
+							img.style.width = "16px";
+							img.style.marginLeft = '4px';
+							partWrapper.appendChild(img);
+						}
+					}
+
+					if (afterText) {
+						partWrapper.appendChild(
+							document.createTextNode(afterText)
+						);
 					}
 				}
 
 				line.appendChild(partWrapper);
 
-				// Add comma between entries
 				if (i < parts.length - 1) {
 					line.appendChild(
 						document.createTextNode(', ')
@@ -400,7 +393,7 @@
 			}
 
 			container.appendChild(line);
-    }
+		}
 
     return container;
 	}

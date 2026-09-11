@@ -4,6 +4,7 @@
     "imgmt": "https://grousehouse.wiki/images/currency/megalodonteeth.png",
     "imgabandonedden": "https://grousehouse.wiki/images/items/backgrounds/thumbnails/Abandonedden.png",
     "imgacorn": "https://grousehouse.wiki/images/items/amusement/acorn.png",
+    "imgbaseapplicatorfossil": "",
     "imgbatcarcass": "https://grousehouse.wiki/images/items/food/batcarcass.png",
     "imgblindedsphynx": "https://grousehouse.wiki/images/items/decorations/thumbnails/Blindedsphinx.png",
     "imgbone": "https://grousehouse.wiki/images/items/amusement/bone.png",
@@ -34,6 +35,7 @@
     "imgmeatchunkslarge": "https://grousehouse.wiki/images/items/food/meatchunkslarge.png",
     "imgmeatchunksmedium": "https://grousehouse.wiki/images/items/food/meatchunksmedium.png",
     "imgmeatchunkssmall": "https://grousehouse.wiki/images/items/food/meatchunkssmall.png",
+    "imgmedicinehealingsalve": "https://grousehouse.wiki/images/items/medicine/medicinehealingsalve.png",
     "imgmolluskshell": "https://grousehouse.wiki/images/items/amusement/molluskshell.png",
     "imgmuskratcarcassdecor": "https://grousehouse.wiki/images/items/decorations/thumbnails/Muskratcarcassdecor.png",
     "imgoddteeth": "https://grousehouse.wiki/images/items/other/oddteeth.png",
@@ -44,6 +46,7 @@
     "imgratcarcass": "https://grousehouse.wiki/images/items/food/ratcarcass.png",
     "imgrecipeanimal": "https://grousehouse.wiki/images/items/recipes/recipeanimal.png",
     "imgrecipeapplicator": "https://grousehouse.wiki/images/items/recipes/recipeapplicator.png",
+    "imgrecipebackground": "https://grousehouse.wiki/images/items/recipes/recipebackground.png",
     "imgrecipetrinket": "https://grousehouse.wiki/images/items/recipes/recipetrinket.png",
     "imgrustypickaxe": "https://grousehouse.wiki/images/items/amusement/rustypickaxe.png",
     "imgscatteredbones": "https://grousehouse.wiki/images/items/decorations/thumbnails/Scatteredbones.png",
@@ -59,8 +62,10 @@
     "imgwoodpeckercarcass": "https://grousehouse.wiki/images/items/food/woodpeckercarcass.png"
   },
   "notes": {
-    "poolbone": "Recipes from bone pool: Abandoned Den|imgabandonedden, Bone Decor|imgbonedecor, Leftover Bones|imgleftoverbones, Muskrat Carcass Decor|imgmuskratcarcassdecor, Rabbit Carcass Decor|imgrabbitcarcassdecor, Scattered Bones|imgscatteredbones, Skeletal Remains|imgskeletalremains, Squirrel Carcass Decor|imgsquirrelcarcassdecor",
-    "poolsingleusefood": "Single use food items: Bat Carcass|imgbatcarcass, Carrot|imgcarrot, Chicken Egg|imgchickenegg, Dead Fish|imgdeadfish, Delicate Meat|imgdelicatemeat, Duck Egg|imgduckegg, Ground Squirrel Carcass|imggroundsquirrelcarcass, Lemming Carcass|imglemmingcarcass, Quail Egg|imgquailegg, Rat Carcass|imgratcarcass, Small Bird Meat|imgsmallbirdmeat, Turkey Egg|imgturkeyegg, Weasel Carcass|imgweaselcarcass, Woodpecker Carcass|imgwoodpeckercarcass"
+    "poolbone": "Abandoned Den|imgrecipebackground;imgabandonedden, Bone Decor|imgrecipetrinket;imgbonedecor, Leftover Bones|imgrecipebackground;imgleftoverbones, Muskrat Carcass Decor|imgrecipetrinket;imgmuskratcarcassdecor, Rabbit Carcass Decor|imgrecipetrinket;imgrabbitcarcassdecor, Scattered Bones|imgrecipetrinket;imgscatteredbones, Skeletal Remains|imgrecipetrinket;imgskeletalremains, Squirrel Carcass Decor|imgrecipetrinket;imgsquirrelcarcassdecor",
+    "poolcavebuildingmaterial": "Large Branch|imglargebranch, Large Leaf|imglargeleaf, Large Rock|imglargerock",
+    "poolmeatchunks": "Meat Chunks [Large]|imgmeatchunkslarge, Meat Chunks [Medium]|imgmeatchunksmedium, Meat Chunks [Small]|imgmeatchunkssmall",
+    "poolsingleusefood": "Bat Carcass|imgbatcarcass, Carrot|imgcarrot, Chicken Egg|imgchickenegg, Dead Fish|imgdeadfish, Delicate Meat|imgdelicatemeat, Duck Egg|imgduckegg, Ground Squirrel Carcass|imggroundsquirrelcarcass, Lemming Carcass|imglemmingcarcass, Quail Egg|imgquailegg, Rat Carcass|imgratcarcass, Small Bird Meat|imgsmallbirdmeat, Turkey Egg|imgturkeyegg, Weasel Carcass|imgweaselcarcass, Woodpecker Carcass|imgwoodpeckercarcass"
   },
 
   "encounters": {
@@ -192,8 +197,8 @@
     "fossilwall": {
       "intro": "This wall towers so high that you can't see the top, and is absolutely riddled with bones and fossils of various sizes and shapes. Who knew so many things lurked just beneath your pawsteps that are only now coming to the surface?",
       "options": {
-        "Scrape at one of the fossils": ["+1 Recipe: Base Applicator [Fossil]|imgrecipeapplicator","+2 MT|imgmt","+1 MT|imgmt"],
-        "Sniff around the base of the wall": ["+1 Recipe: Base Applicator [Fossil]|imgrecipeapplicator","+2 Quail Egg|imgquailegg;imgquailegg","+1 Large Rock|imglargerock","+1 Unidentified Fossil|imgunidentifiedfossil"]
+        "Scrape at one of the fossils": ["+1 Recipe: Base Applicator [Fossil]|imgrecipeapplicator;imgbaseapplicatorfossil","+2 MT|imgmt","+1 MT|imgmt"],
+        "Sniff around the base of the wall": ["+1 Recipe: Base Applicator [Fossil]|imgrecipeapplicator;imgbaseapplicatorfossil","+2 Quail Egg|imgquailegg;imgquailegg","+1 Large Rock|imglargerock","+1 Unidentified Fossil|imgunidentifiedfossil"]
       }
     },
     "fossilizedtree": {
@@ -294,15 +299,23 @@
       ]
     },
     "fillerscentpath": {
-      "intro": "",
+      "intro": "You catch a strange scent on the ground, a mingling of two different scents. You follow them until they part ways.",
       "options": {
-        "Follow North": [],
+        "Follow North": ["+1 random single-use food item*","+1-3 SC|imgsc|(<5000 SC)"],
         "Follow West": ["+1 random meat chunks item*//+1 random cave-building material**"]
       },
       "notes": [
-        "*@poolmeatchunks",
-        "**@poolcavebuildingmaterial"
+        "*@poolsingleusefood",
+        "**@poolmeatchunks",
+        "***@poolcavebuildingmaterial"
       ]
+    },
+    "fillerwaterpool": {
+      "intro": "A small pool of water appears up ahead, and as you approach you notice that there is a dim blue light glowing from beneath the surface of the water.",
+      "options": {
+        "Inspect": ["+1 Large Leaf//+1 Large Rock//+1 Large Branch|imglargebranch;imglargeleaf;imglargerock","+1 Medicine: Healing Salve|imgmedicinehealingsalve"],
+        "Drink": ["+5-15 HP"]
+      }
     }
 
   }

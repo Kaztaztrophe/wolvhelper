@@ -29,15 +29,19 @@
     "disturbeddirt": {
       "intro": "Hmm...the dirt has been displaced here, almost like someone was digging recently. Maybe something valuable is buried?",
       "options": {
-        "Dig around": ["+1 MT|imgmt","No reward"],
-        "Carefully scrape away the dirt": ["+1 Unidentified Fossil|imgunidentifiedfossil","No reward"]
-      }
+        "Dig around*": ["+1 MT|imgmt","No reward"],
+        "Carefully scrape away the dirt**": ["+1 Unidentified Fossil|imgunidentifiedfossil","No reward"]
+      },
+      "notes": [
+        "*This is a note for testing.",
+        "**This is another note for testing."
+      ]
     },
     "nearbycreeksound": {
       "intro": "The familiar sound of a creek bubbling in the distance draws your pawsteps in that direction. It would be a nice spot to take a breather.",
       "options": {
         "Follow the bubbling": ["+2 MT|imgmt","+10 HP"],
-        "Walk along the shore": ["+2 Mollusk Shell|imgmolluskshell,molluskshell","+1 Unidentified Fossil","+1 MT|imgmt//+1 Unidentified Fossil|imgunidentifiedfossil"],
+        "Walk along the shore": ["+2 Mollusk Shell|imgmolluskshell,imgmolluskshell","+1 Unidentified Fossil","+1 MT|imgmt//+1 Unidentified Fossil|imgunidentifiedfossil"],
         "Wade through the water": ["+1 Large Branch|imglargebranch","+1 Unidentified Fossil|imgunidentifiedfossil","+1 MT|imgmt//+1 Unidentified Fossil|imgunidentifiedfossil","+1 MT|imgmt"]
       }
     },
@@ -51,7 +55,7 @@
       "intro": "Your ears catch the sound of rocks crashing down a slope nearby. You probably should stay away to be safe, but your curiosity begs you to check it out.",
       "options": {
         "Investigate": ["+1 Large Rock|imglargerock","+1 Rusty Pickaxe|imgrustypickaxe","+1 MT|imgmt"],
-        "Proceed with caution": ["+2 Large Rock//+1 Rabbit Carcass|imglargerock,largerock,imgrabbitcarcass","+1 Unidentified Fossil|imgunidentifiedfossil","-5 HP"]
+        "Proceed with caution": ["+2 Large Rock//+1 Rabbit Carcass|imglargerock,imglargerock,imgrabbitcarcass","+1 Unidentified Fossil|imgunidentifiedfossil","-5 HP"]
       }
     },
     "slippedonarock": {
@@ -84,7 +88,7 @@
     "ammonitebed": {
       "intro": "One side of a huge, dark rock slab is completely smooth, but the other side looks like the bottom of the sea, with lots of shells of different sizes still stuck within it. You can tell they're older than any wolf can remember.",
       "options": {
-        "Try to take one out": ["+1 MT|imgmt//+2 Mollusk Shell|imgmolluskshell,molluskshell"],
+        "Try to take one out": ["+1 MT|imgmt//+2 Mollusk Shell|imgmolluskshell,imgmolluskshell"],
         "Scratch the surface": ["+2% energy//+1 Unidentified Fossil|imgunidentifiedfossil"]
       }
     },
@@ -119,7 +123,7 @@
     "fossilcliffright": {
       "intro": "A cliff rises to your right with a column of...something crumbling from where it's embedded in the rock. Is it some sort of old human structure?",
       "options": {
-        "Check out the column": ["+1 Wealden Amber//+1 Hiker's Rope|imgwealdenamber,imghikersrope","+1 Fossilized Bone Dust|imgfossilizedbonedust","+1 Unidentified Fossil|unidentifiedfossil","+1 MT|imgmt"],
+        "Check out the column": ["+1 Wealden Amber//+1 Hiker's Rope|imgwealdenamber,imghikersrope","+1 Fossilized Bone Dust|imgfossilizedbonedust","+1 Unidentified Fossil|imgunidentifiedfossil","+1 MT|imgmt"],
         "Check out the crevices in the rock": ["+1 MT|imgmt"]
       }
     },
@@ -202,7 +206,7 @@
         "Scratch aggressively": ["+2 MT|imgmt"],
         "Bite": ["+2 Fossilized Bone Dust|imgfossilizedbonedust,imgfossilizedbonedust"]
       }
-    }
+    },
 
   }
 }

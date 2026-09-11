@@ -17,6 +17,7 @@
     "imgquailegg": "https://grousehouse.wiki/images/items/food/quailegg.png",
     "imgrabbitcarcass": "https://grousehouse.wiki/images/items/food/rabbitcarcass.png",
     "imgratcarcass": "https://grousehouse.wiki/images/items/food/ratcarcass.png",
+    "imgrecipeanimal": "https://grousehouse.wiki/images/items/recipes/recipeanimal.png",
     "imgrecipeapplicator": "https://grousehouse.wiki/images/items/recipes/recipeapplicator.png",
     "imgrustypickaxe": "https://grousehouse.wiki/images/items/amusement/rustypickaxe.png",
     "imgsmallbirdmeat": "https://grousehouse.wiki/images/items/food/smallbirdmeat.png",
@@ -202,6 +203,24 @@
         "Scratch aggressively": ["+2 MT|imgmt"],
         "Bite": ["+2 Fossilized Bone Dust|imgfossilizedbonedust,imgfossilizedbonedust"]
       }
+    },
+
+    "fillerbirdrest": {
+      "intro": "You hear the faint twitter of birds somewhere nearby. You look up to the sky and watch them swooping overhead. What would it feel like to fly? You find a nice comfortable spot in the shade and rest for a moment.",
+      "options": {
+        "Sleep": ["+5-10% energy"],
+        "Rest": ["+4-5 HP"]
+      }
+    },
+    "fillerbutterfly": {
+      "intro": "Catching your breath, a small butterfly lands on your nose.",
+      "options": {
+        "Watch": ["+1 random recipe from butterfly pool*|imgrecipeanimal//No reward"],
+        "Chomp": ["+1 random recipe from butterfly pool*|imgrecipeanimal//+1% hunger"]
+      },
+      "notes": [
+        "*Recipes from butterfly pool: Blinded Sphinx, Brown Longtail, Canyon Rubyspot, Diana Fritillary, Fiery Skipper, Giant Swallowtail, Gulf Fritillary, Uhler's Arctic, White Peacock"
+      ]
     }
 
   }

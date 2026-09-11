@@ -4,28 +4,44 @@
     "imgmt": "https://grousehouse.wiki/images/currency/megalodonteeth.png",
     "imgabandonedden": "https://grousehouse.wiki/images/items/backgrounds/thumbnails/Abandonedden.png",
     "imgacorn": "https://grousehouse.wiki/images/items/amusement/acorn.png",
-    "imgbaseapplicatorfossil": "",
+    "imgaloe": "https://grousehouse.wiki/images/items/herbs/aloe.png",
+    "imgarnica": "https://grousehouse.wiki/images/items/herbs/arnica.png",
+    "imgbaseapplicatorfossil": "https://grousehouse.wiki/images/items/applicators/base_fossil.png",
     "imgbatcarcass": "https://grousehouse.wiki/images/items/food/batcarcass.png",
+    "imgbearberry": "https://grousehouse.wiki/images/items/herbs/bearberry.png",
     "imgblindedsphynx": "https://grousehouse.wiki/images/items/decorations/thumbnails/Blindedsphinx.png",
     "imgbone": "https://grousehouse.wiki/images/items/amusement/bone.png",
     "imgbonedecor": "https://grousehouse.wiki/images/items/decorations/thumbnails/Bonedecor.png",
+    "imgboneset": "https://grousehouse.wiki/images/items/herbs/boneset.png",
     "imgbrownlongtail": "https://grousehouse.wiki/images/items/decorations/thumbnails/Brownlongtail.png",
+    "imgbuffaloberry": "https://grousehouse.wiki/images/items/herbs/buffaloberry.png",
+    "imgburningbush": "https://grousehouse.wiki/images/items/herbs/burningbush.png",
     "imgbutterflywing": "https://grousehouse.wiki/images/items/other/butterflywing.png",
     "imgcanyonrubyspot": "https://grousehouse.wiki/images/items/decorations/thumbnails/Canyonrubyspot.png",
+    "imgcarrionflower": "https://grousehouse.wiki/images/items/herbs/carrionflower.png",
     "imgcarrot": "https://grousehouse.wiki/images/items/food/carrot.png",
+    "imgcedarbark": "https://grousehouse.wiki/images/items/herbs/cedarbark.png",
+    "imgchaparral": "https://grousehouse.wiki/images/items/herbs/chaparral.png",
     "imgcharcoal": "https://grousehouse.wiki/images/items/herbs/charcoal.png",
     "imgchickenegg": "https://grousehouse.wiki/images/items/food/chickenegg.png",
+    "imgdandelion": "https://grousehouse.wiki/images/items/herbs/dandelion.png",
     "imgdeadfish": "https://grousehouse.wiki/images/items/food/deadfish.png",
     "imgdelicatemeat": "https://grousehouse.wiki/images/items/food/delicatemeat.png",
     "imgdianafritillary": "https://grousehouse.wiki/images/items/decorations/thumbnails/Dianafritillary.png",
     "imgduckegg": "https://grousehouse.wiki/images/items/food/duckegg.png",
+    "imgfeverfew": "https://grousehouse.wiki/images/items/herbs/feverfew.png",
     "imgfieryskipper": "https://grousehouse.wiki/images/items/decorations/thumbnails/Fieryskipper.png",
     "imgfossilizedbonedust": "https://grousehouse.wiki/images/items/other/fossilizedbonedust.png",
+    "imggarlic": "https://grousehouse.wiki/images/items/herbs/garlic.png",
     "imggiantswallowtail": "https://grousehouse.wiki/images/items/decorations/thumbnails/Giantswallowtail.png",
+    "imgginger": "https://grousehouse.wiki/images/items/herbs/ginger.png",
+    "imggoldenseal": "https://grousehouse.wiki/images/items/herbs/goldenseal.png",
     "imggroundsquirrelcarcass": "https://grousehouse.wiki/images/items/food/groundsquirrelcarcass.png",
+    "imgguaiacum": "https://grousehouse.wiki/images/items/herbs/guaiacum.png",
     "imggulffritillary": "https://grousehouse.wiki/images/items/decorations/thumbnails/Gulffritillary.png",
     "imghikersrope": "https://grousehouse.wiki/images/items/amusement/hikersrope.png",
     "imgironscrap": "https://grousehouse.wiki/images/items/other/ironscrap.png",
+    "imgkava": "https://grousehouse.wiki/images/items/herbs/kava.png",
     "imglargebranch": "https://grousehouse.wiki/images/items/other/largebranch.png",
     "imglargeleaf": "https://grousehouse.wiki/images/items/other/largeleaf.png",
     "imglargerock": "https://grousehouse.wiki/images/items/other/largerock.png",
@@ -37,9 +53,12 @@
     "imgmeatchunkssmall": "https://grousehouse.wiki/images/items/food/meatchunkssmall.png",
     "imgmedicinehealingsalve": "https://grousehouse.wiki/images/items/medicine/medicinehealingsalve.png",
     "imgmolluskshell": "https://grousehouse.wiki/images/items/amusement/molluskshell.png",
+    "imgmullein": "https://grousehouse.wiki/images/items/herbs/mullein.png",
     "imgmuskratcarcassdecor": "https://grousehouse.wiki/images/items/decorations/thumbnails/Muskratcarcassdecor.png",
     "imgoddteeth": "https://grousehouse.wiki/images/items/other/oddteeth.png",
+    "imgoregano": "https://grousehouse.wiki/images/items/herbs/oregano.png",
     "imgowltalon": "https://grousehouse.wiki/images/items/amusement/owltalon.png",
+    "imgpineappleleaf": "https://grousehouse.wiki/images/items/herbs/pineappleleaf.png",
     "imgquailegg": "https://grousehouse.wiki/images/items/food/quailegg.png",
     "imgrabbitcarcass": "https://grousehouse.wiki/images/items/food/rabbitcarcass.png",
     "imgrabbitcarcassdecor": "https://grousehouse.wiki/images/items/decorations/thumbnails/Rabbitcarcassdecor.png",
@@ -48,22 +67,42 @@
     "imgrecipeapplicator": "https://grousehouse.wiki/images/items/recipes/recipeapplicator.png",
     "imgrecipebackground": "https://grousehouse.wiki/images/items/recipes/recipebackground.png",
     "imgrecipetrinket": "https://grousehouse.wiki/images/items/recipes/recipetrinket.png",
+    "imgredwoodsorrel": "https://grousehouse.wiki/images/items/herbs/redwoodsorrel.png",
     "imgrustypickaxe": "https://grousehouse.wiki/images/items/amusement/rustypickaxe.png",
     "imgscatteredbones": "https://grousehouse.wiki/images/items/decorations/thumbnails/Scatteredbones.png",
     "imgskeletalremains": "https://grousehouse.wiki/images/items/decorations/thumbnails/Skeletalremains.png",
+    "imgspoonwood": "https://grousehouse.wiki/images/items/herbs/spoonwood.png",
+    "imgstjohnswort": "https://grousehouse.wiki/images/items/herbs/stjohnswort.png",
     "imgsmallbirdmeat": "https://grousehouse.wiki/images/items/food/smallbirdmeat.png",
     "imgsquirrelcarcassdecor": "https://grousehouse.wiki/images/items/decorations/thumbnails/Squirrelcarcassdecor.png",
+    "imgtansy": "https://grousehouse.wiki/images/items/herbs/tansy.png",
+    "imgtobacco": "https://grousehouse.wiki/images/items/herbs/tobacco.png",
     "imgturkeyegg": "https://grousehouse.wiki/images/items/food/turkeyegg.png",
+    "imgturmeric": "https://grousehouse.wiki/images/items/herbs/turmeric.png",
     "imguhlersarctic": "https://grousehouse.wiki/images/items/decorations/thumbnails/Uhlersarctic.png",
     "imgunidentifiedfossil": "https://grousehouse.wiki/images/items/lore/unidentifiedfossil.png",
     "imgwealdenamber": "https://grousehouse.wiki/images/items/other/wealdenamber.png",
     "imgweaselcarcass": "https://grousehouse.wiki/images/items/food/weaselcarcass.png",
     "imgwhitepeacock": "https://grousehouse.wiki/images/items/decorations/thumbnails/Whitepeacock.png",
-    "imgwoodpeckercarcass": "https://grousehouse.wiki/images/items/food/woodpeckercarcass.png"
+    "imgwinterfat": "https://grousehouse.wiki/images/items/herbs/winterfat.png",
+    "imgwoodpeckercarcass": "https://grousehouse.wiki/images/items/food/woodpeckercarcass.png",
+    "imgyarrow": "https://grousehouse.wiki/images/items/herbs/yarrow.png"
   },
   "notes": {
     "poolbone": "Abandoned Den|imgrecipebackground;imgabandonedden, Bone Decor|imgrecipetrinket;imgbonedecor, Leftover Bones|imgrecipebackground;imgleftoverbones, Muskrat Carcass Decor|imgrecipetrinket;imgmuskratcarcassdecor, Rabbit Carcass Decor|imgrecipetrinket;imgrabbitcarcassdecor, Scattered Bones|imgrecipetrinket;imgscatteredbones, Skeletal Remains|imgrecipetrinket;imgskeletalremains, Squirrel Carcass Decor|imgrecipetrinket;imgsquirrelcarcassdecor",
     "poolcavebuildingmaterial": "Large Branch|imglargebranch, Large Leaf|imglargeleaf, Large Rock|imglargerock",
+    "poolherbconiferousforest": "Arnica|imgarnica, Bearberry|imgbearberry, Boneset|imgboneset, Buffaloberry|imgbuffaloberry, Burning Bush|imgburningbush, Carrionflower|imgcarrionflower, Cedar Bark|imgcedarbark, Charcoal|imgcharcoal, Dandelion|imgdandelion, Feverfew|imgfeverfew, Garlic|imggarlic, Ginger|imgginger, Goldenseal|imggoldenseal, Mullein|imgmullein, Redwood Sorrel|imgredwoodsorrel, Spoonwood|imgspoonwood, St. John's Wort|imgstjohnswort, Tansy|imgtansy, Yarrow|imgyarrow",
+    "poolherbdeciduousforest": "Arnica|imgarnica, Bearberry|imgbearberry, Boneset|imgboneset, Burning Bush|imgburningbush, Carrionflower|imgcarrionflower, Cedar Bark|imgcedarbark, Charcoal|imgcharcoal, Dandelion|imgdandelion, Feverfew|imgfeverfew, Garlic|imggarlic, Ginger|imgginger, Goldenseal|imggoldenseal, Mullein|imgmullein, Spoonwood|imgspoonwood, St. John's Wort|imgstjohnswort, Tansy|imgtansy, Yarrow|imgyarrow",
+    "poolherbdesert": "Aloe|imgaloe, Arnica|imgarnica, Cedar Bark|imgcedarbark, Chaparral|imgchaparral, Charcoal|imgcharcoal, Dandelion|imgdandelion, Mullein|imgmullein, Oregano|imgoregano, Tansy|imgtansy, Tobacco|imgtobacco, Winterfat|imgwinterfat, Yarrow|imgyarrow",
+    "poolherbglacier": "Arnica|imgarnica, Charcoal|imgcharcoal, Dandelion|imgdandelion, Yarrow|imgyarrow",
+    "poolherbgrasslands": "Arnica|imgarnica, Boneset|imgboneset, Burning Bush|imgburningbush, Carrionflower|imgcarrionflower, Cedar Bark|imgcedarbark, Charcoal|imgcharcoal, Dandelion|imgdandelion, Feverfew|imgfeverfew, Garlic|imggarlic, Ginger|imgginger, Goldenseal|imggoldenseal, Mullein|imgmullein, Spoonwood|imgspoonwood, St. John's Wort|imgstjohnswort, Tansy|imgtansy, Yarrow|imgyarrow",
+    "poolherbmountains": "Arnica|imgarnica, Bearberry|imgbearberry, Buffaloberry|imgbuffaloberry, Carrionflower|imgcarrionflower, Cedar Bark|imgcedarbark, Charcoal|imgcharcoal, Dandelion|imgdandelion, Feverfew|imgfeverfew, Garlic|imggarlic, Ginger|imgginger, Mullein|imgmullein, Oregano|imgoregano, Redwood Sorrel|imgredwoodsorrel, Spoonwood|imgspoonwood, St. John's Wort|imgstjohnswort, Tansy|imgtansy, Tobacco|imgtobacco, Winterfat|imgwinterfat, Yarrow|imgyarrow",
+    "poolherbprairie": "Arnica|imgarnica, Boneset|imgboneset, Buffaloberry|imgbuffaloberry, Burning Bush|imgburningbush, Cedar Bark|imgcedarbark, Charcoal|imgcharcoal, Dandelion|imgdandelion, Feverfew|imgfeverfew, Garlic|imggarlic, Ginger|imgginger, Mullein|imgmullein, Oregano|imgoregano, St. John's Wort|imgstjohnswort, Tansy|imgtansy, Tobacco|imgtobacco, Winterfat|imgwinterfat, Yarrow|imgyarrow",
+    "poolherbrainforest": "Aloe|imgaloe, Arnica|imgarnica, Cedar Bark|imgcedarbark, Charcoal|imgcharcoal, Dandelion|imgdandelion, Feverfew|imgfeverfew, Guaiacum|imgguaiacum, Kava|imgkava, Oregano|imgoregano, Pineapple Leaf|imgpineappleleaf, Turmeric|imgturmeric, Yarrow|imgyarrow",
+    "poolherbriparianwoodland": "Arnica|imgarnica, Boneset|imgboneset, Buffaloberry|imgbuffaloberry, Burning Bush|imgburningbush, Carrionflower|imgcarrionflower, Cedar Bark|imgcedarbark, Charcoal|imgcharcoal, Dandelion|imgdandelion, Feverfew|imgfeverfew, Garlic|imggarlic, Ginger|imgginger, Goldenseal|imggoldenseal, Mullein|imgmullein, Spoonwood|imgspoonwood, St. John's Wort|imgstjohnswort, Tansy|imgtansy, Yarrow|imgyarrow",
+    "poolherbswamp": "Aloe|imgaloe, Arnica|imgarnica, Boneset|imgboneset, Cedar Bark|imgcedarbark, Charcoal|imgcharcoal, Dandelion|imgdandelion, Garlic|imggarlic, Guaiacum|imgguaiacum, Oregano|imgoregano, Redwood Sorrel|imgredwoodsorrel, Spoonwood|imgspoonwood, St. John's Wort|imgstjohnswort, Turmeric|imgturmeric, Yarrow|imgyarrow",
+    "poolherbtaiga": "Arnica|imgarnica, Bearberry|imgbearberry, Boneset|imgboneset, Buffaloberry|imgbuffaloberry, Carrionflower|imgcarrionflower, Charcoal|imgcharcoal, Dandelion|imgdandelion, Ginger|imgginger, Yarrow|imgyarrow",
+    "poolherbtundra": "Arnica|imgarnica, Bearberry|imgbearberry, Charcoal|imgcharcoal, Dandelion|imgdandelion, Yarrow|imgyarrow",
     "poolmeatchunks": "Meat Chunks [Large]|imgmeatchunkslarge, Meat Chunks [Medium]|imgmeatchunksmedium, Meat Chunks [Small]|imgmeatchunkssmall",
     "poolsingleusefood": "Bat Carcass|imgbatcarcass, Carrot|imgcarrot, Chicken Egg|imgchickenegg, Dead Fish|imgdeadfish, Delicate Meat|imgdelicatemeat, Duck Egg|imgduckegg, Ground Squirrel Carcass|imggroundsquirrelcarcass, Lemming Carcass|imglemmingcarcass, Quail Egg|imgquailegg, Rat Carcass|imgratcarcass, Small Bird Meat|imgsmallbirdmeat, Turkey Egg|imgturkeyegg, Weasel Carcass|imgweaselcarcass, Woodpecker Carcass|imgwoodpeckercarcass"
   },
@@ -275,7 +314,7 @@
         "Chomp": ["+1 random recipe from butterfly pool*","+1% hunger"]
       },
       "notes": [
-        "*Recipes from butterfly pool: Blinded Sphinx|imgrecipeanimal;imgblindedsphynx, Brown Longtail|imgrecipeanimal;imgbrownlongtail, Canyon Rubyspot|imgrecipeanimal;imgcanyonrubyspot, Diana Fritillary|imgrecipeanimal;imgdianafritillary, Fiery Skipper|imgrecipeanimal;imgfieryskipper, Giant Swallowtail|imgrecipeanimal;imggiantswallowtail, Gulf Fritillary|imgrecipeanimal;imggulffritillary, Uhler's Arctic|imgrecipeanimal;imguhlersarctic, White Peacock|imgrecipeanimal;imgwhitepeacock"
+        "*Blinded Sphinx|imgrecipeanimal;imgblindedsphynx, Brown Longtail|imgrecipeanimal;imgbrownlongtail, Canyon Rubyspot|imgrecipeanimal;imgcanyonrubyspot, Diana Fritillary|imgrecipeanimal;imgdianafritillary, Fiery Skipper|imgrecipeanimal;imgfieryskipper, Giant Swallowtail|imgrecipeanimal;imggiantswallowtail, Gulf Fritillary|imgrecipeanimal;imggulffritillary, Uhler's Arctic|imgrecipeanimal;imguhlersarctic, White Peacock|imgrecipeanimal;imgwhitepeacock"
       ]
     },
     "fillercritters": {
@@ -285,7 +324,7 @@
         "Turn Back": ["+1 random single-use food item**"]
       },
       "notes": [
-        "*Alaskan Tundra Wolf (Tundra), Arctic Wolf (Glacier), Eastern Wolf (Grasslands, Prairie, Riparian Woodland), Mexican Wolf (Desert), Red Wolf (Rainforest, Swamp), Timber Wolf (Coniferous Forest, Deciduous Forest, Mountains, Taiga)",
+        "*''Coniferous Forest:'' Timber Wolf, ''Deciduous Forest:'' Timber Wolf, ''Desert:'' Mexican Wolf, ''Glacier:'' Arctic Wolf, ''Grasslands:'' Eastern Wolf, ''Mountains:'' Timber Wolf, ''Prairie:'' Eastern Wolf, ''Rainforest:'' Red Wolf, ''Riparian Woodland:'' Eastern Wolf, ''Swamp:'' Red Wolf, ''Taiga:'' Timber Wolf, ''Tundra:'' Alaskan Tundra Wolf",
         "**@poolsingleusefood"
       ]
     },
@@ -302,7 +341,7 @@
       "intro": "You catch a strange scent on the ground, a mingling of two different scents. You follow them until they part ways.",
       "options": {
         "Follow North": ["+1 random single-use food item*","+1-3 SC|imgsc|(<5000 SC)"],
-        "Follow West": ["+1 random meat chunks item*//+1 random cave-building material**"]
+        "Follow West": ["+1 random meat chunks item**//+1 random cave-building material***"]
       },
       "notes": [
         "*@poolsingleusefood",
@@ -315,6 +354,27 @@
       "options": {
         "Inspect": ["+1 Large Leaf//+1 Large Rock//+1 Large Branch|imglargebranch;imglargeleaf;imglargerock","+1 Medicine: Healing Salve|imgmedicinehealingsalve"],
         "Drink": ["+5-15 HP"]
+      }
+    },
+    "herbs": {
+      "intro": "You wander across some interesting plants growing from the soil. You give them a sniff.. oooh, herbs!",
+      "options": {
+        "Gather": ["+1 random biome-specific herb*"],
+        "Use": ["+5 HP"]
+      },
+      "location": {
+        "/biome/1": "*@poolherbgrasslands",
+        "/biome/2": "*@poolherbdeciduousforest",
+        "/biome/3": "*@poolherbmountains",
+        "/biome/4": "*@poolherbriparianwoodland",
+        "/biome/5": "*@poolherbdesert",
+        "/biome/6": "*@poolherbprairie",
+        "/biome/7": "*@poolherbswamp",
+        "/biome/8": "*@poolherbrainforest",
+        "/biome/9": "*@poolherbconiferousforest",
+        "/biome/10": "*@poolherbtaiga",
+        "/biome/11": "*@poolherbtundra",
+        "/biome/12": "*@poolherbglacier"
       }
     }
 

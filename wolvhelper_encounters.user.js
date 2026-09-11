@@ -4,10 +4,11 @@
 // @version     1.0.1
 // @author      Kaztaztrophe
 // @description Wolvden explore encounter helper which displays results
-// @match       https://www.wolvden.com/biome/*
-// @match       https://wolvden.com/biome/*
+// @match       https://www.wolvden.com/*
+// @match       https://wolvden.com/*
 // @run-at      document-idle
 // @grant       none
+// @noframes
 // @updateURL   https://raw.githubusercontent.com/Kaztaztrophe/Wolvhelper/main/wolvhelper_encounters.user.js
 // @downloadURL https://raw.githubusercontent.com/Kaztaztrophe/Wolvhelper/main/wolvhelper_encounters.user.js
 // ==/UserScript==
@@ -77,11 +78,12 @@
 
 	// Normalize the text
 	function normalizeText(text) {
-		return text
-			.toLowerCase()
-			.replace(/\s+/g, ' ')
-			.trim()
-			.replace(/[!?.,:;]+$/, '');
+    return text
+        .toLowerCase()
+        .replace(/\*/g, '')
+        .replace(/\s+/g, ' ')
+        .trim()
+        .replace(/[!?.,:;]+$/, '');
 	}
 
 	// Find encounter ID from data-action button
@@ -298,30 +300,34 @@
 
 	// Create notes section
 	function createNotesElement(notes) {
-		if (!Array.isArray(notes) || notes.length === 0) {
-			return null;
-		}
+    if (!notes) {
+        return null;
+    }
 
-		const container = document.createElement('div');
-		container.style.marginTop = '8px';
-		container.style.textAlign = 'left';
+    // Allow either a single string or an array of notes
+    const noteList = Array.isArray(notes) ? notes : [notes];
 
-		const label = document.createElement('b');
-		label.textContent = 'Notes:';
+    if (noteList.length === 0) {
+        return null;
+    }
 
-		container.appendChild(label);
+    const container = document.createElement('div');
+    container.style.marginTop = '8px';
+    container.style.textAlign = 'left';
 
-		for (const note of notes) {
-			const line = document.createElement('div');
+    const label = document.createElement('b');
+    label.textContent = 'Notes:';
 
-			line.textContent = note;
+    container.appendChild(label);
 
-			container.appendChild(line);
-		}
+    for (const note of noteList) {
+        const line = document.createElement('div');
+        line.textContent = note;
+        container.appendChild(line);
+    }
 
-		return container;
-	}
-
+    return container;
+}
 
 	// Remove old output
 	function clearExploreHelper() {

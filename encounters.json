@@ -215,8 +215,8 @@
     "fillerbutterfly": {
       "intro": "Catching your breath, a small butterfly lands on your nose.",
       "options": {
-        "Watch": ["+1 random recipe from butterfly pool*|imgrecipeanimal//No reward"],
-        "Chomp": ["+1 random recipe from butterfly pool*|imgrecipeanimal//+1% hunger"]
+        "Watch": ["+1 random recipe from butterfly pool*|imgrecipeanimal","No reward"],
+        "Chomp": ["+1 random recipe from butterfly pool*|imgrecipeanimal","+1% hunger"]
       },
       "notes": [
         "*Recipes from butterfly pool: Blinded Sphinx, Brown Longtail, Canyon Rubyspot, Diana Fritillary, Fiery Skipper, Giant Swallowtail, Gulf Fritillary, Uhler's Arctic, White Peacock"

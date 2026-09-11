@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        Wolvhelper: Explore Encounters (Mini)
 // @namespace   https://github.com/Kaztaztrophe/Wolvhelper/
-// @version     1.2.0
+// @version     1.2.1
 // @author      Kaztaztrophe
 // @description Wolvden explore encounter helper which displays results
 // @match       https://www.wolvden.com/*
@@ -69,7 +69,7 @@
       .replace(/\*/g, '')
       .replace(/\s+/g, ' ')
       .trim()
-      .replace(/[!?.,:;]+$/, '');
+      .replace(/[!?.,:]+$/, '');
 	}
 
 	// Find encounter ID from data-action button
@@ -158,8 +158,11 @@
 
 	// Parse single results
 	function parseSingleReward(value) {
+    const parts = value.split('|');
+
     return {
-      result: value.split('|')[0].trim()
+      result: parts[0].trim(),
+      afterText: parts.slice(2).join('|').trim()
     };
   }
 
@@ -184,7 +187,7 @@
 	}
 
 	// Parse all results for an option
-	function createResultElement(rewards) {
+  function createResultElement(rewards) {
     const container = document.createElement('span');
 
     rewards.forEach((reward, index) => {
@@ -200,7 +203,14 @@
         container.appendChild(noReward);
       } else {
         container.appendChild(
-            document.createTextNode(reward.result)
+          document.createTextNode(reward.result)
+        );
+      }
+
+      // Text after image
+      if (reward.afterText) {
+        container.appendChild(
+          document.createTextNode(' ' + reward.afterText)
         );
       }
     });
@@ -249,12 +259,26 @@
 	}
 
   // Create notes section
-	function createNotesElement(notes) {
-    if (!notes) {
+  function createNotesElement(notes, conditional, buttons) {
+    if (!notes && !conditional) {
       return null;
     }
 
-    const noteList = Array.isArray(notes) ? notes : [notes];
+    const noteList = Array.isArray(notes) ? notes : notes ? [notes] : [];
+
+    // Add conditional notes only when their button is present
+    if (conditional && buttons) {
+      for (const [buttonName, note] of Object.entries(conditional)) {
+        const buttonExists = [...buttons].some(button =>
+          normalizeText(button.textContent) === normalizeText(buttonName) ||
+          normalizeText(button.textContent).startsWith(normalizeText(buttonName) + ' ')
+        );
+
+        if (buttonExists) {
+          noteList.push(note);
+        }
+      }
+    }
 
     if (noteList.length === 0) {
       return null;
@@ -273,9 +297,8 @@
 
       let noteText = note;
 
-      // Parse notes that start with @, preserving *
       noteText = noteText.replace(
-        /(\**)@([a-zA-Z0-9_]+)/g,
+        /(\**)\@([a-zA-Z0-9_]+)/g,
         (match, prefix, key) => {
           return database.notes?.[key]
             ? prefix + database.notes[key]
@@ -305,6 +328,7 @@
 
     return container;
   }
+
 
 	// Remove old output
 	function clearExploreHelper() {
@@ -399,8 +423,10 @@
 
 		// Add optional encounter notes
 		const notes = createNotesElement(
-			encounter.data.notes
-		);
+      encounter.data.notes,
+      encounter.data.conditional,
+      buttons
+    );
 
 		if (notes) {
 			helper.appendChild(notes);

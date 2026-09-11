@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        Wolvhelper: Explore Encounters
 // @namespace   https://github.com/Kaztaztrophe/Wolvhelper/
-// @version     1.2.0
+// @version     1.2.1
 // @author      Kaztaztrophe
 // @description Wolvden explore encounter helper which displays results
 // @match       https://www.wolvden.com/*
@@ -72,7 +72,7 @@
       .replace(/\*/g, '')
       .replace(/\s+/g, ' ')
       .trim()
-      .replace(/[!?.,:;]+$/, '');
+      .replace(/[!?.,:]+$/, '');
 	}
 
 	// Find encounter ID from data-action button
@@ -166,16 +166,19 @@
 		const result = parts[0].trim();
 
 		const images =
-			parts[1]
-				? parts[1]
-					.split(',')
+    	parts[1]
+        ? parts[1]
+					.split(';')
 					.map(x => x.trim())
 					.filter(Boolean)
-				: [];
+        : [];
+
+		const afterText = parts.slice(2).join('|').trim();
 
 		return {
 			result: result,
-			images: images
+			images: images,
+			afterText: afterText
 		};
 	}
 
@@ -252,6 +255,13 @@
 					}
 				}
 
+				// Text after images
+				if (reward.afterText) {
+					container.appendChild(
+						document.createTextNode(' ' + reward.afterText)
+					);
+				}
+
 			}
 		);
 
@@ -300,26 +310,40 @@
 	}
 
 	// Create notes section
-	function createNotesElement(notes) {
-    if (!notes) {
-      return null;
-    }
+	function createNotesElement(notes, conditional, buttons) {
+		if (!notes && !conditional) {
+			return null;
+		}
 
-    const noteList = Array.isArray(notes) ? notes : [notes];
+		const noteList = Array.isArray(notes) ? notes : notes ? [notes] : [];
 
-    if (noteList.length === 0) {
-      return null;
-    }
+		// Add conditional notes only when their button is present
+		if (conditional && buttons) {
+			for (const [buttonName, note] of Object.entries(conditional)) {
+				const buttonExists = [...buttons].some(button =>
+					normalizeText(button.textContent) === normalizeText(buttonName) ||
+					normalizeText(button.textContent).startsWith(normalizeText(buttonName) + ' ')
+				);
 
-    const container = document.createElement('div');
-    container.style.marginTop = '8px';
-    container.style.textAlign = 'left';
+				if (buttonExists) {
+					noteList.push(note);
+				}
+			}
+		}
 
-    const label = document.createElement('b');
-    label.textContent = 'Notes:';
-    container.appendChild(label);
+		if (noteList.length === 0) {
+			return null;
+		}
 
-    for (const note of noteList) {
+		const container = document.createElement('div');
+		container.style.marginTop = '8px';
+		container.style.textAlign = 'left';
+
+		const label = document.createElement('b');
+		label.textContent = 'Notes:';
+		container.appendChild(label);
+
+		for (const note of noteList) {
 			const line = document.createElement('div');
 
 			let noteText = note;
@@ -356,7 +380,13 @@
 					const separators = part.split('|');
 
 					const text = separators[0].trim();
-					const imageName = separators[1]?.trim();
+					const imageNames = separators[1]
+						? separators[1]
+							.split(';')
+							.map(x => x.trim())
+							.filter(Boolean)
+						: [];
+
 					const afterText = separators.slice(2).join('|').trim();
 
 					if (text) {
@@ -365,13 +395,19 @@
 						);
 					}
 
-					if (imageName) {
+					for (const [imageIndex, imageName] of imageNames.entries()) {
 						const img = createRewardImage(imageName);
 
 						if (img) {
+							if (imageIndex === 0) {
+								img.style.marginLeft = '4px';
+							} else {
+								img.style.marginLeft = '2px';
+							}
+
 							img.style.height = '16px';
-							img.style.width = "16px";
-							img.style.marginLeft = '4px';
+							img.style.width = '16px';
+
 							partWrapper.appendChild(img);
 						}
 					}
@@ -395,7 +431,7 @@
 			container.appendChild(line);
 		}
 
-    return container;
+		return container;
 	}
 
 	// Remove old output
@@ -491,7 +527,9 @@
 
 		// Add optional encounter notes
 		const notes = createNotesElement(
-			encounter.data.notes
+			encounter.data.notes,
+			encounter.data.conditional,
+			buttons
 		);
 
 		if (notes) {

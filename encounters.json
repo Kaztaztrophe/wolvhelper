@@ -3,9 +3,16 @@
     "imgsc": "https://grousehouse.wiki/images/currency/silvercone.png",
     "imgmt": "https://grousehouse.wiki/images/currency/megalodonteeth.png",
     "imgacorn": "https://grousehouse.wiki/images/items/amusement/acorn.png",
+    "imgblindedsphynx": "https://grousehouse.wiki/images/items/decorations/thumbnails/Blindedsphinx.png",
+    "imgbrownlongtail": "https://grousehouse.wiki/images/items/decorations/thumbnails/Brownlongtail.png",
     "imgbutterflywing": "https://grousehouse.wiki/images/items/other/butterflywing.png",
+    "imgcanyonrubyspot": "https://grousehouse.wiki/images/items/decorations/thumbnails/Canyonrubyspot.png",
     "imgcharcoal": "https://grousehouse.wiki/images/items/herbs/charcoal.png",
+    "imgdianafritillary": "https://grousehouse.wiki/images/items/decorations/thumbnails/Dianafritillary.png",
+    "imgfieryskipper": "https://grousehouse.wiki/images/items/decorations/thumbnails/Fieryskipper.png",
     "imgfossilizedbonedust": "https://grousehouse.wiki/images/items/other/fossilizedbonedust.png",
+    "imggiantswallowtail": "https://grousehouse.wiki/images/items/decorations/thumbnails/Giantswallowtail.png",
+    "imggulffritillary": "https://grousehouse.wiki/images/items/decorations/thumbnails/Gulffritillary.png",
     "imghikersrope": "https://grousehouse.wiki/images/items/amusement/hikersrope.png",
     "imgironscrap": "https://grousehouse.wiki/images/items/other/ironscrap.png",
     "imglargebranch": "https://grousehouse.wiki/images/items/other/largebranch.png",
@@ -21,8 +28,10 @@
     "imgrecipeapplicator": "https://grousehouse.wiki/images/items/recipes/recipeapplicator.png",
     "imgrustypickaxe": "https://grousehouse.wiki/images/items/amusement/rustypickaxe.png",
     "imgsmallbirdmeat": "https://grousehouse.wiki/images/items/food/smallbirdmeat.png",
+    "imguhlersarctic": "https://grousehouse.wiki/images/items/decorations/thumbnails/Uhlersarctic.png",
     "imgunidentifiedfossil": "https://grousehouse.wiki/images/items/lore/unidentifiedfossil.png",
-    "imgwealdenamber": "https://grousehouse.wiki/images/items/other/wealdenamber.png"
+    "imgwealdenamber": "https://grousehouse.wiki/images/items/other/wealdenamber.png",
+    "imgwhitepeacock": "https://grousehouse.wiki/images/items/decorations/thumbnails/Whitepeacock.png"
   },
 
   "encounters": {
@@ -219,7 +228,7 @@
         "Chomp": ["+1 random recipe from butterfly pool*|imgrecipeanimal","+1% hunger"]
       },
       "notes": [
-        "*Recipes from butterfly pool: Blinded Sphinx, Brown Longtail, Canyon Rubyspot, Diana Fritillary, Fiery Skipper, Giant Swallowtail, Gulf Fritillary, Uhler's Arctic, White Peacock"
+        "*Recipes from butterfly pool: Blinded Sphinx|imgblindedsphynx, Brown Longtail|imgbrownlongtail, Canyon Rubyspot|imgcanyonrubyspot, Diana Fritillary|imgdianafritillary, Fiery Skipper|imgfieryskipper, Giant Swallowtail|imggiantswallowtail, Gulf Fritillary|imggulffritillary, Uhler's Arctic|imguhlersarctic, White Peacock|imgwhitepeacock"
       ]
     }
 

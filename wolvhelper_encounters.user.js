@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        Wolvhelper: Explore Encounters
 // @namespace   https://github.com/Kaztaztrophe/Wolvhelper/
-// @version     1.1.0
+// @version     1.1.1
 // @author      Kaztaztrophe
 // @description Wolvden explore encounter helper which displays results
 // @match       https://www.wolvden.com/*
@@ -330,7 +330,6 @@
         return null;
     }
 
-    // Allow either a single string or an array of notes
     const noteList = Array.isArray(notes) ? notes : [notes];
 
     if (noteList.length === 0) {
@@ -347,31 +346,49 @@
     container.appendChild(label);
 
     for (const note of noteList) {
-        const parts = note.split('|');
-
-        const noteText = parts[0].trim();
-
-        const images = parts[1]
-            ? parts[1]
-                .split(',')
-                .map(x => x.trim())
-                .filter(Boolean)
-            : [];
-
         const line = document.createElement('div');
 
-        // Note text
+        // Split the note into text/image sections
+        const parts = note.split('|');
+
+        // First section is always text
         line.appendChild(
-            document.createTextNode(noteText)
+            document.createTextNode(parts[0].trim())
         );
 
-        // Note images
-        for (const imageName of images) {
-            const img = createRewardImage(imageName);
+        // Every following section is treated as image names
+        // until the next | section.
+        for (let i = 1; i < parts.length; i++) {
+            const section = parts[i].trim();
 
-            if (img) {
-                img.style.marginLeft = '4px';
-                line.appendChild(img);
+            if (!section) {
+                continue;
+            }
+
+            // Image names can be comma-separated
+            const imageNames = section
+                .split(',')
+                .map(name => name.trim())
+                .filter(Boolean);
+
+            for (const imageName of imageNames) {
+                const img = createRewardImage(imageName);
+
+                if (img) {
+                    img.style.marginLeft = '4px';
+                    line.appendChild(img);
+                }
+            }
+
+            // If there's another | section, add it as text
+            if (i + 1 < parts.length) {
+                line.appendChild(
+                    document.createTextNode(
+                        ' ' + parts[i + 1].trim()
+                    )
+                );
+
+                i++;
             }
         }
 
@@ -380,6 +397,7 @@
 
     return container;
 	}
+
 
 	// Remove old output
 	function clearExploreHelper() {

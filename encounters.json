@@ -122,20 +122,6 @@
         "Follow the bubbling": ["+2 MT|imgmt","+10 HP"],
         "Walk along the shore": ["+2 Mollusk Shell|imgmolluskshell;imgmolluskshell","+1 Unidentified Fossil","+1 MT|imgmt//+1 Unidentified Fossil|imgunidentifiedfossil"],
         "Wade through the water": ["+1 Large Branch|imglargebranch","+1 Unidentified Fossil|imgunidentifiedfossil","+1 MT|imgmt//+1 Unidentified Fossil|imgunidentifiedfossil","+1 MT|imgmt"]
-      },
-      "location": {
-        "/biome/1": "*@poolherbgrasslands",
-        "/biome/2": "*@poolherbdeciduousforest",
-        "/biome/3": "*@poolherbmountains",
-        "/biome/4": "*@poolherbriparianwoodland",
-        "/biome/5": "*@poolherbdesert",
-        "/biome/6": "*@poolherbprairie",
-        "/biome/7": "*@poolherbswamp",
-        "/biome/8": "*@poolherbrainforest",
-        "/biome/9": "*@poolherbconiferousforest",
-        "/biome/10": "*@poolherbtaiga",
-        "/biome/11": "*@poolherbtundra",
-        "/biome/12": "BIOME 12 TEST"
       }
     },
     "recentearthquakeshiftedground": {

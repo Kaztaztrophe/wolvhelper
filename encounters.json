@@ -281,11 +281,11 @@
     "fillercritters": {
       "intro": "You see some small critters running desperately in the opposite direction.",
       "options": {
-        "Keep Moving Forward": ["Battle with (LVL+5) level local wolf* enemy"],
+        "Keep Moving Forward": ["Battle with (LVL+5) level local wolf enemy*"],
         "Turn Back": ["+1 random single-use food item**"]
       },
       "notes": [
-        "*Local wolf enemies: Alaskan Tundra Wolf (Tundra), Arctic Wolf (Glacier), Eastern Wolf (Grasslands, Prairie, Riparian Woodland), Mexican Wolf (Desert), Red Wolf (Rainforest, Swamp), Timber Wolf (Coniferous Forest, Deciduous Forest, Mountains, Taiga)",
+        "*Alaskan Tundra Wolf (Tundra), Arctic Wolf (Glacier), Eastern Wolf (Grasslands, Prairie, Riparian Woodland), Mexican Wolf (Desert), Red Wolf (Rainforest, Swamp), Timber Wolf (Coniferous Forest, Deciduous Forest, Mountains, Taiga)",
         "**@poolsingleusefood"
       ]
     },

@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        Wolvhelper: Explore Encounters
 // @namespace   https://github.com/Kaztaztrophe/Wolvhelper/
-// @version     1.0.2
+// @version     1.1.0
 // @author      Kaztaztrophe
 // @description Wolvden explore encounter helper which displays results
 // @match       https://www.wolvden.com/*
@@ -95,37 +95,36 @@
 	// Normalize the text
 	function normalizeText(text) {
     return text
-        .toLowerCase()
-        .replace(/\*/g, '')
-        .replace(/\s+/g, ' ')
-        .trim()
-        .replace(/[!?.,:;]+$/, '');
+      .toLowerCase()
+      .replace(/\*/g, '')
+      .replace(/\s+/g, ' ')
+      .trim()
+      .replace(/[!?.,:;]+$/, '');
 	}
 
 	// Find encounter ID from data-action button
 	function findEncounterIdFromAction(action) {
     if (!action || encounterIdLookup.length === 0) {
-        return null;
+      return null;
     }
 
     const normalizedAction = action.toLowerCase();
 
     for (const entry of encounterIdLookup) {
 
-        // Standard encounters
-        if (normalizedAction.includes(entry.normalized)) {
-            return entry.id;
-        }
+      // Standard encounters
+      if (normalizedAction.includes(entry.normalized)) {
+        return entry.id;
+      }
 
-        // Filler encounters
-        if (entry.normalized.startsWith('filler')) {
-            const fillerActionName =
-                'filler_' + entry.normalized.slice(6);
+      // Filler encounters
+      if (entry.normalized.startsWith('filler')) {
+        const fillerActionName = 'filler_' + entry.normalized.slice(6);
 
-            if (normalizedAction.includes(fillerActionName)) {
-                return entry.id;
-            }
+        if (normalizedAction.includes(fillerActionName)) {
+          return entry.id;
         }
+      }
     }
 
     return null;

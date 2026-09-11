@@ -336,13 +336,39 @@
     container.appendChild(label);
 
     for (const note of noteList) {
+        const parts = note.split('|');
+
+        const noteText = parts[0].trim();
+
+        const images = parts[1]
+            ? parts[1]
+                .split(',')
+                .map(x => x.trim())
+                .filter(Boolean)
+            : [];
+
         const line = document.createElement('div');
-        line.textContent = note;
+
+        // Note text
+        line.appendChild(
+            document.createTextNode(noteText)
+        );
+
+        // Note images
+        for (const imageName of images) {
+            const img = createRewardImage(imageName);
+
+            if (img) {
+                img.style.marginLeft = '4px';
+                line.appendChild(img);
+            }
+        }
+
         container.appendChild(line);
     }
 
     return container;
-}
+	}
 
 	// Remove old output
 	function clearExploreHelper() {

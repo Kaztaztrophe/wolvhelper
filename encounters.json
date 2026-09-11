@@ -135,7 +135,7 @@
         "/biome/9": "*@poolherbconiferousforest",
         "/biome/10": "*@poolherbtaiga",
         "/biome/11": "*@poolherbtundra",
-        "/biome/12": "*@poolherbglacier"
+        "/biome/12": "BIOME 12 TEST"
       }
     },
     "recentearthquakeshiftedground": {

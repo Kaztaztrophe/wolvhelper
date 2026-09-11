@@ -104,19 +104,31 @@
 
 	// Find encounter ID from data-action button
 	function findEncounterIdFromAction(action) {
-		if (!action || encounterIdLookup.length === 0) {
-			return null;
-		}
+    if (!action || encounterIdLookup.length === 0) {
+        return null;
+    }
 
-		const normalizedAction = action.toLowerCase();
+    const normalizedAction = action.toLowerCase();
 
-		for (const entry of encounterIdLookup) {
-			if (normalizedAction.includes(entry.normalized)) {
-				return entry.id;
-			}
-		}
+    for (const entry of encounterIdLookup) {
 
-		return null;
+        // Standard encounters
+        if (normalizedAction.includes(entry.normalized)) {
+            return entry.id;
+        }
+
+        // Filler encounters
+        if (entry.normalized.startsWith('filler')) {
+            const fillerActionName =
+                'filler_' + entry.normalized.slice(6);
+
+            if (normalizedAction.includes(fillerActionName)) {
+                return entry.id;
+            }
+        }
+    }
+
+    return null;
 	}
 
 	function findEncounterByButton(output) {

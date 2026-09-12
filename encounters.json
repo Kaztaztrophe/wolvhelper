@@ -112,8 +112,8 @@
     "disturbeddirt": {
       "intro": "Hmm...the dirt has been displaced here, almost like someone was digging recently. Maybe something valuable is buried?",
       "options": {
-        "Dig around": ["+1 MT|imgmt","No reward","Automatic battle with level (LVL+5) local enemy Wolf*"],
-        "Carefully scrape away the dirt": ["+1 Unidentified Fossil|imgunidentifiedfossil","No reward"]
+        "Dig around": ["+1 MT|imgmt","No reward"],
+        "Carefully scrape away the dirt": ["+1 Unidentified Fossil|imgunidentifiedfossil","No reward","Automatic battle with level (LVL+5) enemy @location1*"]
       }
     },
     "nearbycreeksound": {
@@ -320,7 +320,7 @@
     "fillercritters": {
       "intro": "You see some small critters running desperately in the opposite direction.",
       "options": {
-        "Keep Moving Forward": ["Automatic battle with level (LVL+5) local enemy Wolf*"],
+        "Keep Moving Forward": ["Automatic battle with level (LVL+5) enemy @location1*"],
         "Turn Back": ["+1 random single-use food item**"]
       },
       "location": {
@@ -338,8 +338,7 @@
         "/biome/12": ["Arctic Wolf"]
       },
       "notes": [
-        "*@location1",
-        "**@poolsingleusefood"
+        "*@poolsingleusefood"
       ]
     },
     "fillerdirtsnuffle": {

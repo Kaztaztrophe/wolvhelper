@@ -88,7 +88,7 @@
     "imgwoodpeckercarcass": "https://grousehouse.wiki/images/items/food/woodpeckercarcass.png",
     "imgyarrow": "https://grousehouse.wiki/images/items/herbs/yarrow.png"
   },
-  "notes": {
+  "pools": {
     "poolbone": "Abandoned Den|imgrecipebackground;imgabandonedden, Bone Decor|imgrecipetrinket;imgbonedecor, Leftover Bones|imgrecipebackground;imgleftoverbones, Muskrat Carcass Decor|imgrecipetrinket;imgmuskratcarcassdecor, Rabbit Carcass Decor|imgrecipetrinket;imgrabbitcarcassdecor, Scattered Bones|imgrecipetrinket;imgscatteredbones, Skeletal Remains|imgrecipetrinket;imgskeletalremains, Squirrel Carcass Decor|imgrecipetrinket;imgsquirrelcarcassdecor",
     "poolcavebuildingmaterial": "Large Branch|imglargebranch, Large Leaf|imglargeleaf, Large Rock|imglargerock",
     "poolherbconiferousforest": "Arnica|imgarnica, Bearberry|imgbearberry, Boneset|imgboneset, Buffaloberry|imgbuffaloberry, Burning Bush|imgburningbush, Carrionflower|imgcarrionflower, Cedar Bark|imgcedarbark, Charcoal|imgcharcoal, Dandelion|imgdandelion, Feverfew|imgfeverfew, Garlic|imggarlic, Ginger|imgginger, Goldenseal|imggoldenseal, Mullein|imgmullein, Redwood Sorrel|imgredwoodsorrel, Spoonwood|imgspoonwood, St. John's Wort|imgstjohnswort, Tansy|imgtansy, Yarrow|imgyarrow",

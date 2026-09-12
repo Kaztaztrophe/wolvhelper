@@ -394,9 +394,9 @@
         "Give Crow Skull": ["+8% energy//-5 HP"],
         "Browse Wares": ["+50 EXP","+1 Raven Traders: American Crow Seller|imgraventradersamericancrowseller"]
       },
-      "notes": [
-        "*This result can give 'ANY' recipe."
-      ]
+      "conditional": {
+        "Give Shoe": "*This result can give ANY recipe."
+      }
     },
     "americancrowtrader": {
       "intro": "A big American crow with a curious-looking pouch lands in front of you, asking if you have cool items to trade. Let's see...",

@@ -43,6 +43,7 @@
     "imghikersrope": "https://grousehouse.wiki/images/items/amusement/hikersrope.png",
     "imgironscrap": "https://grousehouse.wiki/images/items/other/ironscrap.png",
     "imgkava": "https://grousehouse.wiki/images/items/herbs/kava.png",
+    "imglargebirdmeat": "https://grousehouse.wiki/images/items/food/largebirdmeat.png",
     "imglargebranch": "https://grousehouse.wiki/images/items/other/largebranch.png",
     "imglargeleaf": "https://grousehouse.wiki/images/items/other/largeleaf.png",
     "imglargerock": "https://grousehouse.wiki/images/items/other/largerock.png",
@@ -65,13 +66,22 @@
     "imgquailegg": "https://grousehouse.wiki/images/items/food/quailegg.png",
     "imgrabbitcarcass": "https://grousehouse.wiki/images/items/food/rabbitcarcass.png",
     "imgrabbitcarcassdecor": "https://grousehouse.wiki/images/items/decorations/thumbnails/Rabbitcarcassdecor.png",
+    "imgraccooncarcass": "https://grousehouse.wiki/images/items/food/raccooncarcass.png",
     "imgratcarcass": "https://grousehouse.wiki/images/items/food/ratcarcass.png",
+    "imgraventradersamericancrowbuyer": "https://grousehouse.wiki/images/items/decorations/thumbnails/Raventradersamericancrowbuyer.png",
+    "imgraventradersamericancrowseller": "https://grousehouse.wiki/images/items/decorations/thumbnails/Raventradersamericancrowseller.png",
+    "imgraventradersamericancrowtrader": "https://grousehouse.wiki/images/items/decorations/thumbnails/Raventradersamericancrowtrader.png",
+    "imgraventraderscommonravenmerchant": "https://grousehouse.wiki/images/items/decorations/thumbnails/Raventraderscommonravenmerchant.png",
+    "imgraventraderscrowsnakeskinpurveyor": "https://grousehouse.wiki/images/items/decorations/thumbnails/Raventraderscrowsnakeskinpurveyor.png",
+    "imgraventraderspiedravenpeddler": "https://grousehouse.wiki/images/items/decorations/thumbnails/Raventraderspiedravenpeddler.png",
+    "imgraventradersravenantlerpurveyor": "https://grousehouse.wiki/images/items/decorations/thumbnails/Raventradersravenantlerpurveyor.png",
     "imgrecipeanimal": "https://grousehouse.wiki/images/items/recipes/recipeanimal.png",
     "imgrecipeapplicator": "https://grousehouse.wiki/images/items/recipes/recipeapplicator.png",
     "imgrecipebackground": "https://grousehouse.wiki/images/items/recipes/recipebackground.png",
     "imgrecipetrinket": "https://grousehouse.wiki/images/items/recipes/recipetrinket.png",
     "imgredwoodsorrel": "https://grousehouse.wiki/images/items/herbs/redwoodsorrel.png",
     "imgrustypickaxe": "https://grousehouse.wiki/images/items/amusement/rustypickaxe.png",
+    "imgsausage": "https://grousehouse.wiki/images/items/food/sausage.png",
     "imgscarabdomen": "https://grousehouse.wiki/images/items/decorations/thumbnails/Scarabdomen.png",
     "imgscarcheekboneleft": "https://grousehouse.wiki/images/items/decorations/thumbnails/Scarcheekboneleft.png",
     "imgscarcheekboneright": "https://grousehouse.wiki/images/items/decorations/thumbnails/Scarcheekboneright.png",
@@ -98,16 +108,18 @@
     "imgscarthroat": "https://grousehouse.wiki/images/items/decorations/thumbnails/Scarthroat.png",
     "imgscatteredbones": "https://grousehouse.wiki/images/items/decorations/thumbnails/Scatteredbones.png",
     "imgskeletalremains": "https://grousehouse.wiki/images/items/decorations/thumbnails/Skeletalremains.png",
-    "imgspoonwood": "https://grousehouse.wiki/images/items/herbs/spoonwood.png",
-    "imgstjohnswort": "https://grousehouse.wiki/images/items/herbs/stjohnswort.png",
     "imgsmallbirdmeat": "https://grousehouse.wiki/images/items/food/smallbirdmeat.png",
+    "imgspoonwood": "https://grousehouse.wiki/images/items/herbs/spoonwood.png",
     "imgsquirrelcarcassdecor": "https://grousehouse.wiki/images/items/decorations/thumbnails/Squirrelcarcassdecor.png",
+    "imgstjohnswort": "https://grousehouse.wiki/images/items/herbs/stjohnswort.png",
+    "imgswancarcass": "https://grousehouse.wiki/images/items/food/swancarcass.png",
     "imgtansy": "https://grousehouse.wiki/images/items/herbs/tansy.png",
     "imgtobacco": "https://grousehouse.wiki/images/items/herbs/tobacco.png",
     "imgturkeyegg": "https://grousehouse.wiki/images/items/food/turkeyegg.png",
     "imgturmeric": "https://grousehouse.wiki/images/items/herbs/turmeric.png",
     "imguhlersarctic": "https://grousehouse.wiki/images/items/decorations/thumbnails/Uhlersarctic.png",
     "imgunidentifiedfossil": "https://grousehouse.wiki/images/items/lore/unidentifiedfossil.png",
+    "imgvultureeggs": "https://grousehouse.wiki/images/items/trophies/vultureeggs.png",
     "imgwealdenamber": "https://grousehouse.wiki/images/items/other/wealdenamber.png",
     "imgweaselcarcass": "https://grousehouse.wiki/images/items/food/weaselcarcass.png",
     "imgwhitepeacock": "https://grousehouse.wiki/images/items/decorations/thumbnails/Whitepeacock.png",
@@ -136,6 +148,294 @@
   },
 
   "encounters": {
+
+    "filler2scents": {
+      "intro": "You briefly stop to smell the air, two diverging scents reaching your nose. Interesting.",
+      "options": {
+        "Follow the stinky scent": ["+1-2 SC|imgsc","No reward (>5000 SC)"],
+        "Follow the delicious scent": ["+5-10% hunger"],
+        "Follow the rancid scent": ["+1 Meat Chunks [Large]|imgmeatchunkslarge","+1 Meat Chunks [Medium]|imgmeatchunksmedium","+1 Meat Chunks [Small]|imgmeatchunkssmall"],
+        "Follow the bitter scent": ["+1 Bone|imgbone","+1 Large Branch|imglargebranch","+1 Large Leaf|imglargeleaf","+1 Large Rock|imglargerock"],
+        "Follow the sweet scent": ["Initiates claiming a New Befriended Wolf","No reward*"]
+      },
+      "conditional": {
+        "Follow the sweet scent": "*Befriending is not available if your territory is full."
+      }
+    },
+    "fillerbirdrest": {
+      "intro": "You hear the faint twitter of birds somewhere nearby. You look up to the sky and watch them swooping overhead. What would it feel like to fly? You find a nice comfortable spot in the shade and rest for a moment.",
+      "options": {
+        "Sleep": ["+5-10% energy"],
+        "Rest": ["+4-5 HP"]
+      }
+    },
+    "fillerbutterfly": {
+      "intro": "Catching your breath, a small butterfly lands on your nose.",
+      "options": {
+        "Watch": ["+1 random recipe from butterfly pool*","No reward"],
+        "Chomp": ["+1 random recipe from butterfly pool*//+1% hunger","+1% hunger"]
+      },
+      "notes": [
+        "*Blinded Sphinx|imgrecipeanimal;imgblindedsphynx, Brown Longtail|imgrecipeanimal;imgbrownlongtail, Canyon Rubyspot|imgrecipeanimal;imgcanyonrubyspot, Diana Fritillary|imgrecipeanimal;imgdianafritillary, Fiery Skipper|imgrecipeanimal;imgfieryskipper, Giant Swallowtail|imgrecipeanimal;imggiantswallowtail, Gulf Fritillary|imgrecipeanimal;imggulffritillary, Uhler's Arctic|imgrecipeanimal;imguhlersarctic, White Peacock|imgrecipeanimal;imgwhitepeacock"
+      ]
+    },
+    "fillercritters": {
+      "intro": "You see some small critters running desperately in the opposite direction.",
+      "options": {
+        "Keep Moving Forward": ["Automatic battle with level (LVL+5) local enemy @location1*"],
+        "Turn Back": ["+1 random single-use food item**"]
+      },
+      "location": {
+        "/biome/1": ["Eastern Wolf"],
+        "/biome/2": ["Timber Wolf"],
+        "/biome/3": ["Timber Wolf"],
+        "/biome/4": ["Eastern Wolf"],
+        "/biome/5": ["Mexican Wolf"],
+        "/biome/6": ["Eastern Wolf"],
+        "/biome/7": ["Red Wolf"],
+        "/biome/8": ["Red Wolf"],
+        "/biome/9": ["Timber Wolf"],
+        "/biome/10": ["Timber Wolf"],
+        "/biome/11": ["Alaskan Tundra Wolf"],
+        "/biome/12": ["Arctic Wolf"]
+      },
+      "notes": [
+        "*@poolsingleusefood"
+      ]
+    },
+    "fillerdirtsnuffle": {
+      "intro": "You snuffle around in the dirt. It's here somewhere.. Yes! Jackpot!",
+      "options": {
+        "Dig": ["+1 Acorn|imgacorn","+1 Bone|imgbone","+1 Owl Talon|imgowltalon","+1 Mollusk Skull|imgmolluskshell","+1 random recipe from bone pool*|imgrecipetrinket","1-3 SC|imgsc|(<5000 SC)"]
+      },
+      "notes": [
+        "*@poolbone"
+      ]
+    },
+    "fillerscentpath": {
+      "intro": "You catch a strange scent on the ground, a mingling of two different scents. You follow them until they part ways.",
+      "options": {
+        "Follow North": ["+1 random single-use food item*","+1-3 SC|imgsc|(<5000 SC)"],
+        "Follow West": ["+1 random meat chunks item**//+1 random cave-building material***"]
+      },
+      "notes": [
+        "*@poolsingleusefood",
+        "**@poolmeatchunks",
+        "***@poolcavebuildingmaterial"
+      ]
+    },
+    "fillerwaterpool": {
+      "intro": "A small pool of water appears up ahead, and as you approach you notice that there is a dim blue light glowing from beneath the surface of the water.",
+      "options": {
+        "Inspect": ["+1 Large Leaf//+1 Large Rock//+1 Large Branch|imglargebranch;imglargeleaf;imglargerock","+1 Medicine: Healing Salve|imgmedicinehealingsalve"],
+        "Drink": ["+5-15 HP"]
+      }
+    },
+
+    "herbs": {
+      "intro": "You wander across some interesting plants growing from the soil. You give them a sniff.. oooh, herbs!",
+      "options": {
+        "Gather": ["+1 random biome-specific herb*"],
+        "Use": ["+5 HP"]
+      },
+      "location": {
+        "/biome/1": ["@poolherbgrasslands"],
+        "/biome/2": ["@poolherbdeciduousforest"],
+        "/biome/3": ["@poolherbmountains"],
+        "/biome/4": ["@poolherbriparianwoodland"],
+        "/biome/5": ["@poolherbdesert"],
+        "/biome/6": ["@poolherbprairie"],
+        "/biome/7": ["@poolherbswamp"],
+        "/biome/8": ["@poolherbrainforest"],
+        "/biome/9": ["@poolherbconiferousforest"],
+        "/biome/10": ["@poolherbtaiga"],
+        "/biome/11": ["@poolherbtundra"],
+        "/biome/12": ["@poolherbglacier"]
+      },
+      "notes": [
+        "*@location1"
+      ]
+    },
+    "poop": {
+      "intro": "You come across some poop... Normally, you'd roll all over it, but for some reason, something seems special about this poop.",
+      "options": {
+        "Check it out": ["+1 biome-specific herb*","Gain illness: Diarrhea","No reward"]
+      },
+      "location": {
+        "/biome/1": ["@poolherbgrasslands"],
+        "/biome/2": ["@poolherbdeciduousforest"],
+        "/biome/3": ["@poolherbmountains"],
+        "/biome/4": ["@poolherbriparianwoodland"],
+        "/biome/5": ["@poolherbdesert"],
+        "/biome/6": ["@poolherbprairie"],
+        "/biome/7": ["@poolherbswamp"],
+        "/biome/8": ["@poolherbrainforest"],
+        "/biome/9": ["@poolherbconiferousforest"],
+        "/biome/10": ["@poolherbtaiga"],
+        "/biome/11": ["@poolherbtundra"],
+        "/biome/12": ["@poolherbglacier"]
+      },
+      "notes": [
+        "*@location1"
+      ]
+    },
+
+    "egg": {
+      "intro": "You stop in your tracks - a very vulgar wolf is passing by, vandalizing the bird nests in the vicinity. Oh no, the eggs!",
+      "options": {
+        "Clean Up": ["+2 Nesting Material|imgnestingmaterial;imgnestingmaterial","+1 random common egg*"],
+        "Intervene": ["+1 Lucky Foot|imgluckyfoot"]
+      },
+      "notes": [
+        "*Chicken Egg|imgchickenegg, Duck Egg|imgduckegg, Quail Egg|imgquailegg, Turkey Egg|imgturkeyegg"
+      ]
+    },
+    "tala": {
+      "intro": "Oh no! It's Tala! She seems to be taunting you for a little payback after the last fight. Are you brave enough to wrestle her?",
+      "options": {
+        "Attack!": ["Automatic battle with enemy Wandering Tala"]
+      }
+    },
+    "wolf": {
+      "intro": "A figure appears up ahead of you, you raise your nose to the air and sniff.. another wolf!",
+      "options": {
+        "Attack": ["Automatic battle with local enemy @location1*"],
+        "Befriend": ["Initiates claiming a New Befriended Wolf"]
+      },
+      "location": {
+        "/biome/1": ["Eastern Wolf"],
+        "/biome/2": ["Timber Wolf"],
+        "/biome/3": ["Timber Wolf"],
+        "/biome/4": ["Eastern Wolf"],
+        "/biome/5": ["Mexican Wolf"],
+        "/biome/6": ["Eastern Wolf"],
+        "/biome/7": ["Red Wolf"],
+        "/biome/8": ["Red Wolf"],
+        "/biome/9": ["Timber Wolf"],
+        "/biome/10": ["Timber Wolf"],
+        "/biome/11": ["Alaskan Tundra Wolf"],
+        "/biome/12": ["Arctic Wolf"]
+      }
+    },
+
+    "deadcow": {
+      "intro": "A familiar scent reaches your nose before you can see its source. You see a large, dead cow. It's still very fresh and looks as if it only died moments ago.",
+      "options": {
+        "Take it": ["+1 Bovine Carcass|imgbovinecarcass"]
+      }
+    },
+
+    "cougarmom": {
+      "intro": "You stopped in mid-step upon noticing a large cougar on your path. And it wasn't alone. A young cub was attempting to keep pace with its mother as fast as it could with its short legs and still a bit wobbly movement. It’s a cute scenery but the cougar doesn't appear particularly thrilled by your presence.",
+      "options": {
+        "What a cute kid!": ["+1 random fresh scar*//-4 HP"]
+      },
+      "notes": [
+        "*@poolfreshscar"
+      ]
+    },
+    "aggressivegoldeneagle": {
+      "intro": "A peculiar sound caught your attention. You rarely hear something like this and your curiosity is stronger than your common sense. What you stumbled upon is no ordinary eagle's nest. While you've encountered them in the past, they are usually empty. However, this time is different – you spotted the white fluff of eagle chicks, checking you from the distance.",
+      "options": {
+        "Sniff": ["+1 random fresh scar*//-4 HP"]
+      },
+      "notes": [
+        "*@poolfreshscar"
+      ]
+    },
+    "faultysteelwolftrap": {
+      "intro": "Suddenly, an intense pain spreads throughout your body, something feels as if it grabbed your leg suddenly, but you can pull it out gently. One of your legs was scraped by something metallic!",
+      "options": {
+        "Check it out": ["+1 random fresh scar*//-4 HP"]
+      },
+      "notes": [
+        "*@poolfreshscar"
+      ]
+    },
+    "swarmingrats": {
+      "intro": "Individually, a single rat may make for a satisfying snack, but a bunch of them can turn into a feast no worse than much larger prey. The way they try to escape triggers your hunter instincts even more.",
+      "options": {
+        "Catch some!": ["+1 random fresh scar*//-4 HP"]
+      },
+      "notes": [
+        "*@poolfreshscar"
+      ]
+    },
+
+    "americancrowbuyer": {
+      "intro": "With a flutter of wings, you are accosted by an American crow with the most unique looking pouch. It seeks to trade things, but when you ask where the wares are, it expresses they are well hidden, very, very high. Fine then, keep your secrets.",
+      "options": {
+        "Give Big Cat Claw": ["+1 Medicine: Healing Salve|imgmedicinehealingsalve"],
+        "Give Lucky Foot": ["+4% energy//+50 EXP"],
+        "Give Massive Pinecone": ["+4 SC|imgsc//+2% energy"],
+        "Give Owl Talon": ["+1 Large Bird Meat|imglargebirdmeat"],
+        "Browse Wares": ["+50 EXP","+1 Raven Traders: American Crow Buyer|imgraventradersamericancrowbuyer"]
+      }
+    },
+    "americancrowseller": {
+      "intro": "You find a spot where an adorable American crow is selling shiny things. You don't have your silver cones with you, but maybe you can offer something more specific?",
+      "options": {
+        "Give Shoe": ["+1 random recipe*","+1 Vulture Eggs|imgvultureeggs"],
+        "Give Wealden Amber": ["+1 Medicine: Healing Salve|imgmedicinehealingsalve"],
+        "Give Nesting Material": ["+1 Swan Carcass|imgswancarcass"],
+        "Give Crow Skull": ["+8% energy//-5 HP"],
+        "Browse Wares": ["+50 EXP","+1 Raven Traders: American Crow Seller|imgraventradersamericancrowseller"]
+      },
+      "notes": [
+        "*This result can give 'ANY' recipe."
+      ]
+    },
+    "americancrowtrader": {
+      "intro": "A big American crow with a curious-looking pouch lands in front of you, asking if you have cool items to trade. Let's see...",
+      "options": {
+        "Give Broken Antler": ["+2 SC|imgsc//+8 HP"],
+        "Give Canine Claw": ["+5% energy"],
+        "Give Bone": ["+1 Sausage|imgsausage"],
+        "Offer Acorn": ["+1 Raccoon Carcass|imgraccooncarcass"],
+        "Browse Wares": ["+50 EXP","+1 Raven Traders: American Crow Trader|imgraventradersamericancrowtrader"]
+      }
+    },
+    "commonravenmerchant": {
+      "intro": "A low croak from above catches your attention. A big common raven merchant is seeking some items to refill its stock.",
+      "options": {
+        "Give a Bone": ["+5% energy//+1 Acorn|imgacorn"],
+        "Give Healing Salve": ["+1 Bison Horns|imgbisonhorns"],
+        "Give Chicken Egg": ["+3 SC|imgsc//+1 Canine Fang|imgcaninefang"],
+        "Give Dog Skull": ["+1 Chicken Roast|imgchickenroast"],
+        "Browse Wares": ["+50 EXP","+1 Raven Traders: Common Raven Merchant|imgraventraderscommonravenmerchant"]
+      }
+    },
+    "crowsnakeskinpurveyor": {
+      "intro": "What a fancy crow! It shows off its latest purchases, obviously fascinated by all types of shed snake skins. Maybe you have some for trade?",
+      "options": {
+        "Give Python Skin": ["+10 Python Eggs|imgpythoneggs;imgpythoneggs;imgpythoneggs;imgpythoneggs;imgpythoneggs;imgpythoneggs;imgpythoneggs;imgpythoneggs;imgpythoneggs;imgpythoneggs//+50 HP//+(LVL*40) EXP"],
+        "Give Light Viper Skin": ["+3 SC|imgsc//+15% energy//+(LVL*30) EXP"],
+        "Give Dark Viper Skin": ["+3 SC|imgsc//+5% energy//+10 HP//+(LVL*50) EXP"],
+        "Give Anaconda Skin": ["+10% energy//+10 Snake Meat|imgsnakemeat;imgsnakemeat;imgsnakemeat;imgsnakemeat;imgsnakemeat;imgsnakemeat;imgsnakemeat;imgsnakemeat;imgsnakemeat;imgsnakemeat;//+10 HP//+(LVL*100) EXP"],
+        "Browse Wares": ["+(LVL*20) EXP","+1 Raven Traders: Crow Snake Skin Purveyor|imgraventraderscrowsnakeskinpurveyor"]
+      }
+    },
+    "piedravenpeddler": {
+      "intro": "Whoah! A magnificent pied raven peddler is inviting you to check out the fresh stock in their shop. You're more interested in its feathers at first, but soon enough you learn what the bird is interested in.",
+      "options": {
+        "Give Dandelion": ["+1 Medicine: Healing Salve|imgmedicinehealingsalve","+8 HP"],
+        "Give Rotting Scraps": ["+2 SC|imgsc//+2% energy//+2 HP"],
+        "Give Rattling Spine": ["+1 Bush Dog Skull|imgbushdogskull","+1 Crocodile Leg|imgcrocodileleg","+4 SC|imgsc//+10% energy//+10 HP"],
+        "Give Wolf Skull": ["+1 Flamingo Carcass|imgflamingocarcass","+1 Wolf Pelt [Light]|imgwolfpeltlight","+1 Wolf Pelt [Piebald]|imgwolfpeltpiebald","+1 Wolf Pelt [Tawny]|imgwolfpelttawny"],
+        "Browse Wares": ["+(LVL*60) EXP","+1 Raven Traders: Pied Raven Peddler|imgraventraderspiedravenpeddler"]
+      }
+    },
+    "ravenantlerpurveyor": {
+      "intro": "You notice a big raven showing off its antler collection. It's looking for more. Maybe you have something to offer?",
+      "options": {
+        "Give Moose Antler": ["+20% energy//+2 Vulture Eggs|imgvultureeggs;imgvultureeggs//+10 HP"],
+        "Give Whitetail Antlers": ["+5 SC|imgsc//+8% energy//+10 HP//+(LVL*20) EXP"],
+        "Give Elk Antlers": ["+10% energy//+1 Medicine: Rich Healing Salve|imgmedicinerichhealingsalve"],
+        "Give Caribou Antlers": ["+3 Medicine: Healing Salve|imgmedicinehealingsalve;imgmedicinehealingsalve;imgmedicinehealingsalve"],
+        "Give Blacktail Antlers": ["+10% energy//+2 Jacana Carcass|imgjacanacarcass;imgjacanacarcass"],
+        "Browse Wares": [""]
+      }
+    },
 
     "disturbeddirt": {
       "intro": "Hmm...the dirt has been displaced here, almost like someone was digging recently. Maybe something valuable is buried?",
@@ -312,293 +612,6 @@
         "Scratch gently": ["+1 Unidentified Fossil|imgunidentifiedfossil"],
         "Scratch aggressively": ["+2 MT|imgmt"],
         "Bite": ["+2 Fossilized Bone Dust|imgfossilizedbonedust;imgfossilizedbonedust"]
-      }
-    },
-
-    "filler2scents": {
-      "intro": "You briefly stop to smell the air, two diverging scents reaching your nose. Interesting.",
-      "options": {
-        "Follow the stinky scent": ["+1-2 SC|imgsc","No reward (>5000 SC)"],
-        "Follow the delicious scent": ["+5-10% hunger"],
-        "Follow the rancid scent": ["+1 Meat Chunks [Large]|imgmeatchunkslarge","+1 Meat Chunks [Medium]|imgmeatchunksmedium","+1 Meat Chunks [Small]|imgmeatchunkssmall"],
-        "Follow the bitter scent": ["+1 Bone|imgbone","+1 Large Branch|imglargebranch","+1 Large Leaf|imglargeleaf","+1 Large Rock|imglargerock"],
-        "Follow the sweet scent": ["Initiates claiming a New Befriended Wolf","No reward*"]
-      },
-      "conditional": {
-        "Follow the sweet scent": "*Befriending is not available if your territory is full."
-      }
-    },
-    "fillerbirdrest": {
-      "intro": "You hear the faint twitter of birds somewhere nearby. You look up to the sky and watch them swooping overhead. What would it feel like to fly? You find a nice comfortable spot in the shade and rest for a moment.",
-      "options": {
-        "Sleep": ["+5-10% energy"],
-        "Rest": ["+4-5 HP"]
-      }
-    },
-    "fillerbutterfly": {
-      "intro": "Catching your breath, a small butterfly lands on your nose.",
-      "options": {
-        "Watch": ["+1 random recipe from butterfly pool*","No reward"],
-        "Chomp": ["+1 random recipe from butterfly pool*","+1% hunger"]
-      },
-      "notes": [
-        "*Blinded Sphinx|imgrecipeanimal;imgblindedsphynx, Brown Longtail|imgrecipeanimal;imgbrownlongtail, Canyon Rubyspot|imgrecipeanimal;imgcanyonrubyspot, Diana Fritillary|imgrecipeanimal;imgdianafritillary, Fiery Skipper|imgrecipeanimal;imgfieryskipper, Giant Swallowtail|imgrecipeanimal;imggiantswallowtail, Gulf Fritillary|imgrecipeanimal;imggulffritillary, Uhler's Arctic|imgrecipeanimal;imguhlersarctic, White Peacock|imgrecipeanimal;imgwhitepeacock"
-      ]
-    },
-    "fillercritters": {
-      "intro": "You see some small critters running desperately in the opposite direction.",
-      "options": {
-        "Keep Moving Forward": ["Automatic battle with level (LVL+5) local enemy @location1*"],
-        "Turn Back": ["+1 random single-use food item**"]
-      },
-      "location": {
-        "/biome/1": ["Eastern Wolf"],
-        "/biome/2": ["Timber Wolf"],
-        "/biome/3": ["Timber Wolf"],
-        "/biome/4": ["Eastern Wolf"],
-        "/biome/5": ["Mexican Wolf"],
-        "/biome/6": ["Eastern Wolf"],
-        "/biome/7": ["Red Wolf"],
-        "/biome/8": ["Red Wolf"],
-        "/biome/9": ["Timber Wolf"],
-        "/biome/10": ["Timber Wolf"],
-        "/biome/11": ["Alaskan Tundra Wolf"],
-        "/biome/12": ["Arctic Wolf"]
-      },
-      "notes": [
-        "*@poolsingleusefood"
-      ]
-    },
-    "fillerdirtsnuffle": {
-      "intro": "You snuffle around in the dirt. It's here somewhere.. Yes! Jackpot!",
-      "options": {
-        "Dig": ["+1 Acorn|imgacorn","+1 Bone|imgbone","+1 Owl Talon|imgowltalon","+1 Mollusk Skull|imgmolluskshell","+1 random recipe from bone pool*|imgrecipetrinket","1-3 SC|imgsc|(<5000 SC)"]
-      },
-      "notes": [
-        "*@poolbone"
-      ]
-    },
-    "fillerscentpath": {
-      "intro": "You catch a strange scent on the ground, a mingling of two different scents. You follow them until they part ways.",
-      "options": {
-        "Follow North": ["+1 random single-use food item*","+1-3 SC|imgsc|(<5000 SC)"],
-        "Follow West": ["+1 random meat chunks item**//+1 random cave-building material***"]
-      },
-      "notes": [
-        "*@poolsingleusefood",
-        "**@poolmeatchunks",
-        "***@poolcavebuildingmaterial"
-      ]
-    },
-    "fillerwaterpool": {
-      "intro": "A small pool of water appears up ahead, and as you approach you notice that there is a dim blue light glowing from beneath the surface of the water.",
-      "options": {
-        "Inspect": ["+1 Large Leaf//+1 Large Rock//+1 Large Branch|imglargebranch;imglargeleaf;imglargerock","+1 Medicine: Healing Salve|imgmedicinehealingsalve"],
-        "Drink": ["+5-15 HP"]
-      }
-    },
-
-    "herbs": {
-      "intro": "You wander across some interesting plants growing from the soil. You give them a sniff.. oooh, herbs!",
-      "options": {
-        "Gather": ["+1 random biome-specific herb*"],
-        "Use": ["+5 HP"]
-      },
-      "location": {
-        "/biome/1": ["@poolherbgrasslands"],
-        "/biome/2": ["@poolherbdeciduousforest"],
-        "/biome/3": ["@poolherbmountains"],
-        "/biome/4": ["@poolherbriparianwoodland"],
-        "/biome/5": ["@poolherbdesert"],
-        "/biome/6": ["@poolherbprairie"],
-        "/biome/7": ["@poolherbswamp"],
-        "/biome/8": ["@poolherbrainforest"],
-        "/biome/9": ["@poolherbconiferousforest"],
-        "/biome/10": ["@poolherbtaiga"],
-        "/biome/11": ["@poolherbtundra"],
-        "/biome/12": ["@poolherbglacier"]
-      },
-      "notes": [
-        "*@location1"
-      ]
-    },
-    "poop": {
-      "intro": "You come across some poop... Normally, you'd roll all over it, but for some reason, something seems special about this poop.",
-      "options": {
-        "Check it out": ["+1 biome-specific herb*","Gain illness: Diarrhea","No reward"]
-      },
-      "location": {
-        "/biome/1": ["@poolherbgrasslands"],
-        "/biome/2": ["@poolherbdeciduousforest"],
-        "/biome/3": ["@poolherbmountains"],
-        "/biome/4": ["@poolherbriparianwoodland"],
-        "/biome/5": ["@poolherbdesert"],
-        "/biome/6": ["@poolherbprairie"],
-        "/biome/7": ["@poolherbswamp"],
-        "/biome/8": ["@poolherbrainforest"],
-        "/biome/9": ["@poolherbconiferousforest"],
-        "/biome/10": ["@poolherbtaiga"],
-        "/biome/11": ["@poolherbtundra"],
-        "/biome/12": ["@poolherbglacier"]
-      },
-      "notes": [
-        "*@location1"
-      ]
-    },
-
-    "egg": {
-      "intro": "You stop in your tracks - a very vulgar wolf is passing by, vandalizing the bird nests in the vicinity. Oh no, the eggs!",
-      "options": {
-        "Clean Up": ["+2 Nesting Material|imgnestingmaterial;imgnestingmaterial","+1 random common egg*"],
-        "Intervene": ["+1 Lucky Foot|imgluckyfoot"]
-      },
-      "notes": [
-        "*Chicken Egg|imgchickenegg, Duck Egg|imgduckegg, Quail Egg|imgquailegg, Turkey Egg|imgturkeyegg"
-      ]
-    },
-    "tala": {
-      "intro": "Oh no! It's Tala! She seems to be taunting you for a little payback after the last fight. Are you brave enough to wrestle her?",
-      "options": {
-        "Attack!": ["Automatic battle with enemy Wandering Tala"]
-      }
-    },
-    "wolf": {
-      "intro": "A figure appears up ahead of you, you raise your nose to the air and sniff.. another wolf!",
-      "options": {
-        "Attack": ["Automatic battle with local enemy @location1*"],
-        "Befriend": ["Initiates claiming a New Befriended Wolf"]
-      },
-      "location": {
-        "/biome/1": ["Eastern Wolf"],
-        "/biome/2": ["Timber Wolf"],
-        "/biome/3": ["Timber Wolf"],
-        "/biome/4": ["Eastern Wolf"],
-        "/biome/5": ["Mexican Wolf"],
-        "/biome/6": ["Eastern Wolf"],
-        "/biome/7": ["Red Wolf"],
-        "/biome/8": ["Red Wolf"],
-        "/biome/9": ["Timber Wolf"],
-        "/biome/10": ["Timber Wolf"],
-        "/biome/11": ["Alaskan Tundra Wolf"],
-        "/biome/12": ["Arctic Wolf"]
-      },
-      "notes": [
-        "*@location1"
-      ]
-    },
-
-    "deadcow": {
-      "intro": "A familiar scent reaches your nose before you can see its source. You see a large, dead cow. It's still very fresh and looks as if it only died moments ago.",
-      "options": {
-        "Take it": ["+1 Bovine Carcass|imgbovinecarcass"]
-      }
-    },
-    "cougarmom": {
-      "intro": "You stopped in mid-step upon noticing a large cougar on your path. And it wasn't alone. A young cub was attempting to keep pace with its mother as fast as it could with its short legs and still a bit wobbly movement. It’s a cute scenery but the cougar doesn't appear particularly thrilled by your presence.",
-      "options": {
-        "What a cute kid!": ["+1 random fresh scar*//-4 HP"]
-      },
-      "notes": [
-        "*@poolfreshscar"
-      ]
-    },
-    "aggressivegoldeneagle": {
-      "intro": "A peculiar sound caught your attention. You rarely hear something like this and your curiosity is stronger than your common sense. What you stumbled upon is no ordinary eagle's nest. While you've encountered them in the past, they are usually empty. However, this time is different – you spotted the white fluff of eagle chicks, checking you from the distance.",
-      "options": {
-        "Sniff": ["+1 random fresh scar*//-4 HP"]
-      },
-      "notes": [
-        "*@poolfreshscar"
-      ]
-    },
-    "faultysteelwolftrap": {
-      "intro": "Suddenly, an intense pain spreads throughout your body, something feels as if it grabbed your leg suddenly, but you can pull it out gently. One of your legs was scraped by something metallic!",
-      "options": {
-        "Check it out": ["+1 random fresh scar*//-4 HP"]
-      },
-      "notes": [
-        "*@poolfreshscar"
-      ]
-    },
-    "swarmingrats": {
-      "intro": "Individually, a single rat may make for a satisfying snack, but a bunch of them can turn into a feast no worse than much larger prey. The way they try to escape triggers your hunter instincts even more.",
-      "options": {
-        "Catch some!": ["+1 random fresh scar*//-4 HP"]
-      },
-      "notes": [
-        "*@poolfreshscar"
-      ]
-    },
-
-    "americancrowbuyer": {
-      "intro": "With a flutter of wings, you are accosted by an American crow with the most unique looking pouch. It seeks to trade things, but when you ask where the wares are, it expresses they are well hidden, very, very high. Fine then, keep your secrets.",
-      "options": {
-        "Give Big Cat Claw": [""],
-        "Give Lucky Foot": [""],
-        "Give Massive Pinecone": [""],
-        "Give Owl Talon": [""],
-        "Browse Wares": [""]
-      }
-    },
-    "americancrowseller": {
-      "intro": "You find a spot where an adorable American crow is selling shiny things. You don't have your silver cones with you, but maybe you can offer something more specific?",
-      "options": {
-        "Give Shoe": [""],
-        "Give Wealden Amber": [""],
-        "Give Nesting Material": [""],
-        "Give Crow Skull": [""],
-        "Browse Wares": [""]
-      }
-    },
-    "americancrowtrader": {
-      "intro": "A big American crow with a curious-looking pouch lands in front of you, asking if you have cool items to trade. Let's see...",
-      "options": {
-        "Give Broken Antler": [""],
-        "Give Canine Claw": [""],
-        "Give Bone": [""],
-        "Offer Acorn": [""],
-        "Browse Wares": [""]
-      }
-    },
-    "commonravenmerchant": {
-      "intro": "A low croak from above catches your attention. A big common raven merchant is seeking some items to refill its stock.",
-      "options": {
-        "Give a Bone": [""],
-        "Give Healing Salve": [""],
-        "Give Chicken Egg": [""],
-        "Give Dog Skull": [""],
-        "Browse Wares": [""]
-      }
-    },
-    "crowsnakeskinpurveyor": {
-      "intro": "What a fancy crow! It shows off its latest purchases, obviously fascinated by all types of shed snake skins. Maybe you have some for trade?",
-      "options": {
-        "Give Python Skin": [""],
-        "Give Light Viper Skin": [""],
-        "Give Dark Viper Skin": [""],
-        "Give Anaconda Skin": [""],
-        "Browse Wares": [""]
-      }
-    },
-    "piedravenpeddler": {
-      "intro": "Whoah! A magnificent pied raven peddler is inviting you to check out the fresh stock in their shop. You're more interested in its feathers at first, but soon enough you learn what the bird is interested in.",
-      "options": {
-        "Give Dandelion": [""],
-        "Give Rotting Scraps": [""],
-        "Give Rattling Spine": [""],
-        "Give Wolf Skull": [""],
-        "Browse Wares": [""]
-      }
-    },
-    "ravenantlerpurveyor": {
-      "intro": "You notice a big raven showing off its antler collection. It's looking for more. Maybe you have something to offer?",
-      "options": {
-        "Give Moose Antler": [""],
-        "Give Whitetail Antlers": [""],
-        "Give Elk Antlers": [""],
-        "Give Caribou Antlers": [""],
-        "Give Blacktail Antlers": [""],
-        "Browse Wares": [""]
       }
     }
 

@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        Wolvhelper: Explore Encounters (Mini)
 // @namespace   https://github.com/Kaztaztrophe/Wolvhelper/
-// @version     1.3.0
+// @version     1.3.1
 // @author      Kaztaztrophe
 // @description Wolvden explore encounter helper which displays results
 // @match       https://www.wolvden.com/*
@@ -72,6 +72,93 @@
       .replace(/[!?.,:]+$/, '');
 	}
 
+	// Get current wolf level from sidebar
+	function getPlayerLevel() {
+		const levelElement = [...document.querySelectorAll('.card-body b')]
+			.find(element =>
+				element.parentElement?.textContent.includes('Level')
+			);
+
+		if (!levelElement) {
+			return null;
+		}
+
+		const level = Number(levelElement.textContent.trim());
+
+		return Number.isFinite(level) ? level : null;
+	}
+
+	// Resolve LVL expressions
+	function resolveLevelExpressions(text) {
+		const level = getPlayerLevel();
+
+		if (level === null) {
+			return text;
+		}
+
+		return text.replace(
+			/\(LVL\s*([+*])\s*(\d+)\)/gi,
+			(match, operator, number) => {
+				const value = Number(number);
+
+				if (operator === '+') {
+					return String(level + value);
+				}
+
+				if (operator === '*') {
+					return String(level * value);
+				}
+
+				return match;
+			}
+		);
+	}
+
+	// Get location-specific values for the current page
+	function getLocationValues(location) {
+		if (!location || typeof location !== 'object') {
+			return [];
+		}
+
+		const currentPath = window.location.pathname.replace(/\/+$/, '');
+
+		for (const [locationPath, value] of Object.entries(location)) {
+			const normalizedLocationPath =
+				String(locationPath).replace(/\/+$/, '');
+
+			if (
+				currentPath === normalizedLocationPath ||
+				currentPath.startsWith(normalizedLocationPath + '/')
+			) {
+				return Array.isArray(value)
+					? value
+					: value
+						? [value]
+						: [];
+			}
+		}
+
+		return [];
+	}
+
+	// Resolve @location references in result text
+	function resolveLocationReferences(text, location) {
+		const locationValues = getLocationValues(location);
+
+		return text.replace(
+			/(\**)\@location(\d+)/gi,
+			(match, prefix, number) => {
+				const index = Number(number) - 1;
+
+				if (locationValues[index] !== undefined) {
+					return prefix + locationValues[index];
+				}
+
+				return match;
+			}
+		);
+	}
+
 	// Find encounter ID from data-action button
 	function findEncounterIdFromAction(action) {
     if (!action || encounterIdLookup.length === 0) {
@@ -117,6 +204,58 @@
 		return null;
 	}
 
+	// Fallback: Find encounter ID from explore foreground image
+	function findEncounterByImage(output) {
+		const foreground = output.querySelector('#explore-foreground');
+
+		if (!foreground) {
+			return null;
+		}
+
+		const backgroundImage = foreground.style.backgroundImage;
+
+		if (!backgroundImage) {
+			return null;
+		}
+
+		// Extract filename from background-image URL
+		const match = backgroundImage.match(
+			/\/([^\/?#]+)\.(?:png|jpg|jpeg|webp)(?:[?#].*)?$/i
+		);
+
+		if (!match) {
+			return null;
+		}
+
+		let filename = match[1].toLowerCase();
+
+		// Remove underscores and hyphens
+		filename = filename.replace(/[_-]/g, '');
+
+		// Remove season and time of day suffixes
+		filename = filename.replace(
+			/(?:spring|summer|autumn|winter)?(?:day|dawn|dusk|night)$/i,
+			''
+		);
+		// Remove additional suffixes
+		filename = filename.replace(
+			/(?:spring|summer|autumn|winter)$/i,
+			''
+		);
+
+		// Try the longest database IDs first.
+		for (const entry of encounterIdLookup) {
+			if (filename.includes(entry.normalized)) {
+				return {
+					id: entry.id,
+					data: database.encounters[entry.id]
+				};
+			}
+		}
+
+		return null;
+	}
+
 	// Fallback: Find encounter ID by intro text
 	function findEncounterByIntro(output) {
 		const paragraphs = output.querySelectorAll('p');
@@ -152,38 +291,55 @@
 			return byButton;
 		}
 
+		// Fallback: Check using encounter image
+		const byImage = findEncounterByImage(output);
+
+		if (byImage) {
+			return byImage;
+		}
+
 		// Fallback: Check using intro text
 		return findEncounterByIntro(output);
 	}
 
 	// Parse single results
-	function parseSingleReward(value) {
-    const parts = value.split('|');
+	function parseSingleReward(value, location) {
+		const parts = value.split('|');
 
-    return {
-      result: parts[0].trim(),
-      afterText: parts.slice(2).join('|').trim()
-    };
-  }
+		let result = parts[0].trim();
+
+		// Resolve LVL expressions
+		result = resolveLevelExpressions(result);
+
+		// Resolve @location references
+		result = resolveLocationReferences(result, location);
+
+		return {
+			result: result,
+			afterText: parts.slice(2).join('|').trim()
+		};
+	}
 
 	// Parse compound results
-	function parseCompoundResult(value) {
+	function parseCompoundResult(value, location) {
 		return value
 			.split('//')
 			.map(part => part.trim())
 			.filter(Boolean)
 			.map(part =>
-				parseSingleReward(part)
+				parseSingleReward(part, location)
 			);
 	}
 
 	// Parse possible results
-	function parseResult(value) {
+	function parseResult(value, location) {
 		if (Array.isArray(value)) {
-			return value.map(outcome => parseCompoundResult(outcome));
+			return value.map(outcome =>
+				parseCompoundResult(outcome, location)
+			);
 		}
 
-		return [parseCompoundResult(value)];
+		return [parseCompoundResult(value, location)];
 	}
 
 	// Parse all results for an option
@@ -479,7 +635,7 @@
 
 				// Exact match or match to close match
 				if (normalizedButton === normalizedOption || normalizedButton.startsWith(normalizedOption + ' ')) {
-					reward = parseResult(optionValue);
+					reward = parseResult(optionValue, encounter.data.location);
 					matchedName = optionName;
 					break;
 				}

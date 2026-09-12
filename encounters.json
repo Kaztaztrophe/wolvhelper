@@ -446,7 +446,23 @@
       ]
     },
 
-    "befriendablewolf": {
+    "egg": {
+      "intro": "You stop in your tracks - a very vulgar wolf is passing by, vandalizing the bird nests in the vicinity. Oh no, the eggs!",
+      "options": {
+        "Clean Up": ["+2 Nesting Material|imgnestingmaterial;imgnestingmaterial","+1 random common egg*"],
+        "Intervene": ["+1 Lucky Foot|imgluckyfoot"]
+      },
+      "notes": [
+        "*Chicken Egg|imgchickenegg, Duck Egg|imgduckegg, Quail Egg|imgquailegg, Turkey Egg|imgturkeyegg"
+      ]
+    },
+    "tala": {
+      "intro": "Oh no! It's Tala! She seems to be taunting you for a little payback after the last fight. Are you brave enough to wrestle her?",
+      "options": {
+        "Attack!": ["Automatic battle with enemy Wandering Tala"]
+      }
+    },
+    "wolf": {
       "intro": "A figure appears up ahead of you, you raise your nose to the air and sniff.. another wolf!",
       "options": {
         "Attack": ["Automatic battle with local enemy @location1*"],
@@ -470,22 +486,6 @@
         "*@location1"
       ]
     },
-    "egg": {
-      "intro": "You stop in your tracks - a very vulgar wolf is passing by, vandalizing the bird nests in the vicinity. Oh no, the eggs!",
-      "options": {
-        "Clean Up": ["+2 Nesting Material|imgnestingmaterial;imgnestingmaterial","+1 random common egg*"],
-        "Intervene": ["+1 Lucky Foot|imgluckyfoot"]
-      },
-      "notes": [
-        "*Chicken Egg|imgchickenegg, Duck Egg|imgduckegg, Quail Egg|imgquailegg, Turkey Egg|imgturkeyegg"
-      ]
-    },
-    "tala": {
-      "intro": "Oh no! It's Tala! She seems to be taunting you for a little payback after the last fight. Are you brave enough to wrestle her?",
-      "options": {
-        "Attack!": ["Automatic battle with enemy Wandering Tala"]
-      }
-    },
 
     "deadcow": {
       "intro": "A familiar scent reaches your nose before you can see its source. You see a large, dead cow. It's still very fresh and looks as if it only died moments ago.",
@@ -497,27 +497,110 @@
       "intro": "You stopped in mid-step upon noticing a large cougar on your path. And it wasn't alone. A young cub was attempting to keep pace with its mother as fast as it could with its short legs and still a bit wobbly movement. It’s a cute scenery but the cougar doesn't appear particularly thrilled by your presence.",
       "options": {
         "What a cute kid!": ["+1 random fresh scar*//-4 HP"]
-      }
+      },
+      "notes": [
+        "*@poolfreshscar"
+      ]
     },
     "aggressivegoldeneagle": {
       "intro": "A peculiar sound caught your attention. You rarely hear something like this and your curiosity is stronger than your common sense. What you stumbled upon is no ordinary eagle's nest. While you've encountered them in the past, they are usually empty. However, this time is different – you spotted the white fluff of eagle chicks, checking you from the distance.",
       "options": {
         "Sniff": ["+1 random fresh scar*//-4 HP"]
-      }
+      },
+      "notes": [
+        "*@poolfreshscar"
+      ]
     },
     "faultysteelwolftrap": {
       "intro": "Suddenly, an intense pain spreads throughout your body, something feels as if it grabbed your leg suddenly, but you can pull it out gently. One of your legs was scraped by something metallic!",
       "options": {
         "Check it out": ["+1 random fresh scar*//-4 HP"]
-      }
+      },
+      "notes": [
+        "*@poolfreshscar"
+      ]
     },
     "swarmingrats": {
       "intro": "Individually, a single rat may make for a satisfying snack, but a bunch of them can turn into a feast no worse than much larger prey. The way they try to escape triggers your hunter instincts even more.",
       "options": {
         "Catch some!": ["+1 random fresh scar*//-4 HP"]
+      },
+      "notes": [
+        "*@poolfreshscar"
+      ]
+    },
+
+    "americancrowbuyer": {
+      "intro": "With a flutter of wings, you are accosted by an American crow with the most unique looking pouch. It seeks to trade things, but when you ask where the wares are, it expresses they are well hidden, very, very high. Fine then, keep your secrets.",
+      "options": {
+        "Give Big Cat Claw": [""],
+        "Give Lucky Foot": [""],
+        "Give Massive Pinecone": [""],
+        "Give Owl Talon": [""],
+        "Browse Wares": [""]
+      }
+    },
+    "americancrowseller": {
+      "intro": "You find a spot where an adorable American crow is selling shiny things. You don't have your silver cones with you, but maybe you can offer something more specific?",
+      "options": {
+        "Give Shoe": [""],
+        "Give Wealden Amber": [""],
+        "Give Nesting Material": [""],
+        "Give Crow Skull": [""],
+        "Browse Wares": [""]
+      }
+    },
+    "americancrowtrader": {
+      "intro": "A big American crow with a curious-looking pouch lands in front of you, asking if you have cool items to trade. Let's see...",
+      "options": {
+        "Give Broken Antler": [""],
+        "Give Canine Claw": [""],
+        "Give Bone": [""],
+        "Offer Acorn": [""],
+        "Browse Wares": [""]
+      }
+    },
+    "commonravenmerchant": {
+      "intro": "A low croak from above catches your attention. A big common raven merchant is seeking some items to refill its stock.",
+      "options": {
+        "Give a Bone": [""],
+        "Give Healing Salve": [""],
+        "Give Chicken Egg": [""],
+        "Give Dog Skull": [""],
+        "Browse Wares": [""]
+      }
+    },
+    "crowsnakeskinpurveyor": {
+      "intro": "What a fancy crow! It shows off its latest purchases, obviously fascinated by all types of shed snake skins. Maybe you have some for trade?",
+      "options": {
+        "Give Python Skin": [""],
+        "Give Light Viper Skin": [""],
+        "Give Dark Viper Skin": [""],
+        "Give Anaconda Skin": [""],
+        "Browse Wares": [""]
+      }
+    },
+    "piedravenpeddler": {
+      "intro": "Whoah! A magnificent pied raven peddler is inviting you to check out the fresh stock in their shop. You're more interested in its feathers at first, but soon enough you learn what the bird is interested in.",
+      "options": {
+        "Give Dandelion": [""],
+        "Give Rotting Scraps": [""],
+        "Give Rattling Spine": [""],
+        "Give Wolf Skull": [""],
+        "Browse Wares": [""]
+      }
+    },
+    "ravenantlerpurveyor": {
+      "intro": "You notice a big raven showing off its antler collection. It's looking for more. Maybe you have something to offer?",
+      "options": {
+        "Give Moose Antler": [""],
+        "Give Whitetail Antlers": [""],
+        "Give Elk Antlers": [""],
+        "Give Caribou Antlers": [""],
+        "Give Blacktail Antlers": [""],
+        "Browse Wares": [""]
       }
     }
-
 
   }
 }

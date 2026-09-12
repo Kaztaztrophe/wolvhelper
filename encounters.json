@@ -215,6 +215,16 @@
       ]
     },
 
+    "albinoravenmerchant": {
+      "intro": "A beautiful albino raven merchant has set up shop among some roots. You both look curiously at each other.",
+      "options": {
+        "Give Large Leaf": ["+2 SC|imgsc//+2% energy//+6 HP"],
+        "Give Owl Feather": ["+1 Rugged Flipper|imgruggedflipper"],
+        "Give Carrot": ["+1 Bear Fangs|imgbearfangs"],
+        "Give Yarrow": ["+5% energy//+3 HP"],
+        "Browse Wares": ["+(LVL*20) EXP","+1 Raven Traders: Albino Raven Merchant|imgalbinoravenmerchant"]
+      }
+    },
     "americancrowbuyer": {
       "intro": "With a flutter of wings, you are accosted by an American crow with the most unique looking pouch. It seeks to trade things, but when you ask where the wares are, it expresses they are well hidden, very, very high. Fine then, keep your secrets.",
       "options": {
@@ -286,6 +296,16 @@
         "Give Entwined Antlers": ["+2 Anaconda Eggs|imganacondaeggs"],
         "Give Catfish Skull": ["+1 Venison Liver|imgvenisonliver"],
         "Browse Wares": ["+(LVL*20) EXP","+1 Raven Traders: Fish Crow Merchant|imgfishcrowmerchant"]
+      }
+    },
+    "leucisticravenmerchant": {
+      "intro": "Your eyes water in awe when checking out all the pretty wares this leucistic raven merchant has in store. You ask if it's looking for anything to trade, but it's hard to hide your delight. The prices might be high!",
+      "options": {
+        "Give Charcoal": ["+2 SC|imgsc//+2% energy//+50 EXP"],
+        "Give Lemming Carcass": ["+2% energy//+4 HP"],
+        "Give Thick Fur Tuft": ["+1 Goose Skull|imggooseskull"],
+        "Give Whale Rib Bone": ["+1 Condor Egg|imgcondoregg"],
+        "Browse Wares": ["+(LVL*20) EXP","+1 Raven Traders: Leucistic Raven Merchant|imgleucisticravenmerchant"]
       }
     },
     "piedravenpeddler": {

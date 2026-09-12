@@ -114,6 +114,9 @@
       "options": {
         "Dig around": ["+1 MT|imgmt","No reward"],
         "Carefully scrape away the dirt": ["+1 Unidentified Fossil|imgunidentifiedfossil","No reward","Automatic battle with level (LVL+5) enemy @location1*"]
+      },
+      "location": {
+        "/biome/12": ["Testing Value"]
       }
     },
     "nearbycreeksound": {

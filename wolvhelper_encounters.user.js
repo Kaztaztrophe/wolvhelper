@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        Wolvhelper: Explore Encounters
 // @namespace   https://github.com/Kaztaztrophe/Wolvhelper/
-// @version     1.2.1
+// @version     1.3.0
 // @author      Kaztaztrophe
 // @description Wolvden explore encounter helper which displays results
 // @match       https://www.wolvden.com/*
@@ -23,7 +23,7 @@
 	const IMAGE_WIDTH = '25px';
 	const IMAGE_HEIGHT = '25px';
 	const LINE_HEIGHT = '25px';
-	const WAIT_TIMEOUT = 10000;
+	const WAIT_TIMEOUT = 5000;
 
 	// Import encounter.json database and pre-build
 	let database = null;
@@ -229,41 +229,39 @@
 		const container = document.createElement('span');
 
 		rewards.forEach((reward, index) => {
-				if (index > 0) {
-					container.appendChild(document.createTextNode(' & '));
-				}
-
-				// Reward text
-				if (normalizeText(reward.result) === 'no reward') {
-					const noReward = document.createElement('i');
-					noReward.textContent = reward.result;
-					container.appendChild(noReward);
-				} else {
-					container.appendChild(document.createTextNode(reward.result));
-				}
-
-				// Reward image
-				for (const [imageIndex, imageName] of reward.images.entries()) {
-					const img = createRewardImage(imageName);
-
-					if (img) {
-						// Space between reward text and first image only
-						if (imageIndex === 0) {
-							container.appendChild(document.createTextNode(' '));
-						}
-						container.appendChild(img);
-					}
-				}
-
-				// Text after images
-				if (reward.afterText) {
-					container.appendChild(
-						document.createTextNode(' ' + reward.afterText)
-					);
-				}
-
+			if (index > 0) {
+				container.appendChild(document.createTextNode(' & '));
 			}
-		);
+
+			// Reward text
+			if (normalizeText(reward.result) === 'no reward') {
+				const noReward = document.createElement('i');
+				noReward.textContent = reward.result;
+				container.appendChild(noReward);
+			} else {
+				container.appendChild(document.createTextNode(reward.result));
+			}
+
+			// Reward image
+			for (const [imageIndex, imageName] of reward.images.entries()) {
+				const img = createRewardImage(imageName);
+
+				if (img) {
+					// Space between reward text and first image only
+					if (imageIndex === 0) {
+						container.appendChild(document.createTextNode(' '));
+					}
+					container.appendChild(img);
+				}
+			}
+
+			// Text after images
+			if (reward.afterText) {
+				container.appendChild(
+					document.createTextNode(' ' + reward.afterText)
+				);
+			}
+			});
 
 		return container;
 	}
@@ -309,24 +307,93 @@
 		return line;
 	}
 
+	// Format note text
+	function appendFormattedText(container, text) {
+		const regex = /''([^']+)''|'([^']+)'/g;
+		let lastIndex = 0;
+		let match;
+
+		while ((match = regex.exec(text)) !== null) {
+			// Add normal text before the formatted section
+			if (match.index > lastIndex) {
+				container.appendChild(
+					document.createTextNode(
+						text.slice(lastIndex, match.index)
+					)
+				);
+			}
+
+			// Bold: ''text''
+			if (match[1] !== undefined) {
+				const bold = document.createElement('b');
+				bold.textContent = match[1];
+				container.appendChild(bold);
+			}
+
+			// Italic: 'text'
+			else if (match[2] !== undefined) {
+				const italic = document.createElement('i');
+				italic.textContent = match[2];
+				container.appendChild(italic);
+			}
+
+			lastIndex = regex.lastIndex;
+		}
+
+		// Add remaining normal text
+		if (lastIndex < text.length) {
+			container.appendChild(
+				document.createTextNode(text.slice(lastIndex))
+			);
+		}
+	}
+
 	// Create notes section
-	function createNotesElement(notes, conditional, buttons) {
-		if (!notes && !conditional) {
+	function createNotesElement(notes, conditional, location, buttons) {
+		if (!notes && !conditional && !location) {
 			return null;
 		}
 
-		const noteList = Array.isArray(notes) ? notes : notes ? [notes] : [];
+		const noteList = Array.isArray(notes)
+			? [...notes]
+			: notes
+				? [notes]
+				: [];
 
 		// Add conditional notes only when their button is present
 		if (conditional && buttons) {
 			for (const [buttonName, note] of Object.entries(conditional)) {
 				const buttonExists = [...buttons].some(button =>
 					normalizeText(button.textContent) === normalizeText(buttonName) ||
-					normalizeText(button.textContent).startsWith(normalizeText(buttonName) + ' ')
+					normalizeText(button.textContent).startsWith(
+						normalizeText(buttonName) + ' '
+					)
 				);
 
-				if (buttonExists) {
+				if (buttonExists && note) {
 					noteList.push(note);
+				}
+			}
+		}
+
+		// Find location-specific values
+		let locationValues = [];
+
+		if (location) {
+			const currentPath = window.location.pathname;
+
+			for (const [locationPath, value] of Object.entries(location)) {
+				if (
+					currentPath === locationPath ||
+					currentPath.startsWith(locationPath + '/')
+				) {
+					locationValues = Array.isArray(value)
+						? value
+						: value
+							? [value]
+							: [];
+
+					break;
 				}
 			}
 		}
@@ -346,16 +413,52 @@
 		for (const note of noteList) {
 			const line = document.createElement('div');
 
-			let noteText = note;
+			let noteText = String(note);
 
-			noteText = noteText.replace(
-				/(\**)\@([a-zA-Z0-9_]+)/g,
-				(match, prefix, key) => {
-					return database.notes?.[key]
-						? prefix + database.notes[key]
-						: match;
-				}
-			);
+			// Resolve @location, @pool, and @note references
+			function resolveReferences(text) {
+				let previousText;
+
+				do {
+					previousText = text;
+
+					text = text.replace(
+						/(\**)\@([a-zA-Z0-9_]+)/g,
+						(match, prefix, key) => {
+
+							// Individual @location references
+							const locationMatch = key.match(/^location(\d+)$/);
+
+							if (locationMatch) {
+								const index = Number(locationMatch[1]) - 1;
+
+								if (locationValues[index] !== undefined) {
+									return prefix + locationValues[index];
+								}
+
+								return match;
+							}
+
+							// Pool references
+							if (database.pools?.[key]) {
+								return prefix + database.pools[key];
+							}
+
+							// Normal note references
+							if (database.notes?.[key]) {
+								return prefix + database.notes[key];
+							}
+
+							return match;
+						}
+					);
+
+				} while (text !== previousText);
+
+				return text;
+			}
+
+			noteText = resolveReferences(noteText);
 
 			const parts = noteText.split(/,\s*/);
 
@@ -373,9 +476,7 @@
 				partWrapper.style.whiteSpace = 'nowrap';
 
 				if (separator === -1) {
-					partWrapper.appendChild(
-						document.createTextNode(part)
-					);
+					appendFormattedText(partWrapper, part);
 				} else {
 					const separators = part.split('|');
 
@@ -387,23 +488,21 @@
 							.filter(Boolean)
 						: [];
 
-					const afterText = separators.slice(2).join('|').trim();
+					const afterText = separators
+						.slice(2)
+						.join('|')
+						.trim();
 
 					if (text) {
-						partWrapper.appendChild(
-							document.createTextNode(text)
-						);
+						appendFormattedText(partWrapper, text);
 					}
 
 					for (const [imageIndex, imageName] of imageNames.entries()) {
 						const img = createRewardImage(imageName);
 
 						if (img) {
-							if (imageIndex === 0) {
-								img.style.marginLeft = '4px';
-							} else {
-								img.style.marginLeft = '2px';
-							}
+							img.style.marginLeft =
+								imageIndex === 0 ? '4px' : '2px';
 
 							img.style.height = '16px';
 							img.style.width = '16px';
@@ -501,7 +600,38 @@
 
 		// Nothing to display
 		if (resultLines.length === 0) {
+			const notes = createNotesElement(
+				encounter.data.notes,
+				encounter.data.conditional,
+				encounter.data.location,
+				buttons
+			);
+
 			clearExploreHelper();
+
+			if (!notes) {
+				return;
+			}
+
+			const helper = document.createElement('div');
+			helper.className = HELPER_CLASS;
+			helper.style.marginTop = HELPER_MARGINS;
+			helper.style.marginBottom = HELPER_MARGINS;
+
+			helper.appendChild(notes);
+
+			const energyMessage = [
+				...output.querySelectorAll('p')
+			].find(p =>
+				normalizeText(p.textContent).includes('you lost')
+			);
+
+			if (energyMessage) {
+				energyMessage.before(helper);
+			} else {
+				output.appendChild(helper);
+			}
+
 			return;
 		}
 
@@ -529,6 +659,7 @@
 		const notes = createNotesElement(
 			encounter.data.notes,
 			encounter.data.conditional,
+			encounter.data.location,
 			buttons
 		);
 

@@ -5,12 +5,16 @@
     "imgabandonedden": "https://grousehouse.wiki/images/items/backgrounds/thumbnails/Abandonedden.png",
     "imgacorn": "https://grousehouse.wiki/images/items/amusement/acorn.png",
     "imgaloe": "https://grousehouse.wiki/images/items/herbs/aloe.png",
+    "imganacondaeggs": "https://grousehouse.wiki/images/items/trophies/anacondaeggs.png",
     "imgarnica": "https://grousehouse.wiki/images/items/herbs/arnica.png",
     "imgbaseapplicatorfossil": "https://grousehouse.wiki/images/items/applicators/base_fossil.png",
     "imgbatcarcass": "https://grousehouse.wiki/images/items/food/batcarcass.png",
     "imgbearberry": "https://grousehouse.wiki/images/items/herbs/bearberry.png",
     "imgbisonhorns": "https://grousehouse.wiki/images/items/trophies/bisonhorns.png",
     "imgblindedsphynx": "https://grousehouse.wiki/images/items/decorations/thumbnails/Blindedsphinx.png",
+    "imgblubber": "https://grousehouse.wiki/images/items/trophies/blubber.png",
+    "imgboarpelt": "https://grousehouse.wiki/images/items/trophies/boarpelt.png",
+    "imgbobcatpelt": "https://grousehouse.wiki/images/items/trophies/bobcatpelt.png",
     "imgbone": "https://grousehouse.wiki/images/items/amusement/bone.png",
     "imgbonedecor": "https://grousehouse.wiki/images/items/decorations/thumbnails/Bonedecor.png",
     "imgboneset": "https://grousehouse.wiki/images/items/herbs/boneset.png",
@@ -29,16 +33,21 @@
     "imgcharcoal": "https://grousehouse.wiki/images/items/herbs/charcoal.png",
     "imgchickenegg": "https://grousehouse.wiki/images/items/food/chickenegg.png",
     "imgchickenroast": "https://grousehouse.wiki/images/items/food/chickenroast.png",
+    "imgchihuahuanravenmerchant": "https://grousehouse.wiki/images/items/decorations/thumbnails/Raventraderschihuahuanravenmerchant.png",
+    "imgcougarpelt": "https://grousehouse.wiki/images/items/trophies/cougarpelt.png",
     "imgcrocodileleg": "https://grousehouse.wiki/images/items/trophies/crocodileleg.png",
     "imgdandelion": "https://grousehouse.wiki/images/items/herbs/dandelion.png",
     "imgdeadfish": "https://grousehouse.wiki/images/items/food/deadfish.png",
     "imgdelicatemeat": "https://grousehouse.wiki/images/items/food/delicatemeat.png",
     "imgdianafritillary": "https://grousehouse.wiki/images/items/decorations/thumbnails/Dianafritillary.png",
     "imgduckegg": "https://grousehouse.wiki/images/items/food/duckegg.png",
+    "imgeasterncrowhawker": "https://grousehouse.wiki/images/items/decorations/thumbnails/Raventraderseasterncrowhawker.png",
     "imgfeverfew": "https://grousehouse.wiki/images/items/herbs/feverfew.png",
     "imgfieryskipper": "https://grousehouse.wiki/images/items/decorations/thumbnails/Fieryskipper.png",
     "imgflamingocarcass": "https://grousehouse.wiki/images/items/food/flamingocarcass.png",
+    "imgfloridacrowhawker": "https://grousehouse.wiki/images/items/decorations/thumbnails/Raventradersfloridacrowhawker.png",
     "imgfossilizedbonedust": "https://grousehouse.wiki/images/items/other/fossilizedbonedust.png",
+    "imgfoxpeltswift": "https://grousehouse.wiki/images/items/trophies/foxpeltswift.png",
     "imggarlic": "https://grousehouse.wiki/images/items/herbs/garlic.png",
     "imggiantswallowtail": "https://grousehouse.wiki/images/items/decorations/thumbnails/Giantswallowtail.png",
     "imgginger": "https://grousehouse.wiki/images/items/herbs/ginger.png",
@@ -47,6 +56,7 @@
     "imgguaiacum": "https://grousehouse.wiki/images/items/herbs/guaiacum.png",
     "imggulffritillary": "https://grousehouse.wiki/images/items/decorations/thumbnails/Gulffritillary.png",
     "imghikersrope": "https://grousehouse.wiki/images/items/amusement/hikersrope.png",
+    "imghorseskull": "https://grousehouse.wiki/images/items/trophies/horseskull.png",
     "imgironscrap": "https://grousehouse.wiki/images/items/other/ironscrap.png",
     "imgjacanacarcass": "https://grousehouse.wiki/images/items/food/jacanacarcass.png",
     "imgkava": "https://grousehouse.wiki/images/items/herbs/kava.png",
@@ -61,29 +71,40 @@
     "imgmeatchunkslarge": "https://grousehouse.wiki/images/items/food/meatchunkslarge.png",
     "imgmeatchunksmedium": "https://grousehouse.wiki/images/items/food/meatchunksmedium.png",
     "imgmeatchunkssmall": "https://grousehouse.wiki/images/items/food/meatchunkssmall.png",
+    "imgmedicinecureforall": "https://grousehouse.wiki/images/items/medicine/medicinecureforall.png",
     "imgmedicinehealingsalve": "https://grousehouse.wiki/images/items/medicine/medicinehealingsalve.png",
     "imgmedicinerichhealingsalve": "https://grousehouse.wiki/images/items/medicine/medicinerichhealingsalve.png",
     "imgmolluskshell": "https://grousehouse.wiki/images/items/amusement/molluskshell.png",
     "imgmullein": "https://grousehouse.wiki/images/items/herbs/mullein.png",
+    "imgmuskoxhorns": "https://grousehouse.wiki/images/items/trophies/muskoxhorns.png",
     "imgmuskratcarcassdecor": "https://grousehouse.wiki/images/items/decorations/thumbnails/Muskratcarcassdecor.png",
     "imgnestingmaterial": "https://grousehouse.wiki/images/items/specialuse/nestingmaterial.png",
+    "imgnorthwesterncrowhawker": "https://grousehouse.wiki/images/items/decorations/thumbnails/Raventradersnorthwesterncrowhawker.png",
+    "imgoar": "https://grousehouse.wiki/images/items/amusement/oar.png",
     "imgoddteeth": "https://grousehouse.wiki/images/items/other/oddteeth.png",
     "imgoregano": "https://grousehouse.wiki/images/items/herbs/oregano.png",
     "imgowltalon": "https://grousehouse.wiki/images/items/amusement/owltalon.png",
     "imgpineappleleaf": "https://grousehouse.wiki/images/items/herbs/pineappleleaf.png",
+    "imgpronghornpelt": "https://grousehouse.wiki/images/items/trophies/pronghornpelt.png",
     "imgpythoneggs": "https://grousehouse.wiki/images/items/trophies/pythoneggs.png",
     "imgquailegg": "https://grousehouse.wiki/images/items/food/quailegg.png",
     "imgrabbitcarcass": "https://grousehouse.wiki/images/items/food/rabbitcarcass.png",
     "imgrabbitcarcassdecor": "https://grousehouse.wiki/images/items/decorations/thumbnails/Rabbitcarcassdecor.png",
     "imgraccooncarcass": "https://grousehouse.wiki/images/items/food/raccooncarcass.png",
     "imgratcarcass": "https://grousehouse.wiki/images/items/food/ratcarcass.png",
-    "imgraventradersamericancrowbuyer": "https://grousehouse.wiki/images/items/decorations/thumbnails/Raventradersamericancrowbuyer.png",
-    "imgraventradersamericancrowseller": "https://grousehouse.wiki/images/items/decorations/thumbnails/Raventradersamericancrowseller.png",
-    "imgraventradersamericancrowtrader": "https://grousehouse.wiki/images/items/decorations/thumbnails/Raventradersamericancrowtrader.png",
-    "imgraventraderscommonravenmerchant": "https://grousehouse.wiki/images/items/decorations/thumbnails/Raventraderscommonravenmerchant.png",
-    "imgraventraderscrowsnakeskinpurveyor": "https://grousehouse.wiki/images/items/decorations/thumbnails/Raventraderscrowsnakeskinpurveyor.png",
-    "imgraventraderspiedravenpeddler": "https://grousehouse.wiki/images/items/decorations/thumbnails/Raventraderspiedravenpeddler.png",
-    "imgraventradersravenantlerpurveyor": "https://grousehouse.wiki/images/items/decorations/thumbnails/Raventradersravenantlerpurveyor.png",
+    "imgamericancrowbuyer": "https://grousehouse.wiki/images/items/decorations/thumbnails/Raventradersamericancrowbuyer.png",
+    "imgamericancrowseller": "https://grousehouse.wiki/images/items/decorations/thumbnails/Raventradersamericancrowseller.png",
+    "imgamericancrowtrader": "https://grousehouse.wiki/images/items/decorations/thumbnails/Raventradersamericancrowtrader.png",
+    "imgcommonravenmerchant": "https://grousehouse.wiki/images/items/decorations/thumbnails/Raventraderscommonravenmerchant.png",
+    "imgcrowsnakeskinpurveyor": "https://grousehouse.wiki/images/items/decorations/thumbnails/Raventraderscrowsnakeskinpurveyor.png",
+    "imgfishcrowmerchant": "https://grousehouse.wiki/images/items/decorations/thumbnails/Raventradersfishcrowmerchant.png",
+    "imgpiedravenpeddler": "https://grousehouse.wiki/images/items/decorations/thumbnails/Raventraderspiedravenpeddler.png",
+    "imgravenantlerpurveyor": "https://grousehouse.wiki/images/items/decorations/thumbnails/Raventradersravenantlerpurveyor.png",
+    "imgravenbeakdealer": "https://grousehouse.wiki/images/items/decorations/thumbnails/Raventradersravenbeakdealer.png",
+    "imgravenhoofdealer": "https://grousehouse.wiki/images/items/decorations/thumbnails/Raventradersravenhoofdealer.png",
+    "imgravenshelldealer": "https://grousehouse.wiki/images/items/decorations/thumbnails/Raventradersravenshelldealer.png",
+    "imgsinaloacrowmerchant": "https://grousehouse.wiki/images/items/decorations/thumbnails/Raventraderssinaloacrowmerchant.png",
+    "imgsoutherncrowhawker": "https://grousehouse.wiki/images/items/decorations/thumbnails/Raventraderssoutherncrowhawker.png",
     "imgrecipeanimal": "https://grousehouse.wiki/images/items/recipes/recipeanimal.png",
     "imgrecipeapplicator": "https://grousehouse.wiki/images/items/recipes/recipeapplicator.png",
     "imgrecipebackground": "https://grousehouse.wiki/images/items/recipes/recipebackground.png",
@@ -123,17 +144,22 @@
     "imgsquirrelcarcassdecor": "https://grousehouse.wiki/images/items/decorations/thumbnails/Squirrelcarcassdecor.png",
     "imgstjohnswort": "https://grousehouse.wiki/images/items/herbs/stjohnswort.png",
     "imgswancarcass": "https://grousehouse.wiki/images/items/food/swancarcass.png",
+    "imgtamaulipascrowhawker": "https://grousehouse.wiki/images/items/decorations/thumbnails/Raventraderstamaulipascrowhawker.png",
     "imgtansy": "https://grousehouse.wiki/images/items/herbs/tansy.png",
     "imgtobacco": "https://grousehouse.wiki/images/items/herbs/tobacco.png",
     "imgturkeyegg": "https://grousehouse.wiki/images/items/food/turkeyegg.png",
     "imgturmeric": "https://grousehouse.wiki/images/items/herbs/turmeric.png",
     "imguhlersarctic": "https://grousehouse.wiki/images/items/decorations/thumbnails/Uhlersarctic.png",
     "imgunidentifiedfossil": "https://grousehouse.wiki/images/items/lore/unidentifiedfossil.png",
+    "imgvenisonliver": "https://grousehouse.wiki/images/items/trophies/venisonliver.png",
     "imgvultureeggs": "https://grousehouse.wiki/images/items/trophies/vultureeggs.png",
     "imgwealdenamber": "https://grousehouse.wiki/images/items/other/wealdenamber.png",
     "imgweaselcarcass": "https://grousehouse.wiki/images/items/food/weaselcarcass.png",
+    "imgwesterncrowhawker": "https://grousehouse.wiki/images/items/decorations/thumbnails/Raventraderswesterncrowhawker.png",
+    "imgwhalemeat": "https://grousehouse.wiki/images/items/trophies/whalemeat.png",
     "imgwhitepeacock": "https://grousehouse.wiki/images/items/decorations/thumbnails/Whitepeacock.png",
     "imgwinterfat": "https://grousehouse.wiki/images/items/herbs/winterfat.png",
+    "imgwolfpeltblack": "https://grousehouse.wiki/images/items/trophies/wolfpeltblack.png",
     "imgwolfpeltlight": "https://grousehouse.wiki/images/items/trophies/wolfpeltlight.png",
     "imgwolfpeltpiebald": "https://grousehouse.wiki/images/items/trophies/wolfpeltpiebald.png",
     "imgwolfpelttawny": "https://grousehouse.wiki/images/items/trophies/wolfpelttawny.png",
@@ -341,7 +367,7 @@
     "cougarmom": {
       "intro": "You stopped in mid-step upon noticing a large cougar on your path. And it wasn't alone. A young cub was attempting to keep pace with its mother as fast as it could with its short legs and still a bit wobbly movement. It’s a cute scenery but the cougar doesn't appear particularly thrilled by your presence.",
       "options": {
-        "What a cute kid!": ["+1 random fresh scar*//-4 HP"]
+        "What a cute kid!": ["+1 random fresh scar decoration*//-4 HP"]
       },
       "notes": [
         "*@poolfreshscar"
@@ -350,7 +376,7 @@
     "aggressivegoldeneagle": {
       "intro": "A peculiar sound caught your attention. You rarely hear something like this and your curiosity is stronger than your common sense. What you stumbled upon is no ordinary eagle's nest. While you've encountered them in the past, they are usually empty. However, this time is different – you spotted the white fluff of eagle chicks, checking you from the distance.",
       "options": {
-        "Sniff": ["+1 random fresh scar*//-4 HP"]
+        "Sniff": ["+1 random fresh scar decoration*//-4 HP"]
       },
       "notes": [
         "*@poolfreshscar"
@@ -359,7 +385,7 @@
     "faultysteelwolftrap": {
       "intro": "Suddenly, an intense pain spreads throughout your body, something feels as if it grabbed your leg suddenly, but you can pull it out gently. One of your legs was scraped by something metallic!",
       "options": {
-        "Check it out": ["+1 random fresh scar*//-4 HP"]
+        "Check it out": ["+1 random fresh scar decoration*//-4 HP"]
       },
       "notes": [
         "*@poolfreshscar"
@@ -368,7 +394,7 @@
     "swarmingrats": {
       "intro": "Individually, a single rat may make for a satisfying snack, but a bunch of them can turn into a feast no worse than much larger prey. The way they try to escape triggers your hunter instincts even more.",
       "options": {
-        "Catch some!": ["+1 random fresh scar*//-4 HP"]
+        "Catch some!": ["+1 random fresh scar decoration*//-4 HP"]
       },
       "notes": [
         "*@poolfreshscar"
@@ -382,7 +408,7 @@
         "Give Lucky Foot": ["+4% energy//+50 EXP"],
         "Give Massive Pinecone": ["+4 SC|imgsc//+2% energy"],
         "Give Owl Talon": ["+1 Large Bird Meat|imglargebirdmeat"],
-        "Browse Wares": ["+50 EXP","+1 Raven Traders: American Crow Buyer|imgraventradersamericancrowbuyer"]
+        "Browse Wares": ["+50 EXP","+1 Raven Traders: American Crow Buyer|imgamericancrowbuyer"]
       }
     },
     "americancrowseller": {
@@ -392,7 +418,7 @@
         "Give Wealden Amber": ["+1 Medicine: Healing Salve|imgmedicinehealingsalve"],
         "Give Nesting Material": ["+1 Swan Carcass|imgswancarcass"],
         "Give Crow Skull": ["+8% energy//-5 HP"],
-        "Browse Wares": ["+50 EXP","+1 Raven Traders: American Crow Seller|imgraventradersamericancrowseller"]
+        "Browse Wares": ["+50 EXP","+1 Raven Traders: American Crow Seller|imgamericancrowseller"]
       },
       "conditional": {
         "Give Shoe": "*This result can give ANY recipe."
@@ -405,7 +431,17 @@
         "Give Canine Claw": ["+5% energy"],
         "Give Bone": ["+1 Sausage|imgsausage"],
         "Offer Acorn": ["+1 Raccoon Carcass|imgraccooncarcass"],
-        "Browse Wares": ["+50 EXP","+1 Raven Traders: American Crow Trader|imgraventradersamericancrowtrader"]
+        "Browse Wares": ["+50 EXP","+1 Raven Traders: American Crow Trader|imgamericancrowtrader"]
+      }
+    },
+    "chihuahuanravenmerchant": {
+      "intro": "You excitedly trot towards the chihuahuan raven merchant, asking what's in store today. The raven seeks special items and wonders if you have any.",
+      "options": {
+        "Give a Rattle": ["+1 Whale Meat|imgwhalemeat"],
+        "Give Old Horseshoe": ["+1 Medicine: Healing Salve|imgmedicinehealingsalve"],
+        "Give Vulture Talon": ["+2 SC|imgsc//+6% energy//+3 HP"],
+        "Give Swine Carcass": ["+1 Horse Skull|imghorseskull"],
+        "Browse Wares": ["+(LVL*20) EXP","+1 Raven Traders: Chihuahuan Raven Merchant|imgchihuahuanravenmerchant"]
       }
     },
     "commonravenmerchant": {
@@ -415,7 +451,7 @@
         "Give Healing Salve": ["+1 Bison Horns|imgbisonhorns"],
         "Give Chicken Egg": ["+3 SC|imgsc//+1 Canine Fang|imgcaninefang"],
         "Give Dog Skull": ["+1 Chicken Roast|imgchickenroast"],
-        "Browse Wares": ["+50 EXP","+1 Raven Traders: Common Raven Merchant|imgraventraderscommonravenmerchant"]
+        "Browse Wares": ["+50 EXP","+1 Raven Traders: Common Raven Merchant|imgcommonravenmerchant"]
       }
     },
     "crowsnakeskinpurveyor": {
@@ -425,7 +461,17 @@
         "Give Light Viper Skin": ["+3 SC|imgsc//+15% energy//+(LVL*30) EXP"],
         "Give Dark Viper Skin": ["+3 SC|imgsc//+5% energy//+10 HP//+(LVL*50) EXP"],
         "Give Anaconda Skin": ["+10% energy//+10 Snake Meat|imgsnakemeat;imgsnakemeat;imgsnakemeat;imgsnakemeat;imgsnakemeat;imgsnakemeat;imgsnakemeat;imgsnakemeat;imgsnakemeat;imgsnakemeat;//+10 HP//+(LVL*100) EXP"],
-        "Browse Wares": ["+(LVL*20) EXP","+1 Raven Traders: Crow Snake Skin Purveyor|imgraventraderscrowsnakeskinpurveyor"]
+        "Browse Wares": ["+(LVL*20) EXP","+1 Raven Traders: Crow Snake Skin Purveyor|imgcrowsnakeskinpurveyor"]
+      }
+    },
+    "fishcrowmerchant": {
+      "intro": "On a rotten trunk among the tall trees, a fish crow croaks at you, inviting you to check out its wares. Looks like there's a high demand for certain items.",
+      "options": {
+        "Give Large Branch": ["+2 SC|imgsc//+2% energy//+6 HP"],
+        "Give Weasel Carcass": ["+1 Oar|imgoar"],
+        "Give Entwined Antlers": ["+2 Anaconda Eggs|imganacondaeggs"],
+        "Give Catfish Skull": ["+1 Venison Liver|imgvenisonliver"],
+        "Browse Wares": ["+(LVL*20) EXP","+1 Raven Traders: Fish Crow Merchant|imgfishcrowmerchant"]
       }
     },
     "piedravenpeddler": {
@@ -435,7 +481,7 @@
         "Give Rotting Scraps": ["+2 SC|imgsc//+2% energy//+2 HP"],
         "Give Rattling Spine": ["+1 Bush Dog Skull|imgbushdogskull","+1 Crocodile Leg|imgcrocodileleg","+4 SC|imgsc//+10% energy//+10 HP"],
         "Give Wolf Skull": ["+1 Flamingo Carcass|imgflamingocarcass","+1 Wolf Pelt [Light]|imgwolfpeltlight","+1 Wolf Pelt [Piebald]|imgwolfpeltpiebald","+1 Wolf Pelt [Tawny]|imgwolfpelttawny"],
-        "Browse Wares": ["+(LVL*60) EXP","+1 Raven Traders: Pied Raven Peddler|imgraventraderspiedravenpeddler"]
+        "Browse Wares": ["+(LVL*60) EXP","+1 Raven Traders: Pied Raven Peddler|imgpiedravenpeddler"]
       }
     },
     "ravenantlerpurveyor": {
@@ -446,9 +492,102 @@
         "Give Elk Antlers": ["+10% energy//+1 Medicine: Rich Healing Salve|imgmedicinerichhealingsalve"],
         "Give Caribou Antlers": ["+3 Medicine: Healing Salve|imgmedicinehealingsalve;imgmedicinehealingsalve;imgmedicinehealingsalve"],
         "Give Blacktail Antlers": ["+10% energy//+2 Jacana Carcass|imgjacanacarcass;imgjacanacarcass"],
-        "Browse Wares": [""]
+        "Browse Wares": ["+(LVL*20) EXP","+1 Raven Traders: Raven Antler Purveyor|imgravenantlerpurveyor"]
       }
     },
+    "ravenbeakdealer": {
+      "intro": "When you spot a raven with a broken beak, you worry if it's able to feed properly, but you discover it has its own shop dedicated to beaks, and a few helpers moving things around. Looks like no matter what, it's making the best of its situation! Maybe it's looking to expand the collection?",
+      "options": {
+        "Give Small Bird Meat": ["+4% energy//+2 HP"],
+        "Give Goose Beak": ["+3 Medicine: Healing Salve|imgmedicinehealingsalve;imgmedicinehealingsalve;imgmedicinehealingsalve"],
+        "Give Eagle Beak": ["+1 Crocodile Leg|imgcrocodileleg"],
+        "Browse Wares": ["+(LVL*20) EXP","+1 Raven Traders: Raven Beak Dealer|imgravenbeakdealer"]
+      }
+    },
+    "ravenhoofdealer": {
+      "intro": "Fascinated by legs in many shapes and colours, this raven dealer seems to be eager to enhance their collection. You notice its white eye, but it seems to be watching your behaviour with a proper judgemental expression.",
+      "options": {
+        "Give Goose Leg": ["+2 Sausage|imgsausage;imgsausage","+1 Cougar Pelt|imgcougarpelt"],
+        "Give Large Hoof": ["+8% energy//+(LVL*40) EXP"],
+        "Give Gnawing Hoof": ["+2 SC|imgsc//+4% energy//+2 Acorn|imgacorn;imgacorn//+10 HP//+10% hunger"],
+        "Browse Wares": ["+(LVL*20) EXP","+1 Raven Traders: Raven Hoof Dealer|imgravenhoofdealer"]
+      }
+    },
+    "ravenshelldealer": {
+      "intro": "Stashed in all the nooks and crannies of an old, wiggly tree, are beautiful shells of all colours and sizes. The owner of the shop asks if you have anything cool to trade.",
+      "options": {
+        "Give Turtle Shell": ["+10 HP//+(LVL*30) EXP"],
+        "Give Tortoise Shell": ["+3 SC|imgsc//+5% energy//+20 HP//+50% hunger"],
+        "Give Mollusk Shell": ["+1 Jacana Carcass|imgjacanacarcass"],
+        "Browse Wares": ["+(LVL*20) EXP","+1 Raven Traders: Raven Shell Dealer|imgravenshelldealer"]
+      }
+    },
+    "sinaloacrowmerchant": {
+      "intro": "You haven't seen anything like this before - a sinaloa crow merchant is carrying all the goods in a human-made basket. It all smells like delicious food, and even the fake tiny human smells fun. You have seen those before! Maybe it's looking for more?",
+      "options": {
+        "Give Large Rock": ["+2 SC|imgsc//+2% energy//+6 HP"],
+        "Give Boar Tusks": ["+1 Muskox Horns|imgmuskoxhorns"],
+        "Give Odd Teeth": ["+1 SC|imgsc//+8% energy//+2 HP"],
+        "Give Old Doll": ["+1 Blubber|imgblubber","+1 Medicine: Cure-For-All|imgmedicinecureforall"],
+        "Browse Wares": ["+(LVL*20) EXP","+1 Raven Traders: Sinaloa Crow Merchant|imgsinaloacrowmerchant"]
+      }
+    },
+
+    "easterncrowhawker": {
+      "intro": "The loud croaking of this eastern crow hawker announces the gathering of raven traders nearby.",
+      "options": {
+        "Tempt with Legendary Green Sturgeon": ["+1 Boar Pelt|imgboarpelt"],
+        "Tempt with Quail Egg": ["+1 Lucky Foot|imgluckyfoot//-2 HP"],
+        "Tempt with Medium Meat Chunk": ["+2 SC|imgsc//+5% energy//+4 HP"],
+        "Spread the Word": ["+5% energy","+1 Raven Traders: Eastern Crow Hawker|imgeasterncrowhawker"]
+      }
+    },
+    "floridacrowhawker": {
+      "intro": "At first you are annoyed by the croaking, but once you listen carefully, you manage to make out that the Florida crow hawker is directing animals to the nearest crow merchant.",
+      "options": {
+        "Tempt with Legendary Baby Alligator": ["+1 Wolf Pelt [Black]|imgwolfpeltblack"],
+        "Tempt with Small Bird Meat": ["+1 Lucky Foot|imgluckyfoot//-2 HP"],
+        "Tempt with Jackrabbit Carcass": ["+2 SC|imgsc//+5% energy//+4 HP"],
+        "Spread the Word": ["+5% energy","+1 Raven Traders: Florida Crow Hawker|imgfloridacrowhawker"]
+      }
+    },
+    "northwesterncrowhawker": {
+      "intro": "A small, Northwestern Crow Hawker is announcing arrival of raven traders in the area.",
+      "options": {
+        "Tempt with Legendary Chinook Salmon": ["+1 Bobcat Pelt|imgbobcatpelt"],
+        "Tempt with Dead Fish": ["+1 Lucky Foot|imgluckyfoot//-2 HP"],
+        "Tempt with Small Meat Chunk": ["+2 SC|imgsc//+5% energy//+4 HP"],
+        "Spread the Word": ["+5% energy","+1 Raven Traders: Northwestern Crow Hawker|imgnorthwesterncrowhawker"]
+      }
+    },
+    "southerncrowhawker": {
+      "intro": "You spot a southern crow hawker high in the sky as it announces a gathering of merchants just down by the river.",
+      "options": {
+        "Tempt with Legendary Lake Sturgeon": ["+1 Pronghorn Pelt|imgpronghornpelt"],
+        "Tempt with Small Doe Carcass": ["+2 SC|imgsc//+5% energy//+4 HP"],
+        "Tempt with Hare Carcass": ["+1 Lucky Foot|imgluckyfoot"],
+        "Spread the Word": ["+5% energy","+1 Raven Traders: Southern Crow Hawker|imgsoutherncrowhawker"]
+      }
+    },
+    "tamaulipascrowhawker": {
+      "intro": "You jump, surprised by the loud croaking of a tamaulipas crow hawker. Looks like new merchants are moving in somewhere near your den.",
+      "options": {
+        "Tempt with Legendary Colorado Pikeminnow": ["+1 Fox Pelt [Swift]|imgfoxpeltswift"],
+        "Tempt with Turkey Carcass": ["+2 SC|imgsc//+5% energy//+4 HP"],
+        "Tempt with Delicate Meat": ["+1 Lucky Foot|imgluckyfoot"],
+        "Spread the Word": ["+5% energy","+1 Raven Traders: Tamaulipas Crow Hawker|imgtamaulipascrowhawker"]
+      }
+    },
+    "westerncrowhawker": {
+      "intro": "Here ye, here ye! The big raven market is opening nearby! This western crow hawker is busy announcing the location of new traders to all local animals.",
+      "options": {
+        "Tempt with Legendary White Sturgeon": ["+1 Fox Pelt [Swift]|imgfoxpeltswift"],
+        "Tempt with Rat Carcass": ["+1 Lucky Foot|imgluckyfoot//-2 HP"],
+        "Tempt with Large Meat Chunk": ["+2 SC|imgsc//+5% energy//+4 HP"],
+        "Spread the Word": ["+5% energy","+1 Raven Traders: Western Crow Hawker|imgwesterncrowhawker"]
+      }
+    },
+
 
     "disturbeddirt": {
       "intro": "Hmm...the dirt has been displaced here, almost like someone was digging recently. Maybe something valuable is buried?",

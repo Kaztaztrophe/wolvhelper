@@ -195,8 +195,8 @@
     "fillercritters": {
       "intro": "You see some small critters running desperately in the opposite direction.",
       "options": {
-        "Keep Moving Forward": ["Automatic battle with level (LVL+5) local enemy @location1*"],
-        "Turn Back": ["+1 random single-use food item**"]
+        "Keep Moving Forward": ["Automatic battle with level (LVL+5) local enemy @location1"],
+        "Turn Back": ["+1 random single-use food item*"]
       },
       "location": {
         "/biome/1": ["Eastern Wolf"],
@@ -312,7 +312,7 @@
     "wolf": {
       "intro": "A figure appears up ahead of you, you raise your nose to the air and sniff.. another wolf!",
       "options": {
-        "Attack": ["Automatic battle with local enemy @location1*"],
+        "Attack": ["Automatic battle with local enemy @location1"],
         "Befriend": ["Initiates claiming a New Befriended Wolf"]
       },
       "location": {

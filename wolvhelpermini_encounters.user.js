@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        Wolvhelper: Explore Encounters (Mini)
 // @namespace   https://github.com/Kaztaztrophe/Wolvhelper/
-// @version     1.4.0
+// @version     1.4.1
 // @author      Kaztaztrophe
 // @description Wolvden explore encounter helper which displays results
 // @match       https://www.wolvden.com/*
@@ -22,7 +22,7 @@
 	const POOLS_URL = 'https://raw.githubusercontent.com/Kaztaztrophe/Wolvhelper/main/pools.json';
 	const HELPER_CLASS = 'explore-helper';
 	const HELPER_MARGINS = '10px';
-	const WAIT_TIMEOUT = 10000;
+	const WAIT_TIMEOUT = 5000;
 
 	// Import database and pre-build
 	let encounterDatabase = null;
@@ -180,22 +180,49 @@
 		return [];
 	}
 
-	// Resolve @location references in result text
-	function resolveLocationReferences(text, location) {
+	// Resolve location, pool, and note references
+	function resolveReferences(text, location) {
 		const locationValues = getLocationValues(location);
 
-		return text.replace(
-			/(\**)\@location(\d+)/gi,
-			(match, prefix, number) => {
-				const index = Number(number) - 1;
+		let previousText;
 
-				if (locationValues[index] !== undefined) {
-					return prefix + locationValues[index];
+		do {
+			previousText = text;
+
+			text = text.replace(
+				/(\**)\@([a-zA-Z0-9_]+)/g,
+				(match, prefix, key) => {
+
+					// Individual location references
+					const locationMatch = key.match(/^location(\d+)$/);
+
+					if (locationMatch) {
+						const index = Number(locationMatch[1]) - 1;
+
+						if (locationValues[index] !== undefined) {
+							return prefix + locationValues[index];
+						}
+
+						return match;
+					}
+
+					// Pool references
+					if (encounterDatabase.pools?.[key]) {
+						return prefix + encounterDatabase.pools[key];
+					}
+
+					// Normal note references
+					if (encounterDatabase.notes?.[key]) {
+						return prefix + encounterDatabase.notes[key];
+					}
+
+					return match;
 				}
+			);
 
-				return match;
-			}
-		);
+		} while (text !== previousText);
+
+		return text;
 	}
 
 	// Find encounter ID from data-action button
@@ -343,19 +370,22 @@
 
 	// Parse single results
 	function parseSingleReward(value, location) {
-		const parts = value.split('|');
+		// Resolve LVL expressions first
+		let resolvedValue = resolveLevelExpressions(value.trim());
 
-		let result = parts[0].trim();
+		// Resolve all references, including nested pool references
+		resolvedValue = resolveReferences(resolvedValue, location);
 
-		// Resolve LVL expressions
-		result = resolveLevelExpressions(result);
+		// Now split the fully resolved value
+		const parts = resolvedValue.split('|');
 
-		// Resolve @location references
-		result = resolveLocationReferences(result, location);
+		const result = parts[0].trim();
+
+		const afterText = parts.slice(2).join('|').trim();
 
 		return {
 			result: result,
-			afterText: parts.slice(2).join('|').trim()
+			afterText: afterText
 		};
 	}
 
@@ -382,36 +412,35 @@
 	}
 
 	// Parse all results for an option
-  function createResultElement(rewards) {
-    const container = document.createElement('span');
+	function createResultElement(rewards) {
+		const container = document.createElement('span');
 
-    rewards.forEach((reward, index) => {
-      if (index > 0) {
-        container.appendChild(
-          document.createTextNode(' & ')
-        );
-      }
+		rewards.forEach((reward, index) => {
+			if (index > 0) {
+				container.appendChild(
+					document.createTextNode(' & ')
+				);
+			}
 
-      if (normalizeText(reward.result) === 'no reward') {
-        const noReward = document.createElement('i');
-        noReward.textContent = reward.result;
-        container.appendChild(noReward);
-      } else {
-        container.appendChild(
-          document.createTextNode(reward.result)
-        );
-      }
+			if (normalizeText(reward.result) === 'no reward') {
+				const noReward = document.createElement('i');
+				noReward.textContent = reward.result;
+				container.appendChild(noReward);
+			} else {
+				container.appendChild(
+					document.createTextNode(reward.result)
+				);
+			}
 
-      // Text after image
-      if (reward.afterText) {
-        container.appendChild(
-          document.createTextNode(' ' + reward.afterText)
-        );
-      }
-    });
+			if (reward.afterText) {
+				container.appendChild(
+					document.createTextNode(' ' + reward.afterText)
+				);
+			}
+		});
 
-    return container;
-  }
+		return container;
+	}
 
 	// Create result line
 	function createResultLine(buttonText, outcomes) {
@@ -422,7 +451,6 @@
 		const label = document.createElement('b');
 
 		label.textContent = buttonText + ': ';
-		label.style.whiteSpace = 'nowrap';
 
 		line.appendChild(label);
 
@@ -431,15 +459,14 @@
 
 				// Combine separator with result
 				const resultWrapper = document.createElement('span');
-				resultWrapper.style.display = 'inline-block';
-				resultWrapper.style.whiteSpace = 'nowrap';
 
 				// Add OR before result outcome
 				if (index > 0) {
 					const separator = document.createElement('span');
-					separator.textContent = ' OR ';
+					separator.textContent = 'OR';
 					separator.style.fontWeight = 'bold';
 					separator.style.marginLeft = '4px';
+					separator.style.marginRight = '4px';
 
 					resultWrapper.appendChild(separator);
 				}
@@ -454,45 +481,47 @@
 	}
 
   // Format note text
-  function appendFormattedText(container, text) {
-    const regex = /''([^']+)''|'([^']+)'/g;
-    let lastIndex = 0;
-    let match;
+	function appendFormattedText(container, text) {
+		const regex = /'''([^']+)'''|''([^']+)''/g;
+		let lastIndex = 0;
+		let match;
 
-    while ((match = regex.exec(text)) !== null) {
-      // Add normal text before the formatted section
-      if (match.index > lastIndex) {
-        container.appendChild(
-          document.createTextNode(
-            text.slice(lastIndex, match.index)
-          )
-        );
-      }
+		while ((match = regex.exec(text)) !== null) {
+			// Add normal text before the formatted section
+			if (match.index > lastIndex) {
+				container.appendChild(
+					document.createTextNode(
+						text.slice(lastIndex, match.index)
+					)
+				);
+			}
 
-      // Bold: ''text''
-      if (match[1] !== undefined) {
-        const bold = document.createElement('b');
-        bold.textContent = match[1];
-        container.appendChild(bold);
-      }
+			// Bold: '''text'''
+			if (match[1] !== undefined) {
+				const bold = document.createElement('b');
+				bold.textContent = match[1];
+				container.appendChild(bold);
+			}
 
-			// Italic: 'text'
+			// Italic: ''text''
 			else if (match[2] !== undefined) {
 				const italic = document.createElement('i');
 				italic.textContent = match[2];
 				container.appendChild(italic);
 			}
 
-      lastIndex = regex.lastIndex;
-    }
+			lastIndex = regex.lastIndex;
+		}
 
-    // Add remaining normal text
-    if (lastIndex < text.length) {
-      container.appendChild(
-        document.createTextNode(text.slice(lastIndex))
-      );
-    }
-  }
+		// Add remaining normal text
+		if (lastIndex < text.length) {
+			container.appendChild(
+				document.createTextNode(
+					text.slice(lastIndex)
+				)
+			);
+		}
+	}
 
   // Create notes section
   function createNotesElement(notes, conditional, location, buttons) {
@@ -522,28 +551,6 @@
       }
     }
 
-    // Find location-specific values
-    let locationValues = [];
-
-    if (location) {
-      const currentPath = window.location.pathname;
-
-      for (const [locationPath, value] of Object.entries(location)) {
-        if (
-          currentPath === locationPath ||
-          currentPath.startsWith(locationPath + '/')
-        ) {
-          locationValues = Array.isArray(value)
-            ? value
-            : value
-              ? [value]
-              : [];
-
-          break;
-        }
-      }
-    }
-
     if (noteList.length === 0) {
       return null;
     }
@@ -561,50 +568,7 @@
 
       let noteText = String(note);
 
-      // Resolve @location, @pool, and @note references
-      function resolveReferences(text) {
-        let previousText;
-
-        do {
-          previousText = text;
-
-          text = text.replace(
-            /(\**)\@([a-zA-Z0-9_]+)/g,
-            (match, prefix, key) => {
-
-              // Individual @location references
-              const locationMatch = key.match(/^location(\d+)$/);
-
-              if (locationMatch) {
-                const index = Number(locationMatch[1]) - 1;
-
-                if (locationValues[index] !== undefined) {
-                  return prefix + locationValues[index];
-                }
-
-                return match;
-              }
-
-              // Pool references
-              if (encounterDatabase.pools?.[key]) {
-                return prefix + encounterDatabase.pools[key];
-              }
-
-              // Normal note references
-              if (encounterDatabase.notes?.[key]) {
-                return prefix + encounterDatabase.notes[key];
-              }
-
-              return match;
-            }
-          );
-
-        } while (text !== previousText);
-
-        return text;
-      }
-
-      noteText = resolveReferences(noteText);
+			noteText = resolveReferences(noteText, location);
 
       // Remove image references but keep text after image
       const textOnly = noteText

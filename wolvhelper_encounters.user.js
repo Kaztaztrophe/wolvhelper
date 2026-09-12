@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        Wolvhelper: Explore Encounters
 // @namespace   https://github.com/Kaztaztrophe/Wolvhelper/
-// @version     1.4.0
+// @version     1.4.1
 // @author      Kaztaztrophe
 // @description Wolvden explore encounter helper which displays results
 // @match       https://www.wolvden.com/*
@@ -183,22 +183,49 @@
 		return [];
 	}
 
-	// Resolve @location references in result text
-	function resolveLocationReferences(text, location) {
+	// Resolve location, pool, and note references
+	function resolveReferences(text, location) {
 		const locationValues = getLocationValues(location);
 
-		return text.replace(
-			/(\**)\@location(\d+)/gi,
-			(match, prefix, number) => {
-				const index = Number(number) - 1;
+		let previousText;
 
-				if (locationValues[index] !== undefined) {
-					return prefix + locationValues[index];
+		do {
+			previousText = text;
+
+			text = text.replace(
+				/(\**)\@([a-zA-Z0-9_]+)/g,
+				(match, prefix, key) => {
+
+					// Individual location references
+					const locationMatch = key.match(/^location(\d+)$/);
+
+					if (locationMatch) {
+						const index = Number(locationMatch[1]) - 1;
+
+						if (locationValues[index] !== undefined) {
+							return prefix + locationValues[index];
+						}
+
+						return match;
+					}
+
+					// Pool references
+					if (encounterDatabase.pools?.[key]) {
+						return prefix + encounterDatabase.pools[key];
+					}
+
+					// Normal note references
+					if (encounterDatabase.notes?.[key]) {
+						return prefix + encounterDatabase.notes[key];
+					}
+
+					return match;
 				}
+			);
 
-				return match;
-			}
-		);
+		} while (text !== previousText);
+
+		return text;
 	}
 
 	// Find encounter ID from data-action button
@@ -346,15 +373,16 @@
 
 	// Parse single results
 	function parseSingleReward(value, location) {
-		const parts = value.split('|');
+		// Resolve LVL expressions first
+		let resolvedValue = resolveLevelExpressions(value);
 
-		let result = parts[0].trim();
+		// Resolve all references, including nested pool references
+		resolvedValue = resolveReferences(resolvedValue, location);
 
-		// Resolve LVL expressions
-		result = resolveLevelExpressions(result);
+		// Now split the fully resolved value
+		const parts = resolvedValue.split('|');
 
-		// Resolve @location references
-		result = resolveLocationReferences(result, location);
+		const result = parts[0].trim();
 
 		const images =
 			parts[1]
@@ -469,7 +497,6 @@
 		const label = document.createElement('b');
 
 		label.textContent = buttonText + ': ';
-		label.style.whiteSpace = 'nowrap';
 
 		line.appendChild(label);
 
@@ -484,9 +511,10 @@
 				// Add OR before result outcome
 				if (index > 0) {
 					const separator = document.createElement('span');
-					separator.textContent = ' OR ';
+					separator.textContent = 'OR';
 					separator.style.fontWeight = 'bold';
 					separator.style.marginLeft = '4px';
+					separator.style.marginRight = '4px';
 
 					resultWrapper.appendChild(separator);
 				}
@@ -500,9 +528,9 @@
 		return line;
 	}
 
-	// Format note text
+  // Format note text
 	function appendFormattedText(container, text) {
-		const regex = /''([^']+)''|'([^']+)'/g;
+		const regex = /'''([^']+)'''|''([^']+)''/g;
 		let lastIndex = 0;
 		let match;
 
@@ -516,14 +544,14 @@
 				);
 			}
 
-			// Bold: ''text''
+			// Bold: '''text'''
 			if (match[1] !== undefined) {
 				const bold = document.createElement('b');
 				bold.textContent = match[1];
 				container.appendChild(bold);
 			}
 
-			// Italic: 'text'
+			// Italic: ''text''
 			else if (match[2] !== undefined) {
 				const italic = document.createElement('i');
 				italic.textContent = match[2];
@@ -536,7 +564,9 @@
 		// Add remaining normal text
 		if (lastIndex < text.length) {
 			container.appendChild(
-				document.createTextNode(text.slice(lastIndex))
+				document.createTextNode(
+					text.slice(lastIndex)
+				)
 			);
 		}
 	}
@@ -569,28 +599,6 @@
 			}
 		}
 
-		// Find location-specific values
-		let locationValues = [];
-
-		if (location) {
-			const currentPath = window.location.pathname;
-
-			for (const [locationPath, value] of Object.entries(location)) {
-				if (
-					currentPath === locationPath ||
-					currentPath.startsWith(locationPath + '/')
-				) {
-					locationValues = Array.isArray(value)
-						? value
-						: value
-							? [value]
-							: [];
-
-					break;
-				}
-			}
-		}
-
 		if (noteList.length === 0) {
 			return null;
 		}
@@ -608,50 +616,7 @@
 
 			let noteText = String(note);
 
-			// Resolve @location, @pool, and @note references
-			function resolveReferences(text) {
-				let previousText;
-
-				do {
-					previousText = text;
-
-					text = text.replace(
-						/(\**)\@([a-zA-Z0-9_]+)/g,
-						(match, prefix, key) => {
-
-							// Individual @location references
-							const locationMatch = key.match(/^location(\d+)$/);
-
-							if (locationMatch) {
-								const index = Number(locationMatch[1]) - 1;
-
-								if (locationValues[index] !== undefined) {
-									return prefix + locationValues[index];
-								}
-
-								return match;
-							}
-
-							// Pool references
-							if (encounterDatabase.pools?.[key]) {
-								return prefix + encounterDatabase.pools[key];
-							}
-
-							// Normal note references
-							if (encounterDatabase.notes?.[key]) {
-								return prefix + encounterDatabase.notes[key];
-							}
-
-							return match;
-						}
-					);
-
-				} while (text !== previousText);
-
-				return text;
-			}
-
-			noteText = resolveReferences(noteText);
+			noteText = resolveReferences(noteText, location);
 
 			const parts = noteText.split(/,\s*/);
 

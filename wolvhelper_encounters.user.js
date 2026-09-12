@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        Wolvhelper: Explore Encounters
 // @namespace   https://github.com/Kaztaztrophe/Wolvhelper/
-// @version     1.3.1
+// @version     1.4.0
 // @author      Kaztaztrophe
 // @description Wolvden explore encounter helper which displays results
 // @match       https://www.wolvden.com/*
@@ -17,7 +17,9 @@
 	'use strict';
 
 	// Script settings and variables
-	const DATABASE_URL = 'https://raw.githubusercontent.com/Kaztaztrophe/Wolvhelper/main/encounters.json';
+	const ENCOUNTERS_URL = 'https://raw.githubusercontent.com/Kaztaztrophe/Wolvhelper/main/encounters.json';
+	const IMAGES_URL = 'https://raw.githubusercontent.com/Kaztaztrophe/Wolvhelper/main/images.json';
+	const POOLS_URL = 'https://raw.githubusercontent.com/Kaztaztrophe/Wolvhelper/main/pools.json';
 	const HELPER_CLASS = 'explore-helper';
 	const HELPER_MARGINS = '10px';
 	const IMAGE_WIDTH = '25px';
@@ -25,33 +27,70 @@
 	const LINE_HEIGHT = '25px';
 	const WAIT_TIMEOUT = 5000;
 
-	// Import encounter.json database and pre-build
-	let database = null;
+	// Import database and pre-build
+	let encounterDatabase = null;
 	let encounterIdLookup = [];
 
 	// Load encounter database
 	async function loadDatabase() {
 		try {
-			const response = await fetch(DATABASE_URL);
+			const [
+				encountersResponse,
+				imagesResponse,
+				poolsResponse
+			] = await Promise.all([
+				fetch(ENCOUNTERS_URL),
+				fetch(IMAGES_URL),
+				fetch(POOLS_URL)
+			]);
 
-			if (!response.ok) {
-				throw new Error(`HTTP ${response.status}`);
+			if (!encountersResponse.ok) {
+				throw new Error(
+					`Failed to load encounters.json: HTTP ${encountersResponse.status}`
+				);
 			}
 
-			database = await response.json();
+			if (!imagesResponse.ok) {
+				throw new Error(
+					`Failed to load images.json: HTTP ${imagesResponse.status}`
+				);
+			}
 
-			if (!database.encounters || typeof database.encounters !== 'object') {
+			if (!poolsResponse.ok) {
+				throw new Error(
+					`Failed to load pools.json: HTTP ${poolsResponse.status}`
+				);
+			}
+
+			encounterDatabase = await encountersResponse.json();
+			encounterDatabase.images = await imagesResponse.json();
+			encounterDatabase.pools = await poolsResponse.json();
+
+			if (
+				!encounterDatabase.encounters || typeof encounterDatabase.encounters !== 'object'
+			) {
 				throw new Error('Database is missing "encounters"');
+			}
+
+			if (
+				!encounterDatabase.images || typeof encounterDatabase.images !== 'object'
+			) {
+				throw new Error('Images database is invalid');
+			}
+
+			if (
+				!encounterDatabase.pools || typeof encounterDatabase.pools !== 'object'
+			) {
+				throw new Error('Pools database is invalid');
 			}
 
 			// Build the encounter lookup
 			encounterIdLookup =
-				Object.keys(database.encounters)
+				Object.keys(encounterDatabase.encounters)
 					.map(id => ({
 						id: id,
 						normalized: id.toLowerCase()
 					}))
-					// Load longest first to prevent incorrect results
 					.sort(
 						(a, b) =>
 							b.normalized.length -
@@ -196,10 +235,10 @@
 		for (const button of buttons) {
 			const action = button.dataset.action;
 			const id = findEncounterIdFromAction(action);
-			if (id && database.encounters[id]) {
+			if (id && encounterDatabase.encounters[id]) {
 				return {
 					id: id,
-					data: database.encounters[id]
+					data: encounterDatabase.encounters[id]
 				};
 			}
 		}
@@ -251,7 +290,7 @@
 			if (filename.includes(entry.normalized)) {
 				return {
 					id: entry.id,
-					data: database.encounters[entry.id]
+					data: encounterDatabase.encounters[entry.id]
 				};
 			}
 		}
@@ -264,7 +303,7 @@
 		const paragraphs = output.querySelectorAll('p');
 
 		for (const entry of encounterIdLookup) {
-			const encounter = database.encounters[entry.id];
+			const encounter = encounterDatabase.encounters[entry.id];
 
 			if (!encounter.intro) {
 				continue;
@@ -358,7 +397,7 @@
 
 	// Reward images
 	function createRewardImage(imageName) {
-    const imageUrl = database.images[imageName];
+    const imageUrl = encounterDatabase.images[imageName];
 
     if (!imageUrl) {
         console.warn('[Wolvhelper] Unknown image:', imageName);
@@ -594,13 +633,13 @@
 							}
 
 							// Pool references
-							if (database.pools?.[key]) {
-								return prefix + database.pools[key];
+							if (encounterDatabase.pools?.[key]) {
+								return prefix + encounterDatabase.pools[key];
 							}
 
 							// Normal note references
-							if (database.notes?.[key]) {
-								return prefix + database.notes[key];
+							if (encounterDatabase.notes?.[key]) {
+								return prefix + encounterDatabase.notes[key];
 							}
 
 							return match;
@@ -698,7 +737,7 @@
 	function updateExploreOutput() {
 		const output = document.querySelector('#explore-output');
 
-		if (!output || !database) {
+		if (!output || !encounterDatabase) {
 			return;
 		}
 

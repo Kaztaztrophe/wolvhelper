@@ -140,7 +140,7 @@
         "Intervene": ["+1 Lucky Foot|imgluckyfoot"]
       },
       "notes": [
-        "*Chicken Egg|imgchickenegg, Duck Egg|imgduckegg, Quail Egg|imgquailegg, Turkey Egg|imgturkeyegg"
+        "*@poolcommonegg"
       ]
     },
     "tala": {
@@ -222,7 +222,7 @@
         "Give Owl Feather": ["+1 Rugged Flipper|imgruggedflipper"],
         "Give Carrot": ["+1 Bear Fangs|imgbearfangs"],
         "Give Yarrow": ["+5% energy//+3 HP"],
-        "Browse Wares": ["+(LVL*20) EXP","+1 Raven Traders: Albino Raven Merchant|imgalbinoravenmerchant"]
+        "Browse Wares": ["+(LVL*20) EXP","+1 Raven Traders: Albino Raven Merchant|imgraventradersalbinoravenmerchant"]
       }
     },
     "americancrowbuyer": {
@@ -232,7 +232,7 @@
         "Give Lucky Foot": ["+4% energy//+50 EXP"],
         "Give Massive Pinecone": ["+4 SC|imgsc//+2% energy"],
         "Give Owl Talon": ["+1 Large Bird Meat|imglargebirdmeat"],
-        "Browse Wares": ["+50 EXP","+1 Raven Traders: American Crow Buyer|imgamericancrowbuyer"]
+        "Browse Wares": ["+50 EXP","+1 Raven Traders: American Crow Buyer|imgraventradersamericancrowbuyer"]
       }
     },
     "americancrowseller": {
@@ -242,7 +242,7 @@
         "Give Wealden Amber": ["+1 Medicine: Healing Salve|imgmedicinehealingsalve"],
         "Give Nesting Material": ["+1 Swan Carcass|imgswancarcass"],
         "Give Crow Skull": ["+8% energy//-5 HP"],
-        "Browse Wares": ["+50 EXP","+1 Raven Traders: American Crow Seller|imgamericancrowseller"]
+        "Browse Wares": ["+50 EXP","+1 Raven Traders: American Crow Seller|imgraventradersamericancrowseller"]
       },
       "conditional": {
         "Give Shoe": "*This result can give ANY recipe."
@@ -255,7 +255,7 @@
         "Give Canine Claw": ["+5% energy"],
         "Give Bone": ["+1 Sausage|imgsausage"],
         "Offer Acorn": ["+1 Raccoon Carcass|imgraccooncarcass"],
-        "Browse Wares": ["+50 EXP","+1 Raven Traders: American Crow Trader|imgamericancrowtrader"]
+        "Browse Wares": ["+50 EXP","+1 Raven Traders: American Crow Trader|imgraventradersamericancrowtrader"]
       }
     },
     "chihuahuanravenmerchant": {
@@ -265,7 +265,7 @@
         "Give Old Horseshoe": ["+1 Medicine: Healing Salve|imgmedicinehealingsalve"],
         "Give Vulture Talon": ["+2 SC|imgsc//+6% energy//+3 HP"],
         "Give Swine Carcass": ["+1 Horse Skull|imghorseskull"],
-        "Browse Wares": ["+(LVL*20) EXP","+1 Raven Traders: Chihuahuan Raven Merchant|imgchihuahuanravenmerchant"]
+        "Browse Wares": ["+(LVL*20) EXP","+1 Raven Traders: Chihuahuan Raven Merchant|imgraventraderschihuahuanravenmerchant"]
       }
     },
     "commonravenmerchant": {
@@ -275,7 +275,7 @@
         "Give Healing Salve": ["+1 Bison Horns|imgbisonhorns"],
         "Give Chicken Egg": ["+3 SC|imgsc//+1 Canine Fang|imgcaninefang"],
         "Give Dog Skull": ["+1 Chicken Roast|imgchickenroast"],
-        "Browse Wares": ["+50 EXP","+1 Raven Traders: Common Raven Merchant|imgcommonravenmerchant"]
+        "Browse Wares": ["+50 EXP","+1 Raven Traders: Common Raven Merchant|imgraventraderscommonravenmerchant"]
       }
     },
     "crowsnakeskinpurveyor": {
@@ -285,7 +285,7 @@
         "Give Light Viper Skin": ["+3 SC|imgsc//+15% energy//+(LVL*30) EXP"],
         "Give Dark Viper Skin": ["+3 SC|imgsc//+5% energy//+10 HP//+(LVL*50) EXP"],
         "Give Anaconda Skin": ["+10% energy//+10 Snake Meat|imgsnakemeat;imgsnakemeat;imgsnakemeat;imgsnakemeat;imgsnakemeat;imgsnakemeat;imgsnakemeat;imgsnakemeat;imgsnakemeat;imgsnakemeat;//+10 HP//+(LVL*100) EXP"],
-        "Browse Wares": ["+(LVL*20) EXP","+1 Raven Traders: Crow Snake Skin Purveyor|imgcrowsnakeskinpurveyor"]
+        "Browse Wares": ["+(LVL*20) EXP","+1 Raven Traders: Crow Snake Skin Purveyor|imgraventraderscrowsnakeskinpurveyor"]
       }
     },
     "fishcrowmerchant": {
@@ -295,7 +295,7 @@
         "Give Weasel Carcass": ["+1 Oar|imgoar"],
         "Give Entwined Antlers": ["+2 Anaconda Eggs|imganacondaeggs"],
         "Give Catfish Skull": ["+1 Venison Liver|imgvenisonliver"],
-        "Browse Wares": ["+(LVL*20) EXP","+1 Raven Traders: Fish Crow Merchant|imgfishcrowmerchant"]
+        "Browse Wares": ["+(LVL*20) EXP","+1 Raven Traders: Fish Crow Merchant|imgraventradersfishcrowmerchant"]
       }
     },
     "leucisticravenmerchant": {
@@ -305,7 +305,7 @@
         "Give Lemming Carcass": ["+2% energy//+4 HP"],
         "Give Thick Fur Tuft": ["+1 Goose Skull|imggooseskull"],
         "Give Whale Rib Bone": ["+1 Condor Egg|imgcondoregg"],
-        "Browse Wares": ["+(LVL*20) EXP","+1 Raven Traders: Leucistic Raven Merchant|imgleucisticravenmerchant"]
+        "Browse Wares": ["+(LVL*20) EXP","+1 Raven Traders: Leucistic Raven Merchant|imgraventradersleucisticravenmerchant"]
       }
     },
     "piedravenpeddler": {
@@ -315,7 +315,7 @@
         "Give Rotting Scraps": ["+2 SC|imgsc//+2% energy//+2 HP"],
         "Give Rattling Spine": ["+1 Bush Dog Skull|imgbushdogskull","+1 Crocodile Leg|imgcrocodileleg","+4 SC|imgsc//+10% energy//+10 HP"],
         "Give Wolf Skull": ["+1 Flamingo Carcass|imgflamingocarcass","+1 Wolf Pelt [Light]|imgwolfpeltlight","+1 Wolf Pelt [Piebald]|imgwolfpeltpiebald","+1 Wolf Pelt [Tawny]|imgwolfpelttawny"],
-        "Browse Wares": ["+(LVL*60) EXP","+1 Raven Traders: Pied Raven Peddler|imgpiedravenpeddler"]
+        "Browse Wares": ["+(LVL*60) EXP","+1 Raven Traders: Pied Raven Peddler|imgraventraderspiedravenpeddler"]
       }
     },
     "ravenantlerpurveyor": {
@@ -326,7 +326,7 @@
         "Give Elk Antlers": ["+10% energy//+1 Medicine: Rich Healing Salve|imgmedicinerichhealingsalve"],
         "Give Caribou Antlers": ["+3 Medicine: Healing Salve|imgmedicinehealingsalve;imgmedicinehealingsalve;imgmedicinehealingsalve"],
         "Give Blacktail Antlers": ["+10% energy//+2 Jacana Carcass|imgjacanacarcass;imgjacanacarcass"],
-        "Browse Wares": ["+(LVL*20) EXP","+1 Raven Traders: Raven Antler Purveyor|imgravenantlerpurveyor"]
+        "Browse Wares": ["+(LVL*20) EXP","+1 Raven Traders: Raven Antler Purveyor|imgraventradersravenantlerpurveyor"]
       }
     },
     "ravenbeakdealer": {
@@ -335,7 +335,7 @@
         "Give Small Bird Meat": ["+4% energy//+2 HP"],
         "Give Goose Beak": ["+3 Medicine: Healing Salve|imgmedicinehealingsalve;imgmedicinehealingsalve;imgmedicinehealingsalve"],
         "Give Eagle Beak": ["+1 Crocodile Leg|imgcrocodileleg"],
-        "Browse Wares": ["+(LVL*20) EXP","+1 Raven Traders: Raven Beak Dealer|imgravenbeakdealer"]
+        "Browse Wares": ["+(LVL*20) EXP","+1 Raven Traders: Raven Beak Dealer|imgraventradersravenbeakdealer"]
       }
     },
     "ravenhoofdealer": {
@@ -344,7 +344,7 @@
         "Give Goose Leg": ["+2 Sausage|imgsausage;imgsausage","+1 Cougar Pelt|imgcougarpelt"],
         "Give Large Hoof": ["+8% energy//+(LVL*40) EXP"],
         "Give Gnawing Hoof": ["+2 SC|imgsc//+4% energy//+2 Acorn|imgacorn;imgacorn//+10 HP//+10% hunger"],
-        "Browse Wares": ["+(LVL*20) EXP","+1 Raven Traders: Raven Hoof Dealer|imgravenhoofdealer"]
+        "Browse Wares": ["+(LVL*20) EXP","+1 Raven Traders: Raven Hoof Dealer|imgraventradersravenhoofdealer"]
       }
     },
     "ravenshelldealer": {
@@ -353,7 +353,7 @@
         "Give Turtle Shell": ["+10 HP//+(LVL*30) EXP"],
         "Give Tortoise Shell": ["+3 SC|imgsc//+5% energy//+20 HP//+50% hunger"],
         "Give Mollusk Shell": ["+1 Jacana Carcass|imgjacanacarcass"],
-        "Browse Wares": ["+(LVL*20) EXP","+1 Raven Traders: Raven Shell Dealer|imgravenshelldealer"]
+        "Browse Wares": ["+(LVL*20) EXP","+1 Raven Traders: Raven Shell Dealer|imgraventradersravenshelldealer"]
       }
     },
     "sinaloacrowmerchant": {
@@ -363,7 +363,7 @@
         "Give Boar Tusks": ["+1 Muskox Horns|imgmuskoxhorns"],
         "Give Odd Teeth": ["+1 SC|imgsc//+8% energy//+2 HP"],
         "Give Old Doll": ["+1 Blubber|imgblubber","+1 Medicine: Cure-For-All|imgmedicinecureforall"],
-        "Browse Wares": ["+(LVL*20) EXP","+1 Raven Traders: Sinaloa Crow Merchant|imgsinaloacrowmerchant"]
+        "Browse Wares": ["+(LVL*20) EXP","+1 Raven Traders: Sinaloa Crow Merchant|imgraventraderssinaloacrowmerchant"]
       }
     },
 
@@ -373,7 +373,7 @@
         "Tempt with Legendary Green Sturgeon": ["+1 Boar Pelt|imgboarpelt"],
         "Tempt with Quail Egg": ["+1 Lucky Foot|imgluckyfoot//-2 HP"],
         "Tempt with Medium Meat Chunk": ["+2 SC|imgsc//+5% energy//+4 HP"],
-        "Spread the Word": ["+5% energy","+1 Raven Traders: Eastern Crow Hawker|imgeasterncrowhawker"]
+        "Spread the Word": ["+5% energy","+1 Raven Traders: Eastern Crow Hawker|imgraventraderseasterncrowhawker"]
       }
     },
     "floridacrowhawker": {
@@ -382,7 +382,7 @@
         "Tempt with Legendary Baby Alligator": ["+1 Wolf Pelt [Black]|imgwolfpeltblack"],
         "Tempt with Small Bird Meat": ["+1 Lucky Foot|imgluckyfoot//-2 HP"],
         "Tempt with Jackrabbit Carcass": ["+2 SC|imgsc//+5% energy//+4 HP"],
-        "Spread the Word": ["+5% energy","+1 Raven Traders: Florida Crow Hawker|imgfloridacrowhawker"]
+        "Spread the Word": ["+5% energy","+1 Raven Traders: Florida Crow Hawker|imgraventradersfloridacrowhawker"]
       }
     },
     "northwesterncrowhawker": {
@@ -391,7 +391,7 @@
         "Tempt with Legendary Chinook Salmon": ["+1 Bobcat Pelt|imgbobcatpelt"],
         "Tempt with Dead Fish": ["+1 Lucky Foot|imgluckyfoot//-2 HP"],
         "Tempt with Small Meat Chunk": ["+2 SC|imgsc//+5% energy//+4 HP"],
-        "Spread the Word": ["+5% energy","+1 Raven Traders: Northwestern Crow Hawker|imgnorthwesterncrowhawker"]
+        "Spread the Word": ["+5% energy","+1 Raven Traders: Northwestern Crow Hawker|imgraventradersnorthwesterncrowhawker"]
       }
     },
     "southerncrowhawker": {
@@ -400,7 +400,7 @@
         "Tempt with Legendary Lake Sturgeon": ["+1 Pronghorn Pelt|imgpronghornpelt"],
         "Tempt with Small Doe Carcass": ["+2 SC|imgsc//+5% energy//+4 HP"],
         "Tempt with Hare Carcass": ["+1 Lucky Foot|imgluckyfoot"],
-        "Spread the Word": ["+5% energy","+1 Raven Traders: Southern Crow Hawker|imgsoutherncrowhawker"]
+        "Spread the Word": ["+5% energy","+1 Raven Traders: Southern Crow Hawker|imgraventraderssoutherncrowhawker"]
       }
     },
     "tamaulipascrowhawker": {
@@ -409,7 +409,7 @@
         "Tempt with Legendary Colorado Pikeminnow": ["+1 Fox Pelt [Swift]|imgfoxpeltswift"],
         "Tempt with Turkey Carcass": ["+2 SC|imgsc//+5% energy//+4 HP"],
         "Tempt with Delicate Meat": ["+1 Lucky Foot|imgluckyfoot"],
-        "Spread the Word": ["+5% energy","+1 Raven Traders: Tamaulipas Crow Hawker|imgtamaulipascrowhawker"]
+        "Spread the Word": ["+5% energy","+1 Raven Traders: Tamaulipas Crow Hawker|imgraventraderstamaulipascrowhawker"]
       }
     },
     "westerncrowhawker": {
@@ -418,10 +418,41 @@
         "Tempt with Legendary White Sturgeon": ["+1 Fox Pelt [Swift]|imgfoxpeltswift"],
         "Tempt with Rat Carcass": ["+1 Lucky Foot|imgluckyfoot//-2 HP"],
         "Tempt with Large Meat Chunk": ["+2 SC|imgsc//+5% energy//+4 HP"],
-        "Spread the Word": ["+5% energy","+1 Raven Traders: Western Crow Hawker|imgwesterncrowhawker"]
+        "Spread the Word": ["+5% energy","+1 Raven Traders: Western Crow Hawker|imgraventraderswesterncrowhawker"]
       }
     },
 
+    "barnowl": {
+      "intro": "A barn owl swoops overhead, clutching something in its talons. Maybe something tasty?",
+      "options": {
+        "Leap": ["+5-10% hunger","No reward"]
+      }
+    },
+    "beaver": {
+      "intro": "A beaver appears startled at your sudden appearance, it seems to be in the middle of collecting materials.",
+      "options": {
+        "Chase": ["+1 Beaver Carcass|imgbeavercarcass","No reward"],
+        "Growl": ["+1 Large Branch|imglargebranch","+1 random recipe from cave-building material pool*","+1 random recipe from rare jay pool**","No reward"]
+      },
+      "notes": [
+        "*@poolrecipecavebuildingmaterial",
+        "**@poolreciperarejay"
+      ]
+    },
+    "bluejay": {
+      "intro": "A blue jay is aggressively chasing and screaming at another bird - presumably one that got too close to its nest. In the chaos, you notice something fall to the ground in front of you.",
+      "options": {
+        "Offer Acorn": ["+1 Lucky Foot","+1 Recipe: @poolrecipeluckyfoot","+1 random uncommon amusement item*","+1 random recipe from acorn pool**","+1 random recipe from amusement pool***","+1 random recipe from jay pool****"],
+        "Take": ["+1 Blue Jay Feather|imgbluejayfeather","+1 Recipe: @poolrecipecommonjay","+1 random herb*****"]
+      },
+      "notes": [
+        "*@pooluncommonamusement",
+        "**@poolrecipeacorn",
+        "***@poolrecipeamusement",
+        "****@poolrecipecommonjay, @poolreciperarejay",
+        "*****@poolherbany"
+      ]
+    },
 
     "disturbeddirt": {
       "intro": "Hmm...the dirt has been displaced here, almost like someone was digging recently. Maybe something valuable is buried?",

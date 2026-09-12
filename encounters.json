@@ -13,6 +13,7 @@
     "imgbone": "https://grousehouse.wiki/images/items/amusement/bone.png",
     "imgbonedecor": "https://grousehouse.wiki/images/items/decorations/thumbnails/Bonedecor.png",
     "imgboneset": "https://grousehouse.wiki/images/items/herbs/boneset.png",
+    "imgbovinecarcass": "https://grousehouse.wiki/images/items/food/bovinecarcass.png",
     "imgbrownlongtail": "https://grousehouse.wiki/images/items/decorations/thumbnails/Brownlongtail.png",
     "imgbuffaloberry": "https://grousehouse.wiki/images/items/herbs/buffaloberry.png",
     "imgburningbush": "https://grousehouse.wiki/images/items/herbs/burningbush.png",
@@ -47,6 +48,7 @@
     "imglargerock": "https://grousehouse.wiki/images/items/other/largerock.png",
     "imgleftoverbones": "https://grousehouse.wiki/images/items/backgrounds/thumbnails/Leftoverbones.png",
     "imglemmingcarcass": "https://grousehouse.wiki/images/items/food/lemmingcarcass.png",
+    "imgluckyfoot": "https://grousehouse.wiki/images/items/other/luckyfoot.png",
     "imgmassivepinecone": "https://grousehouse.wiki/images/items/amusement/massivepinecone.png",
     "imgmeatchunkslarge": "https://grousehouse.wiki/images/items/food/meatchunkslarge.png",
     "imgmeatchunksmedium": "https://grousehouse.wiki/images/items/food/meatchunksmedium.png",
@@ -55,6 +57,7 @@
     "imgmolluskshell": "https://grousehouse.wiki/images/items/amusement/molluskshell.png",
     "imgmullein": "https://grousehouse.wiki/images/items/herbs/mullein.png",
     "imgmuskratcarcassdecor": "https://grousehouse.wiki/images/items/decorations/thumbnails/Muskratcarcassdecor.png",
+    "imgnestingmaterial": "https://grousehouse.wiki/images/items/specialuse/nestingmaterial.png",
     "imgoddteeth": "https://grousehouse.wiki/images/items/other/oddteeth.png",
     "imgoregano": "https://grousehouse.wiki/images/items/herbs/oregano.png",
     "imgowltalon": "https://grousehouse.wiki/images/items/amusement/owltalon.png",
@@ -69,6 +72,30 @@
     "imgrecipetrinket": "https://grousehouse.wiki/images/items/recipes/recipetrinket.png",
     "imgredwoodsorrel": "https://grousehouse.wiki/images/items/herbs/redwoodsorrel.png",
     "imgrustypickaxe": "https://grousehouse.wiki/images/items/amusement/rustypickaxe.png",
+    "imgscarabdomen": "https://grousehouse.wiki/images/items/decorations/thumbnails/Scarabdomen.png",
+    "imgscarcheekboneleft": "https://grousehouse.wiki/images/items/decorations/thumbnails/Scarcheekboneleft.png",
+    "imgscarcheekboneright": "https://grousehouse.wiki/images/items/decorations/thumbnails/Scarcheekboneright.png",
+    "imgscareyelongleft": "https://grousehouse.wiki/images/items/decorations/thumbnails/Scareyelongleft.png",
+    "imgscareyelongright": "https://grousehouse.wiki/images/items/decorations/thumbnails/Scareyelongright.png",
+    "imgscarearnotchleft": "https://grousehouse.wiki/images/items/decorations/thumbnails/Scarearnotchleft.png",
+    "imgscarearnotchright": "https://grousehouse.wiki/images/items/decorations/thumbnails/Scarearnotchright.png",
+    "imgscardorsalscratch": "https://grousehouse.wiki/images/items/decorations/thumbnails/Scardorsalscratch.png",
+    "imgscarhockleft": "https://grousehouse.wiki/images/items/decorations/thumbnails/Scarhockleft.png",
+    "imgscarhockright": "https://grousehouse.wiki/images/items/decorations/thumbnails/Scarhockright.png",
+    "imgscarscratchedback": "https://grousehouse.wiki/images/items/decorations/thumbnails/Scarscratchedback.png",
+    "imgscarscratchedshoulderleft": "https://grousehouse.wiki/images/items/decorations/thumbnails/Scarscratchedshoulderleft.png",
+    "imgscarscratchedshoulderright": "https://grousehouse.wiki/images/items/decorations/thumbnails/Scarscratchedshoulderright.png",
+    "imgscarscratchedhindlegleft": "https://grousehouse.wiki/images/items/decorations/thumbnails/Scarscratchedhindlegleft.png",
+    "imgscarscratchedhindlegright": "https://grousehouse.wiki/images/items/decorations/thumbnails/Scarscratchedhindlegright.png",
+    "imgscarsnout": "https://grousehouse.wiki/images/items/decorations/thumbnails/Scarsnout.png",
+    "imgscarstop": "https://grousehouse.wiki/images/items/decorations/thumbnails/Scarstop.png",
+    "imgscarthighswipeleft": "https://grousehouse.wiki/images/items/decorations/thumbnails/Scarthighswipeleft.png",
+    "imgscarthighswiperight": "https://grousehouse.wiki/images/items/decorations/thumbnails/Scarthighswiperight.png",
+    "imgscartricepsscratchleft": "https://grousehouse.wiki/images/items/decorations/thumbnails/Scartricepsscratchleft.png",
+    "imgscartricepsscratchright": "https://grousehouse.wiki/images/items/decorations/thumbnails/Scartricepsscratchright.png",
+    "imgscarwristleft": "https://grousehouse.wiki/images/items/decorations/thumbnails/Scarwristleft.png",
+    "imgscarwristright": "https://grousehouse.wiki/images/items/decorations/thumbnails/Scarwristright.png",
+    "imgscarthroat": "https://grousehouse.wiki/images/items/decorations/thumbnails/Scarthroat.png",
     "imgscatteredbones": "https://grousehouse.wiki/images/items/decorations/thumbnails/Scatteredbones.png",
     "imgskeletalremains": "https://grousehouse.wiki/images/items/decorations/thumbnails/Skeletalremains.png",
     "imgspoonwood": "https://grousehouse.wiki/images/items/herbs/spoonwood.png",
@@ -91,6 +118,7 @@
   "pools": {
     "poolbone": "Abandoned Den|imgrecipebackground;imgabandonedden, Bone Decor|imgrecipetrinket;imgbonedecor, Leftover Bones|imgrecipebackground;imgleftoverbones, Muskrat Carcass Decor|imgrecipetrinket;imgmuskratcarcassdecor, Rabbit Carcass Decor|imgrecipetrinket;imgrabbitcarcassdecor, Scattered Bones|imgrecipetrinket;imgscatteredbones, Skeletal Remains|imgrecipetrinket;imgskeletalremains, Squirrel Carcass Decor|imgrecipetrinket;imgsquirrelcarcassdecor",
     "poolcavebuildingmaterial": "Large Branch|imglargebranch, Large Leaf|imglargeleaf, Large Rock|imglargerock",
+    "poolfreshscar": "Scar: Abdomen|imgscarabdomen, Scar: Cheekbone [Left]|imgscarcheekboneleft, Scar: Cheekbone [Right]|imgscarcheekboneright, Scar: Eye - Long [Left]|imgscareyelongleft, Scar: Eye - Long [Right]|imgscareyelongright, Scar: Ear Notch [Left]|imgscarearnotchleft, Scar: Ear Notch [Right]|imgscarearnotchright, Scar: Dorsal Scratch|imgscardorsalscratch, Scar: Hock [Left]|imgscarhockleft, Scar: Hock [Right]|imgscarhockright, Scar: Scratched Back|imgscarscratchedback, Scar: Scratched Shoulder [Left]|imgscarscratchedshoulderleft, Scar: Scratched Shoulder [Right]|imgscarscratchedshoulderright, Scar: Scratched Hind Leg [Left]|imgscarscratchedhindlegleft, Scar: Scratched Hind Leg [Right]|imgscarscratchedhindlegright, Scar: Snout|imgscarsnout, Scar: Stop|imgscarstop, Scar: Thigh Swipe [Left]|imgscarthighswipeleft, Scar: Thigh Swipe [Right]|imgscarthighswiperight, Scar: Triceps Scratch [Left]|imgscartricepsscratchleft, Scar: Triceps Scratch [Right]|imgscartricepsscratchright, Scar: Wrist [Left]|imgscarwristleft, Scar: Wrist [Right]|imgscarwristright, Scar: Throat|imgscarthroat",
     "poolherbconiferousforest": "Arnica|imgarnica, Bearberry|imgbearberry, Boneset|imgboneset, Buffaloberry|imgbuffaloberry, Burning Bush|imgburningbush, Carrionflower|imgcarrionflower, Cedar Bark|imgcedarbark, Charcoal|imgcharcoal, Dandelion|imgdandelion, Feverfew|imgfeverfew, Garlic|imggarlic, Ginger|imgginger, Goldenseal|imggoldenseal, Mullein|imgmullein, Redwood Sorrel|imgredwoodsorrel, Spoonwood|imgspoonwood, St. John's Wort|imgstjohnswort, Tansy|imgtansy, Yarrow|imgyarrow",
     "poolherbdeciduousforest": "Arnica|imgarnica, Bearberry|imgbearberry, Boneset|imgboneset, Burning Bush|imgburningbush, Carrionflower|imgcarrionflower, Cedar Bark|imgcedarbark, Charcoal|imgcharcoal, Dandelion|imgdandelion, Feverfew|imgfeverfew, Garlic|imggarlic, Ginger|imgginger, Goldenseal|imggoldenseal, Mullein|imgmullein, Spoonwood|imgspoonwood, St. John's Wort|imgstjohnswort, Tansy|imgtansy, Yarrow|imgyarrow",
     "poolherbdesert": "Aloe|imgaloe, Arnica|imgarnica, Cedar Bark|imgcedarbark, Chaparral|imgchaparral, Charcoal|imgcharcoal, Dandelion|imgdandelion, Mullein|imgmullein, Oregano|imgoregano, Tansy|imgtansy, Tobacco|imgtobacco, Winterfat|imgwinterfat, Yarrow|imgyarrow",
@@ -114,24 +142,7 @@
       "options": {
         "Dig around": ["+1 MT|imgmt","No reward"],
         "Carefully scrape away the dirt": ["+1 Unidentified Fossil|imgunidentifiedfossil","No reward"]
-      },
-      "location": {
-        "/biome/1": ["@poolherbgrasslands"],
-        "/biome/2": ["@poolherbdeciduousforest"],
-        "/biome/3": ["@poolherbmountains"],
-        "/biome/4": ["@poolherbriparianwoodland"],
-        "/biome/5": ["@poolherbdesert"],
-        "/biome/6": ["@poolherbprairie"],
-        "/biome/7": ["@poolherbswamp"],
-        "/biome/8": ["@poolherbrainforest"],
-        "/biome/9": ["@poolherbconiferousforest"],
-        "/biome/10": ["@poolherbtaiga"],
-        "/biome/11": ["@poolherbtundra"],
-        "/biome/12": ["@poolherbglacier"]
-      },
-      "notes": [
-        "*@location1"
-      ]
+      }
     },
     "nearbycreeksound": {
       "intro": "The familiar sound of a creek bubbling in the distance draws your pawsteps in that direction. It would be a nice spot to take a breather.",
@@ -311,10 +322,10 @@
         "Follow the delicious scent": ["+5-10% hunger"],
         "Follow the rancid scent": ["+1 Meat Chunks [Large]|imgmeatchunkslarge","+1 Meat Chunks [Medium]|imgmeatchunksmedium","+1 Meat Chunks [Small]|imgmeatchunkssmall"],
         "Follow the bitter scent": ["+1 Bone|imgbone","+1 Large Branch|imglargebranch","+1 Large Leaf|imglargeleaf","+1 Large Rock|imglargerock"],
-        "Follow the sweet scent": ["Automatic befriending encounter with a wolf","No reward*"]
+        "Follow the sweet scent": ["Initiates claiming a New Befriended Wolf","No reward*"]
       },
       "conditional": {
-        "Follow the sweet scent": "*Befriending is not available if your territory is full"
+        "Follow the sweet scent": "*Befriending is not available if your territory is full."
       }
     },
     "fillerbirdrest": {
@@ -337,7 +348,7 @@
     "fillercritters": {
       "intro": "You see some small critters running desperately in the opposite direction.",
       "options": {
-        "Keep Moving Forward": ["Automatic battle with level (LVL+5) enemy @location1*"],
+        "Keep Moving Forward": ["Automatic battle with level (LVL+5) local enemy @location1*"],
         "Turn Back": ["+1 random single-use food item**"]
       },
       "location": {
@@ -438,11 +449,11 @@
     "befriendablewolf": {
       "intro": "A figure appears up ahead of you, you raise your nose to the air and sniff.. another wolf!",
       "options": {
-        "Attack": ["Automatic battle with local enemy Wolf*"],
+        "Attack": ["Automatic battle with local enemy @location1*"],
         "Befriend": ["Initiates claiming a New Befriended Wolf"]
       },
       "location": {
-        "/biome/1": ["Local enemy in Grasslands: Eastern Wolf"],
+        "/biome/1": ["Eastern Wolf"],
         "/biome/2": ["Timber Wolf"],
         "/biome/3": ["Timber Wolf"],
         "/biome/4": ["Eastern Wolf"],
@@ -459,14 +470,52 @@
         "*@location1"
       ]
     },
+    "egg": {
+      "intro": "You stop in your tracks - a very vulgar wolf is passing by, vandalizing the bird nests in the vicinity. Oh no, the eggs!",
+      "options": {
+        "Clean Up": ["+2 Nesting Material|imgnestingmaterial;imgnestingmaterial","+1 random common egg*"],
+        "Intervene": ["+1 Lucky Foot|imgluckyfoot"]
+      },
+      "notes": [
+        "*Chicken Egg|imgchickenegg, Duck Egg|imgduckegg, Quail Egg|imgquailegg, Turkey Egg|imgturkeyegg"
+      ]
+    },
     "tala": {
       "intro": "Oh no! It's Tala! She seems to be taunting you for a little payback after the last fight. Are you brave enough to wrestle her?",
       "options": {
         "Attack!": ["Automatic battle with enemy Wandering Tala"]
-      },
-      "notes": [
-        "Wandering Tala is a rare enemy with a level range of 15-20."
-      ]
+      }
+    },
+
+    "deadcow": {
+      "intro": "A familiar scent reaches your nose before you can see its source. You see a large, dead cow. It's still very fresh and looks as if it only died moments ago.",
+      "options": {
+        "Take it": ["+1 Bovine Carcass|imgbovinecarcass"]
+      }
+    },
+    "cougarmom": {
+      "intro": "You stopped in mid-step upon noticing a large cougar on your path. And it wasn't alone. A young cub was attempting to keep pace with its mother as fast as it could with its short legs and still a bit wobbly movement. It’s a cute scenery but the cougar doesn't appear particularly thrilled by your presence.",
+      "options": {
+        "What a cute kid!": ["+1 random fresh scar*//-4 HP"]
+      }
+    },
+    "aggressivegoldeneagle": {
+      "intro": "A peculiar sound caught your attention. You rarely hear something like this and your curiosity is stronger than your common sense. What you stumbled upon is no ordinary eagle's nest. While you've encountered them in the past, they are usually empty. However, this time is different – you spotted the white fluff of eagle chicks, checking you from the distance.",
+      "options": {
+        "Sniff": ["+1 random fresh scar*//-4 HP"]
+      }
+    },
+    "faultysteelwolftrap": {
+      "intro": "Suddenly, an intense pain spreads throughout your body, something feels as if it grabbed your leg suddenly, but you can pull it out gently. One of your legs was scraped by something metallic!",
+      "options": {
+        "Check it out": ["+1 random fresh scar*//-4 HP"]
+      }
+    },
+    "swarmingrats": {
+      "intro": "Individually, a single rat may make for a satisfying snack, but a bunch of them can turn into a feast no worse than much larger prey. The way they try to escape triggers your hunter instincts even more.",
+      "options": {
+        "Catch some!": ["+1 random fresh scar*//-4 HP"]
+      }
     }
 
 

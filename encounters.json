@@ -527,6 +527,47 @@
         "Investigate [Winter]": "*@poolcommonfeather"
       }
     },
+    "raven": {
+      "intro": "A raven swoops down over your head and seems to be trying to get your attention.",
+      "options": {
+        "Follow": ["+1 Acorn|imgacorn","+1 Bone|imgbone","+1 random item from raven feather pool*","+1 random critter carcass**","+1 random herb***","+1 random recipe from amusement pool****","+1 random recipe from rare jay pool*****","4-6 SC|imgsc|(<5000 SC)","1-2 SC|imgsc|(>5000 SC)","No reward"]
+      },
+      "notes": [
+        "*@poolravenfeather",
+        "**@poolcrittercarcass",
+        "***@poolherbany",
+        "****@poolrecipeamusement",
+        "*****@poolreciperarejay"
+      ]
+    },
+    "redsquirrel": {
+      "intro": "A red squirrel is perched on a branch, clasping what looks like a pinecone in its paws. It would be a shame if it dropped it...",
+      "options": {
+        "Offer Acorn": ["+2-3 SC|imgsc","+1 random recipe from acorn pool*"],
+        "Bark": ["2-3 SC|imgsc","No reward"]
+      },
+      "notes": [
+        "*@poolrecipeacorn"
+      ]
+    },
+    "southernflyingsquirrel": {
+      "intro": "You notice a small critter flying through the air.. what on earth? You take a closer look - seems to be a Southern Flying Squirrel!",
+      "options": {
+        "Watch": ["+1 Acorn|imgacorn","+7% hunger"]
+      }
+    },
+    "stripedskunk": {
+      "intro": "This looks like an interesting, perhaps tasty creature... On second thought, it smells bad. Very very bad. Rancid, even. Time to run away!",
+      "options": {
+        "Hold Your Breath": ["+2-4 SC|imgsc","No reward"]
+      }
+    },
+    "wildturkey": {
+      "intro": "This tom turkey is strutting and making drumming noises. Perhaps there are some females nearby he is trying to impress.",
+      "options": {
+        "Stalk": ["+1 Turkey Tom Carcass|imgturkeytomcarcass","-2 HP","No reward"]
+      }
+    },
 
 
     "disturbeddirt": {

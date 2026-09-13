@@ -511,7 +511,7 @@
     "raccoon": {
       "intro": "This angry Raccoon seems to be guarding something. Hmmm...",
       "options": {
-        "Investigate": {
+        "Investigate [Spring]": {
           "steps": ["Eat the kits","Rummage in stores"]
         },
         "Investigate [Summer]": ["Acorn|imgacorn","Chicken Egg|imgchickenegg","Duck Egg|imgduckegg","Quail Carcass|imgquailcarcass","Quail Egg|imgquailegg"],

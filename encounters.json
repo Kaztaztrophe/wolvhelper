@@ -442,7 +442,7 @@
     "bluejay": {
       "intro": "A blue jay is aggressively chasing and screaming at another bird - presumably one that got too close to its nest. In the chaos, you notice something fall to the ground in front of you.",
       "options": {
-        "Offer Acorn": ["+1 Lucky Foot","+1 Recipe: @poolrecipeluckyfoot","+1 random uncommon amusement item*","+1 random recipe from acorn pool**","+1 random recipe from amusement pool***","+1 random recipe from jay pool****"],
+        "Offer Acorn": ["+1 Lucky Foot|imgluckyfoot","+1 Recipe: @poolrecipeluckyfoot","+1 random uncommon amusement item*","+1 random recipe from acorn pool**","+1 random recipe from amusement pool***","+1 random recipe from jay pool****"],
         "Take": ["+1 Blue Jay Feather|imgbluejayfeather","+1 Recipe: @poolrecipecommonjay","+1 random herb*****"]
       },
       "notes": [
@@ -453,6 +453,81 @@
         "*****@poolherbany"
       ]
     },
+    "cottontail": {
+      "intro": "A small fluffy bunny sits alert in the grass.",
+      "options": {
+        "Stalk": ["+1 Rabbit Carcass//+1 Lucky Foot|imgrabbitcarcass;imgluckyfoot","+1 Rabbit Carcass|imgrabbitcarcass//+1 Recipe: @poolrecipeluckyfoot","+1 Wisdom stat","No reward"],
+        "Chase": ["+1 Rabbit Carcass//+1 Lucky Foot|imgrabbitcarcass;imgluckyfoot","+1 Rabbit Carcass|imgrabbitcarcass//+1 Recipe: @poolrecipeluckyfoot","+1 Speed stat","No reward"]
+      }
+    },
+    "easternchipmunk": {
+      "intro": "An eastern chipmunk is perched upon the tree trunk, gingerly washing itself. As it notices you it leaps from the trunk and scurries off.",
+      "options": {
+        "Follow": ["+1 Acorn|imgacorn","No reward"],
+        "Sniff Around": ["+1 Spicebush Swallowtail|imgspicebushswallowtail","No reward"]
+      }
+    },
+    "gartersnake": {
+      "intro": "This charming little snake slithers around in the grass and over the top of a large rock to peek from higher ground. It seems to be looking for something.",
+      "options": {
+        "What's That?": ["+1 item for active snake quest","No reward*"]
+      },
+      "notes": [
+        "*Unless you have an active item quest with the questing snake, this option will always have no reward."
+      ]
+    },
+    "leastweasel": {
+      "intro": "You spot this small least weasel standing on a rock. How cute!",
+      "options": {
+        "Play": ["+10% energy"]
+      }
+    },
+    "ninebandedarmadillo": {
+      "intro": "A small Nine-Banded Armadillo sits cleaning itself before turning and trotting off.",
+      "options": {
+        "Follow": ["+1 random common egg*"],
+        "Chase": ["+4% hunger","-1 HP"]
+      },
+      "notes": [
+        "*@poolcommonegg"
+      ]
+    },
+    "opossum": {
+      "intro": "You spot an opossum on a tree branch above. It watches you closely, wary.",
+      "options": {
+        "Meanly Offer Acorn": ["+1 random recipe from acorn pool*"],
+        "Kindly Offer Acorn": ["+1 random recipe from acorn pool*"]
+      },
+      "notes": [
+        "*@poolrecipeacorn"
+      ]
+    },
+    "peregrinefalcon": {
+      "intro": "A Peregrine Falcon soars overhead, it's impossibly fast, you almost don't notice it. You watch as something drops from it.",
+      "options": {
+        "Catch": ["+1 Peregrine Falcon Feather|imgperegrinefalconfeather","+5% hunger"]
+      }
+    },
+    "raccoon": {
+      "intro": "This angry Raccoon seems to be guarding something. Hmmm...",
+      "options": {
+        "Investigate": {
+          "steps": ["Eat the kits","Rummage in stores"]
+        },
+        "Investigate [Summer]": ["Acorn|imgacorn","Chicken Egg|imgchickenegg","Duck Egg|imgduckegg","Quail Carcass|imgquailcarcass","Quail Egg|imgquailegg"],
+        "Investigate [Autumn]": ["+3-4 SC|imgsc|(<5000 SC)","No reward (>5000 SC)"],
+        "Investigate [Winter]": ["+1 Acorn|imgacorn","+1 Large Branch|imglargebranch","+1 Large Leaf|imglargeleaf","+1 Large Rock|imglargerock","+1 random common feather item*"]
+      },
+      "steps": {
+        "Eat the kits": ["+10% hunger"],
+        "Rummage in stores": ["+10% hunger"]
+      },
+      "conditional": {
+        "Eat the kits": "This is a testing note.",
+        "Investigate [Winter]": "*@poolcommonfeather"
+      }
+    },
+
 
     "disturbeddirt": {
       "intro": "Hmm...the dirt has been displaced here, almost like someone was digging recently. Maybe something valuable is buried?",

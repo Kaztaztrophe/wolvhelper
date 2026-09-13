@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        Wolvhelper: Explore Encounters
-// @namespace   https://github.com/Kaztaztrophe/Wolvhelper/
-// @version     1.4.1
+// @namespace   https://github.com/Kaztaztrophe/Wolvhelper
+// @version     1.4.2
 // @author      Kaztaztrophe
 // @description Wolvden explore encounter helper which displays results
 // @match       https://www.wolvden.com/*
@@ -16,7 +16,6 @@
 (function () {
 	'use strict';
 
-	// Script settings and variables
 	const ENCOUNTERS_URL = 'https://raw.githubusercontent.com/Kaztaztrophe/Wolvhelper/main/encounters.json';
 	const IMAGES_URL = 'https://raw.githubusercontent.com/Kaztaztrophe/Wolvhelper/main/images.json';
 	const POOLS_URL = 'https://raw.githubusercontent.com/Kaztaztrophe/Wolvhelper/main/pools.json';
@@ -27,75 +26,47 @@
 	const LINE_HEIGHT = '25px';
 	const WAIT_TIMEOUT = 5000;
 
-	// Import database and pre-build
 	let encounterDatabase = null;
 	let encounterIdLookup = [];
 
-	// Load encounter database
 	async function loadDatabase() {
 		try {
-			const [
-				encountersResponse,
-				imagesResponse,
-				poolsResponse
-			] = await Promise.all([
+			const [encountersResponse, imagesResponse, poolsResponse] = await Promise.all([
 				fetch(ENCOUNTERS_URL),
 				fetch(IMAGES_URL),
 				fetch(POOLS_URL)
 			]);
 
 			if (!encountersResponse.ok) {
-				throw new Error(
-					`Failed to load encounters.json: HTTP ${encountersResponse.status}`
-				);
+				throw new Error(`[Wolvhelper] Failed to load encounters.json: HTTP ${encountersResponse.status}`);
 			}
-
 			if (!imagesResponse.ok) {
-				throw new Error(
-					`Failed to load images.json: HTTP ${imagesResponse.status}`
-				);
+				throw new Error(`[Wolvhelper] Failed to load images.json: HTTP ${imagesResponse.status}`);
 			}
-
 			if (!poolsResponse.ok) {
-				throw new Error(
-					`Failed to load pools.json: HTTP ${poolsResponse.status}`
-				);
+				throw new Error(`[Wolvhelper] Failed to load pools.json: HTTP ${poolsResponse.status}`);
 			}
 
 			encounterDatabase = await encountersResponse.json();
 			encounterDatabase.images = await imagesResponse.json();
 			encounterDatabase.pools = await poolsResponse.json();
 
-			if (
-				!encounterDatabase.encounters || typeof encounterDatabase.encounters !== 'object'
-			) {
-				throw new Error('Database is missing "encounters"');
+			if (!encounterDatabase.encounters || typeof encounterDatabase.encounters !== 'object') {
+				throw new Error('[Wolvhelper] Database is missing "encounters"');
+			}
+			if (!encounterDatabase.images || typeof encounterDatabase.images !== 'object') {
+				throw new Error('[Wolvhelper] Images database is invalid');
+			}
+			if (!encounterDatabase.pools || typeof encounterDatabase.pools !== 'object') {
+				throw new Error('[Wolvhelper] Pools database is invalid');
 			}
 
-			if (
-				!encounterDatabase.images || typeof encounterDatabase.images !== 'object'
-			) {
-				throw new Error('Images database is invalid');
-			}
-
-			if (
-				!encounterDatabase.pools || typeof encounterDatabase.pools !== 'object'
-			) {
-				throw new Error('Pools database is invalid');
-			}
-
-			// Build the encounter lookup
-			encounterIdLookup =
-				Object.keys(encounterDatabase.encounters)
-					.map(id => ({
-						id: id,
-						normalized: id.toLowerCase()
-					}))
-					.sort(
-						(a, b) =>
-							b.normalized.length -
-							a.normalized.length
-					);
+			encounterIdLookup = Object.keys(encounterDatabase.encounters)
+				.map(id => ({
+					id: id,
+					normalized: id.toLowerCase()
+				}))
+				.sort((a, b) => b.normalized.length - a.normalized.length);
 
 			updateExploreOutput();
 
@@ -104,22 +75,60 @@
 		}
 	}
 
-	// Normalize the text
 	function normalizeText(text) {
     return text
-      .toLowerCase()
-      .replace(/\*/g, '')
-      .replace(/\s+/g, ' ')
-      .trim()
-      .replace(/[!?.,:]+$/, '');
+			.toLowerCase()
+			.replace(/\*/g, '')
+			.replace(/\s+/g, ' ')
+			.trim()
+			.replace(/[!?.,:]+$/, '');
 	}
 
-	// Get current wolf level from sidebar
+	function isStepOption(optionValue) {
+		return (optionValue && typeof optionValue === 'object' && !Array.isArray(optionValue) && Array.isArray(optionValue.steps));
+	}
+
+	function getCurrentSeason() {
+		const seasonIcon = document.querySelector('img.seasonIcon[data-original-title], img.seasonIcon[title]');
+
+		if (!seasonIcon) {
+			return null;
+		}
+
+		const season = seasonIcon.getAttribute('data-original-title') || seasonIcon.getAttribute('title');
+
+		if (!season) {
+			return null;
+		}
+
+		return season.trim().toLowerCase();
+	}
+
+	function matchOptionName(buttonText, optionName) {
+		const seasonalMatch = optionName.match(/\s*\[(spring|summer|autumn|winter)\]$/i);
+
+		if (seasonalMatch) {
+			const optionSeason = seasonalMatch[1].toLowerCase();
+			const currentSeason = getCurrentSeason();
+
+			if (!currentSeason || currentSeason !== optionSeason) {
+				return false;
+			}
+
+			optionName = optionName
+				.slice(0, seasonalMatch.index)
+				.trim();
+		}
+
+		const normalizedButton = normalizeText(buttonText);
+		const normalizedOption = normalizeText(optionName);
+
+		return (normalizedButton === normalizedOption || normalizedButton.startsWith(normalizedOption + ' '));
+	}
+
 	function getPlayerLevel() {
 		const levelElement = [...document.querySelectorAll('.card-body b')]
-			.find(element =>
-				element.parentElement?.textContent.includes('Level')
-			);
+			.find(element => element.parentElement?.textContent.includes('Level'));
 
 		if (!levelElement) {
 			return null;
@@ -130,7 +139,6 @@
 		return Number.isFinite(level) ? level : null;
 	}
 
-	// Resolve LVL expressions
 	function resolveLevelExpressions(text) {
 		const level = getPlayerLevel();
 
@@ -138,25 +146,21 @@
 			return text;
 		}
 
-		return text.replace(
-			/\(LVL\s*([+*])\s*(\d+)\)/gi,
-			(match, operator, number) => {
-				const value = Number(number);
+		return text.replace(/\(LVL\s*([+*])\s*(\d+)\)/gi, (match, operator, number) => {
+			const value = Number(number);
 
-				if (operator === '+') {
-					return String(level + value);
-				}
-
-				if (operator === '*') {
-					return String(level * value);
-				}
-
-				return match;
+			if (operator === '+') {
+				return String(level + value);
 			}
-		);
+
+			if (operator === '*') {
+				return String(level * value);
+			}
+
+			return match;
+		});
 	}
 
-	// Get location-specific values for the current page
 	function getLocationValues(location) {
 		if (!location || typeof location !== 'object') {
 			return [];
@@ -165,25 +169,16 @@
 		const currentPath = window.location.pathname.replace(/\/+$/, '');
 
 		for (const [locationPath, value] of Object.entries(location)) {
-			const normalizedLocationPath =
-				String(locationPath).replace(/\/+$/, '');
+			const normalizedLocationPath = String(locationPath).replace(/\/+$/, '');
 
-			if (
-				currentPath === normalizedLocationPath ||
-				currentPath.startsWith(normalizedLocationPath + '/')
-			) {
-				return Array.isArray(value)
-					? value
-					: value
-						? [value]
-						: [];
+			if (currentPath === normalizedLocationPath || currentPath.startsWith(normalizedLocationPath + '/')) {
+				return Array.isArray(value) ? value : value ? [value] : [];
 			}
 		}
 
 		return [];
 	}
 
-	// Resolve location, pool, and note references
 	function resolveReferences(text, location) {
 		const locationValues = getLocationValues(location);
 
@@ -192,11 +187,8 @@
 		do {
 			previousText = text;
 
-			text = text.replace(
-				/(\**)\@([a-zA-Z0-9_]+)/g,
-				(match, prefix, key) => {
+			text = text.replace(/(\**)\@([a-zA-Z0-9_]+)/g, (match, prefix, key) => {
 
-					// Individual location references
 					const locationMatch = key.match(/^location(\d+)$/);
 
 					if (locationMatch) {
@@ -209,12 +201,10 @@
 						return match;
 					}
 
-					// Pool references
 					if (encounterDatabase.pools?.[key]) {
 						return prefix + encounterDatabase.pools[key];
 					}
 
-					// Normal note references
 					if (encounterDatabase.notes?.[key]) {
 						return prefix + encounterDatabase.notes[key];
 					}
@@ -228,7 +218,6 @@
 		return text;
 	}
 
-	// Find encounter ID from data-action button
 	function findEncounterIdFromAction(action) {
     if (!action || encounterIdLookup.length === 0) {
       return null;
@@ -238,12 +227,10 @@
 
     for (const entry of encounterIdLookup) {
 
-      // Standard encounters
       if (normalizedAction.includes(entry.normalized)) {
         return entry.id;
       }
 
-      // Filler encounters
       if (entry.normalized.startsWith('filler')) {
         const fillerActionName = 'filler_' + entry.normalized.slice(6);
 
@@ -262,6 +249,7 @@
 		for (const button of buttons) {
 			const action = button.dataset.action;
 			const id = findEncounterIdFromAction(action);
+
 			if (id && encounterDatabase.encounters[id]) {
 				return {
 					id: id,
@@ -273,7 +261,6 @@
 		return null;
 	}
 
-	// Fallback: Find encounter ID from explore foreground image
 	function findEncounterByImage(output) {
 		const foreground = output.querySelector('#explore-foreground');
 
@@ -287,10 +274,7 @@
 			return null;
 		}
 
-		// Extract filename from background-image URL
-		const match = backgroundImage.match(
-			/\/([^\/?#]+)\.(?:png|jpg|jpeg|webp)(?:[?#].*)?$/i
-		);
+		const match = backgroundImage.match(/\/([^\/?#]+)\.(?:png|jpg|jpeg|webp)(?:[?#].*)?$/i);
 
 		if (!match) {
 			return null;
@@ -298,21 +282,12 @@
 
 		let filename = match[1].toLowerCase();
 
-		// Remove underscores and hyphens
 		filename = filename.replace(/[_-]/g, '');
 
-		// Remove season and time of day suffixes
-		filename = filename.replace(
-			/(?:spring|summer|autumn|winter)?(?:day|dawn|dusk|night)$/i,
-			''
-		);
-		// Remove additional suffixes
-		filename = filename.replace(
-			/(?:spring|summer|autumn|winter)$/i,
-			''
-		);
+		filename = filename.replace(/(?:spring|summer|autumn|winter)?(?:day|dawn|dusk|night)$/i, '');
 
-		// Try the longest database IDs first.
+		filename = filename.replace(/(?:spring|summer|autumn|winter)$/i, '');
+
 		for (const entry of encounterIdLookup) {
 			if (filename.includes(entry.normalized)) {
 				return {
@@ -325,7 +300,6 @@
 		return null;
 	}
 
-	// Fallback: Find encounter ID by intro text
 	function findEncounterByIntro(output) {
 		const paragraphs = output.querySelectorAll('p');
 
@@ -351,46 +325,32 @@
 		return null;
 	}
 
-	// Find current encounter
 	function findCurrentEncounter(output) {
-		// Fast check using data-action button
 		const byButton = findEncounterByButton(output);
 
 		if (byButton) {
 			return byButton;
 		}
 
-		// Fallback: Check using encounter image
 		const byImage = findEncounterByImage(output);
 
 		if (byImage) {
 			return byImage;
 		}
 
-		// Fallback: Check using intro text
 		return findEncounterByIntro(output);
 	}
 
-	// Parse single results
 	function parseSingleReward(value, location) {
-		// Resolve LVL expressions first
 		let resolvedValue = resolveLevelExpressions(value);
 
-		// Resolve all references, including nested pool references
 		resolvedValue = resolveReferences(resolvedValue, location);
 
-		// Now split the fully resolved value
 		const parts = resolvedValue.split('|');
 
 		const result = parts[0].trim();
 
-		const images =
-			parts[1]
-				? parts[1]
-					.split(';')
-					.map(x => x.trim())
-					.filter(Boolean)
-				: [];
+		const images = parts[1] ? parts[1].split(';').map(x => x.trim()).filter(Boolean) : [];
 
 		const afterText = parts.slice(2).join('|').trim();
 
@@ -401,29 +361,22 @@
 		};
 	}
 
-	// Parse compound results
 	function parseCompoundResult(value, location) {
 		return value
 			.split('//')
 			.map(part => part.trim())
 			.filter(Boolean)
-			.map(part =>
-				parseSingleReward(part, location)
-			);
+			.map(part => parseSingleReward(part, location));
 	}
 
-	// Parse possible results
 	function parseResult(value, location) {
 		if (Array.isArray(value)) {
-			return value.map(outcome =>
-				parseCompoundResult(outcome, location)
-			);
+			return value.map(outcome => parseCompoundResult(outcome, location));
 		}
 
 		return [parseCompoundResult(value, location)];
 	}
 
-	// Reward images
 	function createRewardImage(imageName) {
     const imageUrl = encounterDatabase.images[imageName];
 
@@ -445,7 +398,6 @@
     return img;
 	}
 
-	// Parse all results for an option
 	function createResultElement(rewards) {
 		const container = document.createElement('span');
 
@@ -454,7 +406,6 @@
 				container.appendChild(document.createTextNode(' & '));
 			}
 
-			// Reward text
 			if (normalizeText(reward.result) === 'no reward') {
 				const noReward = document.createElement('i');
 				noReward.textContent = reward.result;
@@ -463,12 +414,11 @@
 				container.appendChild(document.createTextNode(reward.result));
 			}
 
-			// Reward image
 			for (const [imageIndex, imageName] of reward.images.entries()) {
 				const img = createRewardImage(imageName);
 
 				if (img) {
-					// Space between reward text and first image only
+
 					if (imageIndex === 0) {
 						container.appendChild(document.createTextNode(' '));
 					}
@@ -476,66 +426,103 @@
 				}
 			}
 
-			// Text after images
 			if (reward.afterText) {
-				container.appendChild(
-					document.createTextNode(' ' + reward.afterText)
-				);
+				container.appendChild(document.createTextNode(' ' + reward.afterText));
 			}
-			});
+		});
 
 		return container;
 	}
 
-	// Create result line
+	function createStepPreviewLine(buttonText, steps) {
+		const line = document.createElement('div');
+		line.style.lineHeight = LINE_HEIGHT;
+		line.style.textAlign = 'left';
+
+		const label = document.createElement('b');
+		label.textContent = buttonText + ': ';
+
+		line.appendChild(label);
+
+		steps.forEach((step, index) => {
+			if (index > 0) {
+				const separator = document.createElement('span');
+				separator.textContent = 'or';
+				separator.style.marginLeft = '4px';
+				separator.style.marginRight = '4px';
+
+				line.appendChild(separator);
+			}
+
+			const stepLabel = document.createElement('b');
+			stepLabel.textContent = step;
+
+			line.appendChild(stepLabel);
+		});
+
+		return line;
+	}
+
+	function createStepResultLines(encounter, stepNames) {
+		const resultLines = [];
+
+		for (const stepName of stepNames) {
+			const stepValue = encounter.data.steps?.[stepName];
+
+			if (stepValue === undefined) {
+				continue;
+			}
+
+			const outcomes = parseResult(stepValue, encounter.data.location);
+
+			resultLines.push(createResultLine(stepName, outcomes));
+		}
+
+		return resultLines;
+	}
+
 	function createResultLine(buttonText, outcomes) {
 		const line = document.createElement('div');
 		line.style.lineHeight = LINE_HEIGHT;
 		line.style.textAlign = 'left';
 
-		// Button name
 		const label = document.createElement('b');
 
 		label.textContent = buttonText + ': ';
 
 		line.appendChild(label);
 
-		// Result outcomes
 		outcomes.forEach((outcome, index) => {
 
-				// Combine separator with result
-				const resultWrapper = document.createElement('span');
-				resultWrapper.style.display = 'inline-block';
-				resultWrapper.style.whiteSpace = 'nowrap';
+			const resultWrapper = document.createElement('span');
+			resultWrapper.style.display = 'inline-block';
+			resultWrapper.style.whiteSpace = 'nowrap';
 
-				// Add OR before result outcome
-				if (index > 0) {
-					const separator = document.createElement('span');
-					separator.textContent = 'OR';
-					separator.style.fontWeight = 'bold';
-					separator.style.marginLeft = '4px';
-					separator.style.marginRight = '4px';
+			if (index > 0) {
+				const separator = document.createElement('span');
+				separator.textContent = 'OR';
+				separator.style.fontWeight = 'bold';
+				separator.style.marginLeft = '4px';
+				separator.style.marginRight = '4px';
 
-					resultWrapper.appendChild(separator);
-				}
-
-				resultWrapper.appendChild(createResultElement(outcome));
-
-				line.appendChild(resultWrapper);
+				resultWrapper.appendChild(separator);
 			}
-		);
+
+			resultWrapper.appendChild(createResultElement(outcome));
+
+			line.appendChild(resultWrapper);
+		});
 
 		return line;
 	}
 
-  // Format note text
 	function appendFormattedText(container, text) {
 		const regex = /'''([^']+)'''|''([^']+)''/g;
 		let lastIndex = 0;
 		let match;
 
 		while ((match = regex.exec(text)) !== null) {
-			// Add normal text before the formatted section
+
 			if (match.index > lastIndex) {
 				container.appendChild(
 					document.createTextNode(
@@ -561,37 +548,29 @@
 			lastIndex = regex.lastIndex;
 		}
 
-		// Add remaining normal text
 		if (lastIndex < text.length) {
-			container.appendChild(
-				document.createTextNode(
-					text.slice(lastIndex)
-				)
-			);
+			container.appendChild(document.createTextNode(text.slice(lastIndex)));
 		}
 	}
 
-	// Create notes section
 	function createNotesElement(notes, conditional, location, buttons) {
 		if (!notes && !conditional && !location) {
 			return null;
 		}
 
-		const noteList = Array.isArray(notes)
-			? [...notes]
-			: notes
-				? [notes]
-				: [];
+		const noteList = Array.isArray(notes) ? [...notes] : notes ? [notes] : [];
 
-		// Add conditional notes only when their button is present
 		if (conditional && buttons) {
 			for (const [buttonName, note] of Object.entries(conditional)) {
-				const buttonExists = [...buttons].some(button =>
-					normalizeText(button.textContent) === normalizeText(buttonName) ||
-					normalizeText(button.textContent).startsWith(
-						normalizeText(buttonName) + ' '
-					)
-				);
+
+				const normalizedButtonName = normalizeText(buttonName);
+
+				const buttonExists = [...buttons].some(button => {
+
+					const normalizedButton = normalizeText(button.textContent);
+
+					return (normalizedButton === normalizedButtonName || normalizedButton.startsWith(normalizedButtonName + ' '));
+				});
 
 				if (buttonExists && note) {
 					noteList.push(note);
@@ -618,7 +597,7 @@
 
 			noteText = resolveReferences(noteText, location);
 
-			const parts = noteText.split(/,\s*/);
+			const parts = noteText.split(',');
 
 			for (let i = 0; i < parts.length; i++) {
 				const part = parts[i].trim();
@@ -632,6 +611,7 @@
 				const partWrapper = document.createElement('span');
 				partWrapper.style.display = 'inline-block';
 				partWrapper.style.whiteSpace = 'nowrap';
+				partWrapper.style.overflowWrap = 'break-word';
 
 				if (separator === -1) {
 					appendFormattedText(partWrapper, part);
@@ -639,17 +619,9 @@
 					const separators = part.split('|');
 
 					const text = separators[0].trim();
-					const imageNames = separators[1]
-						? separators[1]
-							.split(';')
-							.map(x => x.trim())
-							.filter(Boolean)
-						: [];
+					const imageNames = separators[1] ? separators[1].split(';').map(x => x.trim()).filter(Boolean) : [];
 
-					const afterText = separators
-						.slice(2)
-						.join('|')
-						.trim();
+					const afterText = separators.slice(2).join('|').trim();
 
 					if (text) {
 						appendFormattedText(partWrapper, text);
@@ -659,8 +631,7 @@
 						const img = createRewardImage(imageName);
 
 						if (img) {
-							img.style.marginLeft =
-								imageIndex === 0 ? '4px' : '2px';
+							img.style.marginLeft = imageIndex === 0 ? '4px' : '2px';
 
 							img.style.height = '16px';
 							img.style.width = '16px';
@@ -670,19 +641,15 @@
 					}
 
 					if (afterText) {
-						partWrapper.appendChild(
-							document.createTextNode(afterText)
-						);
+						partWrapper.appendChild(document.createTextNode(afterText));
 					}
 				}
 
-				line.appendChild(partWrapper);
-
 				if (i < parts.length - 1) {
-					line.appendChild(
-						document.createTextNode(', ')
-					);
+					partWrapper.appendChild(document.createTextNode(',\u00A0'));
 				}
+
+				line.appendChild(partWrapper);
 			}
 
 			container.appendChild(line);
@@ -691,14 +658,12 @@
 		return container;
 	}
 
-	// Remove old output
 	function clearExploreHelper() {
 		const helpers = document.querySelectorAll('.' + HELPER_CLASS);
 
 		helpers.forEach(helper => helper.remove());
 	}
 
-	// Update explore output
 	function updateExploreOutput() {
 		const output = document.querySelector('#explore-output');
 
@@ -706,64 +671,84 @@
 			return;
 		}
 
-		// Find current encounter
 		const encounter = findCurrentEncounter(output);
 
-		// Not in database
 		if (!encounter) {
 			clearExploreHelper();
 			return;
 		}
 
-		// Find buttons
 		const buttons = output.querySelectorAll('button');
 
 		const resultLines = [];
 
-		// Check each button
 		for (const button of buttons) {
-			const buttonText =
-				button.textContent.trim();
+			const buttonText = button.textContent.trim();
 
-			const normalizedButton = normalizeText(buttonText);
-
-			let reward = null;
 			let matchedName = null;
+			let matchedValue = null;
+			let matchedOption = null;
 
-			// Match button with database options
 			for (const [optionName, optionValue] of Object.entries(encounter.data.options || {})) {
-				const normalizedOption = normalizeText(optionName);
+				if (!matchOptionName(buttonText, optionName)) {
+					continue;
+				}
 
-				// Exact match or match to close match
-				if (normalizedButton === normalizedOption || normalizedButton.startsWith(normalizedOption + ' ')) {
-					reward = parseResult(optionValue, encounter.data.location);
-					matchedName = optionName;
-					break;
+				const isSeasonal = /\s*\[(spring|summer|autumn|winter)\]$/i.test(optionName);
+
+				const candidate = {
+					name: optionName,
+					value: optionValue,
+					isSeasonal: isSeasonal
+				};
+
+				if (!matchedOption) {
+					matchedOption = candidate;
+					continue;
+				}
+
+				if (isSeasonal && !matchedOption.isSeasonal) {
+					matchedOption = candidate;
 				}
 			}
 
-			// Not in database
-			if (!reward) {
+			if (matchedOption) {
+				matchedName = matchedOption.name;
+				matchedValue = matchedOption.value;
+			}
+
+			if (matchedName === null && encounter.data.steps) {
+				for (const stepName of Object.keys(encounter.data.steps)) {
+					if (normalizeText(buttonText) === normalizeText(stepName)) {
+						resultLines.push(...createStepResultLines(encounter, [stepName]));
+
+						matchedName = stepName;
+						break;
+					}
+				}
+			}
+
+			if (matchedName === null) {
 				continue;
 			}
 
-			// Add result
+			if (isStepOption(matchedValue)) {
+				resultLines.push(createStepPreviewLine(buttonText, matchedValue.steps));
+
+				continue;
+			}
+
 			resultLines.push(
 				createResultLine(
-					matchedName,
-					reward
+					matchedName.replace(/\s*\[(spring|summer|autumn|winter)\]$/i, ''), 
+					parseResult(matchedValue, encounter.data.location)
 				)
 			);
 		}
 
-		// Nothing to display
 		if (resultLines.length === 0) {
-			const notes = createNotesElement(
-				encounter.data.notes,
-				encounter.data.conditional,
-				encounter.data.location,
-				buttons
-			);
+
+			const notes = createNotesElement(encounter.data.notes, encounter.data.conditional, encounter.data.location, buttons);
 
 			clearExploreHelper();
 
@@ -778,11 +763,10 @@
 
 			helper.appendChild(notes);
 
-			const energyMessage = [
-				...output.querySelectorAll('p')
-			].find(p =>
-				normalizeText(p.textContent).includes('you lost')
-			);
+			const energyMessage = [...output.querySelectorAll('p')]
+				.find(p => normalizeText(p.textContent)
+					.includes('you lost')
+				);
 
 			if (energyMessage) {
 				energyMessage.before(helper);
@@ -793,7 +777,6 @@
 			return;
 		}
 
-		// Create or reuse helper
 		let helper = output.querySelector('.' + HELPER_CLASS);
 
 		if (!helper) {
@@ -803,32 +786,23 @@
 			helper.style.marginBottom = HELPER_MARGINS;
 		}
 
-		// Remove previous contents
 		helper.replaceChildren();
 
-		// Add current results
-		for (
-			const line of resultLines
-		) {
+		for (const line of resultLines) {
 			helper.appendChild(line);
 		}
 
-		// Add optional encounter notes
-		const notes = createNotesElement(
-			encounter.data.notes,
-			encounter.data.conditional,
-			encounter.data.location,
-			buttons
-		);
+		const notes = createNotesElement(encounter.data.notes, encounter.data.conditional, encounter.data.location, buttons);
 
 		if (notes) {
 			helper.appendChild(notes);
 		}
 
-		// Find energy message
-		const energyMessage = [...output.querySelectorAll('p')].find(p => normalizeText(p.textContent).includes('you lost'));
+		const energyMessage = [...output.querySelectorAll('p')]
+			.find(p => normalizeText(p.textContent)
+				.includes('you lost')
+			);
 
-		// Add before energy message
 		if (energyMessage) {
 			energyMessage.before(helper);
 		} else {
@@ -836,20 +810,18 @@
 		}
 	}
 
-	// Wait for explore content to change
 	function waitForExploreChange() {
 		const output = document.querySelector('#explore-output');
 
-		// Wait for #explore-output
 		if (!output) {
 			setTimeout(waitForExploreChange, 50);
 			return;
 		}
 
-		// Save the current contents
 		const oldHTML = output.innerHTML;
 
 		const observer = new MutationObserver(() => {
+
 				if (output.innerHTML !== oldHTML) {
 					observer.disconnect();
 
@@ -860,37 +832,29 @@
 			});
 
 		observer.observe(output, {
-				childList: true,
-				subtree: true,
-				characterData: true
-			}
-		);
+			childList: true,
+			subtree: true,
+			characterData: true
+		});
 
-		// Timeout
 		setTimeout(() => {
 			observer.disconnect();
 		}, WAIT_TIMEOUT);
 	}
 
-	// Watch for explore steps
-	document.addEventListener(
-		'click',
-		function (event) {
-			const exploreLink = event.target.closest('#explore-explore-link');
+	document.addEventListener('click', function (event) {
 
-			if (!exploreLink) {
-				return;
-			}
+		const exploreLink = event.target.closest('#explore-explore-link');
 
-			// Remove previous encounter immediately
-			clearExploreHelper();
-
-			// Wait for new encounter
-			waitForExploreChange();
+		if (!exploreLink) {
+			return;
 		}
-	);
 
-// Start the helper
+		clearExploreHelper();
+
+		waitForExploreChange();
+	});
+
 loadDatabase();
 
 })();
